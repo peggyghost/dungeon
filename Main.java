@@ -1,5 +1,11 @@
 import java.util.*;
 import java.util.ArrayList;
+import java.io.FileReader;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.*;
 /**
  * a main class that makes a scanner and a inventory object
  * it prints out the options and then asks what the player wants to do
@@ -7,11 +13,55 @@ import java.util.ArrayList;
  * it's in a do while so it never stops unless you wnat to stop
  */
 public class Main{
-	public static void main(String[] args){
+	//public static String filename = "bro.dat";
+
+	public static void main(String[] args)throws IOException{
+		////PAIGE CHANGED CODE
+	//	public static void main(String[] args){
+		//	Room rooms = new Room();
+		//	System.out.println(rooms.soString());
+		//}
+
+	////	public static void save(Serializable objectToSerialise){
+	//		FileOutputStream fos = null;
+
+	//		try{
+	//			fos = new FileOutputStream("bro.dat");
+//
+//				ObjectOutoutStream oos = new ObjectOutputStream(fos);
+//				oos.writeObject(objectToSerialise);
+
+//				oos.flush();
+//				oos.close();
+//			}catch (IOException e){
+//				e.printStackTrace();
+//			}
+//		}
+		
+		
+		//public static String filename = "bro.dat";
+		
+		
+
+	//	File file = new File("fileSave.txt");
+
+	//	file.createNewFile();
+
+	//	FileWriter writer = new FileWriter(file);
+
+		//writer.write("peggy");
+	//	writer.flush();
+	//	writer.close();
+
+
+		
+
+
+		/////////END PAIGE'S CHANGED CODE
 		Scanner bob = new Scanner(System.in);
 		Inventory stuff = new Inventory(100000000);	
 		Room room = new Room();
-
+	
 		System.out.println(" ");
 		System.out.println("                    ~  WELCOME TO ONE ROOM DUNGEON GAME ~");
 		System.out.println("      ");
@@ -63,7 +113,7 @@ public class Main{
 		System.out.println(" ");
 		System.out.println("             Remember " + bro.name() + ", to see the instrucitons, press 'p'.");
 		System.out.println(" ");
-		System.out.println("           Now remember not to ask any questions becuase this is a video game");
+		System.out.println("           Now remember not to ask any questions because this is a video game.");
 		System.out.println("   ");
 		System.out.println("   ");
 
@@ -123,12 +173,14 @@ public class Main{
                 System.out.println("                                   Press 'd' to move RIGHT. ");
                 System.out.println("                                   Press 'i' to access inventroy ");
 		System.out.println("                                   Press 'q' to activate not alive mode");
-				//System.out.println(" w:up a:left s:down d:right ");
-				//System.out.println(" i:inventory  q:suicide");
-			       //System.out.println(" ");
+				
+			
+			      
 			}//end of if for printing controls
-
+			//PAIGES EDITED CODE
 			if(input.equals("q")){
+				System.out.println("Saving game");
+				save(room);
 				bro.kill();
 			}//end of if for quit
 
@@ -167,7 +219,9 @@ public class Main{
 							stuff.equipArmor();
 							break;
 						case 5://exit
+
 							go = false;
+							save(room);			
 							break;
 					}//end of swtich
 				}while(go);//end of do while
@@ -305,6 +359,59 @@ public class Main{
 
 
 		}//end of while alive check
-	}//end of main
+	}
 
-}//end of Main
+
+	public static void save(Serializable Room){
+                        Inventory settings = items; 
+			FileOutputStream fos = null;
+                 
+                         try{
+                                 fos = new FileOutputStream("bro.dat");
+                                 
+                                 ObjectOutputStream oos = new ObjectOutputStream(fos);
+                                 oos.writeObject(settings);
+                                 
+                                 oos.flush();
+                                 oos.close();
+                         }catch (IOException e){
+                                 e.printStackTrace();
+                         }
+                 }
+
+	public static void openGame(Serializable Room){
+		FileInputStream fis = new FileINputStream("bro.dat");
+		ObjectOutputStream ois = new ObjectOutputStream(fos);
+		Inventory settings = items;
+		ois.readObject();
+		ois.close();
+
+
+
+
+	}
+
+//	}//end of main
+}
+	//public void saveAndExit(Room theRoom){
+	//	FileOutputStream fos = new FileOutputStream("fileSave.txt");
+	//	fos.getPosition();
+	//	int[][] AriPerspective = Room.getAri();
+	//	int AriXpos;
+	//	int AriYpos;
+	//	
+	//	for(int i = 0; i < Room.area; i++){
+	//		if(i.equals(": ("){
+					
+						
+
+
+	//	Room.getGarret();
+				
+		/*TODO get coordinates of each entity as [0,0]
+			TODO Associate coordinates [x,y] with two different ints for each entity 
+		  */
+		//int[][] garretArr = theRoom.
+
+	
+//}//end of Main

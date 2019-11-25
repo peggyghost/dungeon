@@ -10,7 +10,7 @@
          this.name = name;
          this.weapon = Weapon;
          this.health = health;
- }
+	 }
 
           public int health(){
                   return this.health;
