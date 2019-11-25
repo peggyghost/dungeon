@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Hero {
+class Hero extends Character {
 	public int health;
 	public boolean isalive;
 	private String name;
@@ -9,13 +9,18 @@ class Hero {
 	
 
 
-	Hero(String name, String Class){
+	Hero(String name, String Class, int health ){
 		this.name = name;
 		this.Class = Class;
-		this.health = 100;
+		this.health = health;
 		this.isalive = true;
 
 	}
+
+	public int health(){
+		return this.health;
+	}
+
 	public String name(){
 		return name;
 	}

@@ -1,6 +1,6 @@
   import java.util.*;
   
-   class Enemy {
+   class Enemy extends Character{
   
          String name;
          int health;
