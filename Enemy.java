@@ -1,6 +1,6 @@
   import java.util.*;
   
-   class Enemy extends Character{
+   class Enemy {
   
          String name;
          int health;
@@ -10,7 +10,7 @@
          this.name = name;
          this.weapon = Weapon;
          this.health = health;
-	 }
+ }
 
           public int health(){
                   return this.health;

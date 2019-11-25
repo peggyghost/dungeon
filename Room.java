@@ -1,9 +1,6 @@
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
-class Room implements Serializable{
-
-	private static final long serialVersionUid = 1L;
+class Room{
 	
 	private String[][] area;
 	private int[][] position;
@@ -20,38 +17,6 @@ class Room implements Serializable{
 		this.Items = new Item[20][20];
 	}//end of room constructor
 	
-	/*	public static void Rooms(String[][] area, int[][] position, int[][] Garret, int[][] Ari, Item[][] Items){
-		this.area = area;
-		this.position = position;
-		this.Garret = Garret;
-		this.Ari = Ari;
-		this.Items = Items;
-	}
-
-	//PAIGES ADDED CODE
-
-	public int[][] getPosition(){
-		return position;
-	}
-
-	public String[][] getArea(){
-		return area;
-	}
-
-	public int[][] getGarret(){
-		return Garret[i][p];
-	}
-
-	public int[][] getAri(){
-		return Ari;
-	}
-
-	public Item[][] getItem(){
-		return Items;
-	}*/
-
-	//get position method  for x and y
-
 	public void create(){
 		//creating board to keep track of player postion with 1 or 0. 0 if not there 1 if they are there
 		for(int i = 0; i <this.position.length; i++){

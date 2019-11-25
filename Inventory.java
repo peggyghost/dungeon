@@ -12,8 +12,8 @@ import java.util.Scanner;
  * and then asking wihch weapopn or armor they want to equp it only shows the type of the item that coresponds 
  * with the method
  */
-public class Inventory {
-//	public static final long serialVersionUID = 1L;
+public class Inventory{
+
 	private ArrayList<Item> items;
 	private int maxWeight;
 	private Item equippedWeapon;
