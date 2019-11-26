@@ -33,7 +33,7 @@ class Room{
 		}
 		return false;//if not it's false
 	}//end of is here method
-	
+
 	//this method is to teleport the player to the other room, where the other door is 
 	public void teleportTo(int y, int x){
 		this.position[y][x] = 1;
@@ -170,20 +170,20 @@ class Room{
 		this.position[1][2] = 1;//putting player in this position
 
 		//creating door in the rooms
-                for(int i = 0; i <this.Door.length; i++){
-                        for(int p = 0; p < this.Door.length; p++){
-                                this.Door[i][p] = 0;//filling with zero
-                        }
-                }//end of Door making board
-                this.Door[1][1] = 1;
+		for(int i = 0; i <this.Door.length; i++){
+			for(int p = 0; p < this.Door.length; p++){
+				this.Door[i][p] = 0;//filling with zero
+			}
+		}//end of Door making board
+		this.Door[1][1] = 1;
 
 		//creating stairs to transport to room3
 		for(int i = 0; i <this.Stairs.length; i++){
-                        for(int p = 0; p < this.Stairs.length; p++){
-                                this.Stairs[i][p] = 0;//filling with zero
-                        }
-                }//end of Door making board
-                this.Stairs[18][18] = 1;
+			for(int p = 0; p < this.Stairs.length; p++){
+				this.Stairs[i][p] = 0;//filling with zero
+			}
+		}//end of Door making board
+		this.Stairs[18][18] = 1;
 
 		//creating board to keep track of ari
 		for(int i = 0; i <this.Ari.length; i++){
@@ -280,11 +280,11 @@ class Room{
 
 		//creating stairs to connect rooms
 		for(int i = 0; i <this.Stairs.length; i++){
-                        for(int p = 0; p < this.Stairs.length; p++){
-                                this.Stairs[i][p] = 0;//filling with zero
-                        }
+			for(int p = 0; p < this.Stairs.length; p++){
+				this.Stairs[i][p] = 0;//filling with zero
+			}
 		}
-                this.Stairs[1][1] = 1;
+		this.Stairs[1][1] = 1;
 
 		//creating board to keep track of garret
 		for(int i = 0; i <this.Garret.length; i++){
@@ -644,8 +644,8 @@ class Room{
 					System.out.print(" D ");
 				}
 				else if(this.Stairs[i][p] ==1){
-                                        System.out.print(" S ");
-                                }
+					System.out.print(" S ");
+				}
 				else{
 					System.out.print(this.area[i][p]);
 				}
@@ -669,11 +669,11 @@ class Room{
 					System.out.print("<$>");
 				}
 				else if(this.Door[i][p] ==1){
-                                        System.out.print(" D ");
-                                }
+					System.out.print(" D ");
+				}
 				else if(this.Stairs[i][p] ==1){
-                                        System.out.print(" S ");
-                                }
+					System.out.print(" S ");
+				}
 				else{
 					System.out.print(this.area[i][p]);
 				}
@@ -704,11 +704,11 @@ class Room{
 					System.out.print("<$>");
 				}
 				else if(this.Door[i][p] ==1){
-                                        System.out.print(" D ");
-                                }
+					System.out.print(" D ");
+				}
 				else if(this.Stairs[i][p] ==1){
-                                        System.out.print(" S ");
-                                }
+					System.out.print(" S ");
+				}
 				else{
 					System.out.print(this.area[i][p]);
 				}
