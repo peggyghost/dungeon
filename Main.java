@@ -10,7 +10,7 @@ public class Main{
 	public static void main(String[] args){
 		Scanner bob = new Scanner(System.in);
 		Inventory stuff = new Inventory(100000000);	
-		Room room = new Room();
+		Room room = new Room(20,20);
 
 		System.out.println(" ");
 		System.out.println("                    ~  WELCOME TO ONE ROOM DUNGEON GAME ~");

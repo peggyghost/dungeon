@@ -12,14 +12,14 @@ class Room{
 	private Random fate = new Random();
 	private boolean present;
 
-	Room(){
-		this.area = new String[20][20];
-		this.position = new int[20][20];
-		this.Garret = new int[20][20];
-		this.Ari = new int[20][20];
-		this.Items = new Item[20][20];
-		this.Door = new int[20][20];
-		this.Stairs = new int[20][20];
+	Room(int y, int x){
+		this.area = new String[y][x];
+		this.position = new int[y][x];
+		this.Garret = new int[y][x];
+		this.Ari = new int[y][x];
+		this.Items = new Item[y][x];
+		this.Door = new int[y][x];
+		this.Stairs = new int[y][x];
 	}//end of room constructor
 
 	//this method is to check if the player is in the current room
@@ -36,7 +36,7 @@ class Room{
 	
 	//this method is to teleport the player to the other room, where the other door is 
 	public void teleportTo(int y, int x){
-		this.position[y][x] == 1;
+		this.position[y][x] = 1;
 	}
 
 	//this method is to make the position of the player in the past room gone
@@ -68,20 +68,20 @@ class Room{
 		this.Door[9][13] = 1;
 
 		//creating board to keep track of garret
-                for(int i = 0; i <this.Garret.length; i++){
-                        for(int p = 0; p < this.Garret.length; p++){
-                                this.Garret[i][p] = 0;//filling with zero
-                        }
-                }//end of garret board
-                this.Garret[18][10] = 1;//putts garret there
-
-		//creating board to keep track of garret
-                for(int i = 0; i <this.Ari.length; i++){
-                        for(int p = 0; p < this.Ari.length; p++){
-                                this.Ari[i][p] = 0;//filling with zero
-                        }
-                }//end of garret board
-                this.Ari[5][13] = 1;//putts garret there
+//                for(int i = 0; i <this.Garret.length; i++){
+  //                      for(int p = 0; p < this.Garret.length; p++){
+    //                            this.Garret[i][p] = 0;//filling with zero
+      //                  }
+        //        }//end of garret board
+          //      this.Garret[18][10] = 1;//putts garret there
+//
+//		//creating board to keep track of garret
+  //              for(int i = 0; i <this.Ari.length; i++){
+    //                    for(int p = 0; p < this.Ari.length; p++){
+      //                          this.Ari[i][p] = 0;//filling with zero
+        //                }
+          //      }//end of garret board
+            //    this.Ari[5][13] = 1;//putts ari there
 
 
 		//makes board that tells if item is there
