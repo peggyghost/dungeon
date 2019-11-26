@@ -65,19 +65,19 @@ public class Main{
 		System.out.print("                                    ");
 		String Class = bob.next();
 
-		Hero bro = new Hero(Name,Class);
+		Hero bro = new Hero(Name, 100, Class);
 		stuff.noobGear();//to give the hero a default gear weapon and armour
 
 
 		System.out.println(" ");
-		System.out.println("             Remember " + bro.name() + ", to see the instrucitons, press 'p'.");
+		System.out.println("             Remember " + bro.getname() + ", to see the instrucitons, press 'p'.");
 		System.out.println(" ");
 		System.out.println("           Now remember not to ask any questions becuase this is a video game");
 		System.out.println("   ");
 		System.out.println("   ");
 
-		Enemy Garret =new Enemy("Garret THE DEMON KING", new Item(ItemType.weapon,"BasketBall", 4, 70, 70), 200);//makes the enemy garret and gives him a weapon
-		Enemy Ari = new Enemy("Ari THE WOMAN", new Item(ItemType.weapon,"Cellphone", 345,543,60),200);//creates the enemy ari and gives her a weapon
+		Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
+		Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
 
 		String input = " ";//declares and initializes the input variable
 		
@@ -87,7 +87,7 @@ public class Main{
 		room3.create3();
 
 
-		while(bro.alive()){//keeps going until player is dead 
+		while(bro.isAlive()){//keeps going until player is dead 
 			System.out.println(" ");
 
 			//prints out board depending on location
@@ -126,7 +126,7 @@ public class Main{
 					System.out.println(" AND HE LIKED WHAT HE SAW. PROBABLY ENOUGH TO WANT A BABY WITH YOU!");
 					System.out.println(" DON'T ASK HOW I KNOW THAT WE DON'T HAVE TIME");
 					System.out.println(" ");
-					while(bro.alive() && Garret.isAlive()){
+					while(bro.isAlive() && Garret.isAlive()){
 						//enemy damage - the armor is the damage the enemy can deal
 						int enemyhit = Garret.power() - stuff.protection();
 						//your weapons damage is the damage you can do
@@ -148,26 +148,26 @@ public class Main{
 							System.out.println(" ");
 							bro.kill();
 						}
-						if(Garret.isAlive() && bro.alive()){
+						if(Garret.isAlive() && bro.isAlive()){
 							bro.damage(enemyhit);
 							System.out.println(" ");
 							System.out.println("Garret hit you with his " + Garret.equippedWeapon() + ". It did " + enemyhit + " damage!");
 							System.out.println(" ");
 						}
 					}//end of while fight
-					if(!bro.alive()){
+					if(!bro.isAlive()){
 						System.out.println(" ");
-						System.out.println(bro.name() + "!?!?!?! YOU CAN'T DIE NOW!!!");
+						System.out.println(bro.getname() + "!?!?!?! YOU CAN'T DIE NOW!!!");
 						for(int i = 0 ; i < 6; i++){
 							System.out.println("AAAAAAHHHHHHHHHHHHHHH");
 						}
 						Garret.boyTaunt();
 					}//end of losing message
-					if(bro.alive()){
+					if(bro.isAlive()){
 						System.out.println(" ");
 						System.out.println(" You have defeated " + Garret.getname() + "!!!!!");
 						System.out.println(" ");
-						bro.flexonGarret();
+						bro.boyTaunt();
 					}
 				}//end of if for garret interaction  interaction
 
@@ -177,7 +177,7 @@ public class Main{
 					System.out.println(" NO MAN CAN HANDLE THE PURE TEENAGE DRAMA SHE IS CAPABLE OF SUMMONING");
 					System.out.println(" IF YOU DON'T BEAT HER QUICK SHE'LL DROWN YOU IN BORING SPEECHES");
 					System.out.println(" ");
-					while(bro.alive() && Ari.isAlive()){
+					while(bro.isAlive() && Ari.isAlive()){
 						//enemy damage - the armor is the damage the enemy can deal
 						int enemyhit = Ari.power() - stuff.protection();
 						//your weapons damage is the damage you can do
@@ -201,7 +201,7 @@ public class Main{
 							System.out.println(" ");
 							bro.kill();
 						}
-						if(Ari.isAlive()&& bro.alive()){
+						if(Ari.isAlive()&& bro.isAlive()){
 							bro.damage(enemyhit);
 							System.out.println(" ");
 							System.out.println("Ari hit you with her " + Ari.equippedWeapon() + ". It did " + enemyhit + " damage!");
@@ -209,20 +209,20 @@ public class Main{
 							System.out.println(" ");
 						}
 						System.out.println(" ");
-						bro.flexonAri();
+						bro.girlTaunt();
 					}//end of while fight
-					if(!bro.alive()){
+					if(!bro.isAlive()){
 						System.out.println(" ");
-						System.out.println(bro.name() + "!?!?!?! YOU CAN'T DIE NOW!!!");
+						System.out.println(bro.getname() + "!?!?!?! YOU CAN'T DIE NOW!!!");
 						for(int i = 0 ; i < 8; i++){
 							System.out.println("AAAAAAHHHHHHHHHHHHHHH");
 						}
 					}//end of losing message
-					if(bro.alive()){
+					if(bro.isAlive()){
 						System.out.println(" ");
 						System.out.println(" You have defeated " + Ari.getname() + "!!!!!");
 						System.out.println(" ");
-						bro.flexonAri();
+						bro.girlTaunt();
 					}
 				}//end of if for ari fight interaction
 
@@ -323,7 +323,7 @@ public class Main{
 				String response = bob.next();
 				System.out.println(" ");
 				System.out.println("       What's that?? I can't hear you because I am a virtual machine. Oh well.. lolz You probably said 'yes' ");
-				System.out.println("      Thank you for your service " + bro.name() + ". Good game.");
+				System.out.println("      Thank you for your service " + bro.getname() + ". Good game.");
 				System.out.println(" ");
 				bro.kill();
 			}//end of if for winning message 

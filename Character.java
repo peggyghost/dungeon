@@ -8,28 +8,15 @@ abstract class Character{
 	public Character(String name, int health){
 	       this.name = name;
 	       this.health = health;
-	}
 
-	public String getname(){
-		return name;
 	}
+	public abstract void damage(int hit);
+	public abstract String getname();
+	public abstract boolean isAlive();
+	public abstract void girlTaunt();
+	public abstract void boyTaunt();
 
-	public int health(){
-		return health;
-	}
-
-	public void damage(int hit){
-		this.health -=hit;
-	}
-
-	public boolean isAlive() {
-		if(this.health <= 0) {
-			return false;
-		}
-		return true;
-	}
-
-	public abstract void taunts();
+	
 
 }
 
