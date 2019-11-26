@@ -85,21 +85,34 @@ public class Main{
 
 		while(bro.alive()){//keeps going until player is dead 
 			System.out.println(" ");
-			if(Garret.isAlive() && Ari.isAlive()){
+
+			//prints out board depending on location
+			if(room.isHere()){//if in the first room
 				room.print();//prints out the room
-			}
-			else if(Garret.isAlive() && !Ari.isAlive()){
-				room.printG();
-			}
-			else if(!Garret.isAlive() && Ari.isAlive()){
-				room.printA();
-			}
+			}//end of if
+			else if(room2.isHere()){//if in the second room
+				if(Ari.isAlive()){//checks to see if ari is alive
+					room2.printA();//if so print out room with her in it
+				}
+				else{
+					room2.print();//if not, print out room without her cuz she dead
+				}
+			}//end of else if
+			else if(room3.isHere()){//if in the third room
+				if(Garret.isAlive()){//check to see if garret is alive
+					room3.printG();//if so print out the room wit hhim in it
+				}
+				else{
+					room3.print();//if not print out room without him cuz he dead
+				}
+			}//end of else if
 
 			System.out.println(" ");
 			System.out.println("              ");
 			System.out.print("                      ");
 			input = bob.next();//input from user
 
+			//if statment for movment 
 			if(input.equals("w") || input.equals("a") || input.equals("s") || input.equals("d")){
 				room.MOVE(input);//to move the character in the room
 
@@ -209,29 +222,24 @@ public class Main{
 					}
 				}//end of if for ari fight interaction
 
-				if(Garret.isAlive()){
-					room.enemymoveGarret();
+				if(Garret.isAlive()){//if garret is alive, make him move
+					room3.enemymoveGarret();
 				}
-				if(Ari.isAlive()){
-					room.enemymoveAri();
+				if(Ari.isAlive()){//if ari is alive , make her move
+					room2.enemymoveAri();
 				}	
 			}//end of if for movement
 
+			//for the input if you need to look at directions again
 			if(input.equals("p")){
-				if(Garret.isAlive()){
-					room.enemymoveGarret();
-				}
-				if(Ari.isAlive()){
-					room.enemymoveAri();
-				}
 				System.out.println(" ");
 				System.out.println(" How to play:");
 				System.out.println("                You, the Hero, will be represented on the board by the '+' symbol.");
-				System.out.println("                Your enemy, the Demon King Garret, will be represented by the ':(' symbol.");
-				System.out.println("                Ari THE WOMAN will be represented by the '?' symbol.");
+				System.out.println("                Your enemy, the Demon King Garret, will be represented by the ':(' symbol. He is super sad so he walks in a path");
+				System.out.println("                Ari THE WOMAN will be represented by the '?' symbol. She is CRAZY so you need to chase her");
 				System.out.println("       ");
-				System.out.println("                Move throughout the board collecting as many items '<$>' as you can to defeat the game.");
-				System.out.println("                If you do happen to run into either enemy, you must dual it out to see  who wins!");
+				System.out.println("                Move throughout the board collecting as many items '<$>' as you can to find a powerful weapon.");
+				System.out.println("                If you do happen to run into either enemy, you must dual it out to see who wins!");
 				System.out.println("    ");
 				System.out.println("                                   Press 'w' to move UP. ");
 				System.out.println("                                   Press 's' to move DOWN. ");
@@ -246,15 +254,15 @@ public class Main{
 				bro.kill();
 			}//end of if for quit
 
+			//input for inventory
 			if(input.equals("i")){
-				boolean go = true;
-				if(Garret.isAlive()){
-					room3.create2.enemymoveGarret();
-				}
-				if(Ari.isAlive()){
-					room2.create3.enemymoveAri();
-				}
+				boolean go = true;//variable to make loop go forever until it's false
+				
 				do{
+
+					System.out.println(" ");
+					System.out.println("Your current weapon is " + stuff.currentWeapon());
+					System.out.println("Your current Armor is " + stuff.currentArmor());
 					System.out.println(" ");
 					System.out.println(" 1. Print the inventory");
 					System.out.println(" 2. Drop an item");
@@ -267,10 +275,6 @@ public class Main{
 						case 1://print inventory
 							stuff.print();
 							break;
-							//case 2://add random item
-							//	Item thing = ItemGenerator.generate();
-							//	stuff.add(thing);
-							//	break;
 						case 2://drop item
 							stuff.drop();	
 							break;

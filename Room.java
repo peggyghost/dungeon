@@ -313,12 +313,12 @@ class Room{
 		this.Garret[18][10] = 1;//putts garret there
 
 		//creating board to keep track of ari
-		for(int i = 0; i <this.Ari.length; i++){
-			for(int p = 0; p < this.Ari.length; p++){
-				this.Ari[i][p] = 0;//filling with zero
-			}
-		}
-		this.Ari[7][11] = 1;//putts ari there
+//		for(int i = 0; i <this.Ari.length; i++){
+//			for(int p = 0; p < this.Ari.length; p++){
+//				this.Ari[i][p] = 0;//filling with zero
+//			}
+//		}
+//		this.Ari[7][11] = 1;//putts ari there
 
 		//makes board that tells if item is there
 		for(int i = 0; i <this.Items.length; i++){
@@ -500,12 +500,12 @@ class Room{
 		return false;
 	}//end of itemonfloor
 
-	private int count =0;
+	private int count =0;//holds variable that has list placment to make garret walk in pattern
 	public void enemymoveGarret(){
 		int YEG = 0;
 		int XEG = 0;
-		int[] turns = new int[]{0,0,0,0,0,2,1,1,1,1,1,3};
-		for(int i = 0 ; i < this.Garret.length;i++){
+		int[] turns = new int[]{0,0,0,0,0,2,1,1,1,1,1,3};//dependign on the placement garret will move a certain way
+		for(int i = 0 ; i < this.Garret.length;i++){//this grabs garrets current locations
 			for(int p = 0; p < this.Garret.length;p++){
 				if(this.Garret[i][p] == 1){
 					YEG = i;

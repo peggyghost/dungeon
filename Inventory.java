@@ -20,6 +20,7 @@ public class Inventory{
 	private Item equippedArmor;
 	private Item StartingWeapon;
 	private Item StartingArmor;
+
 	Inventory(int maxWeight){
 		this.maxWeight = maxWeight;
 		this.items = new ArrayList<Item>();
@@ -27,12 +28,14 @@ public class Inventory{
 	}//end of inventory	
 
 	public boolean add(Item item){
-		Item thing = ItemGenerator.generate();
 		int big = totalWeight();
 		if(big + item.getWeight() <= maxWeight){
 			this.items.add(item);
 			return true;
 		}//end of if
+		System.out.println(" ");
+		System.out.println(" You are carrying too much stuff");
+		System.out.println(" ");
 		return false;
 	}//end of add
 
@@ -46,6 +49,7 @@ public class Inventory{
 	}//end of total weight
 
 	public void print(){
+
 		for(int i =0; i< items.size();i++){
 			System.out.println(" ");
 			System.out.print(i+1);
@@ -128,7 +132,10 @@ public class Inventory{
 	public String currentWeapon(){
 		return this.equippedWeapon.getName();
 	}
-
+	
+	public String currentArmor(){
+		return this.equippedArmor.getName();
+	}
 
 	public int power(){ //returns strength of the weapon
 		return this.equippedWeapon.getPower();
@@ -140,21 +147,6 @@ public class Inventory{
 
 
 	}//end of protections
-
-
-	public void StartingWeapon(){//initialzes weapon as a starting weapon
-		this.equippedWeapon = new Item(ItemType.weapon, "Dylan's Shoulders",10,1,3);	
-
-
-
-	}//end of Starting Weapon
-
-	public void StartingArmor(){//initializes armor as a starting armor
-		this.equippedArmor = new Item(ItemType.armor, "Cracked Armor",15,7,9);
-
-
-
-	}//end of StartingArmor
 
 
 
