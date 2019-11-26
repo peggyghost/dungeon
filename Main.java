@@ -119,8 +119,8 @@ public class Main{
 			//if statment for movment 
 			if(input.equals("w") || input.equals("a") || input.equals("s") || input.equals("d")){
 				room.MOVE(input);//to move the character in the room
-
-				if(room3.garretFight() && Garret.isAlive()){
+				
+				if(room3.isHere() && room3.garretFight() && Garret.isAlive()){
 					System.out.println(" WHAT? YOUR FACING " + Garret.getname() + "!! YOU BETTER WATCH OUT.");
 					System.out.println(" HE WAS LOOKING AT YOU THROUGH HIS TELESCOPE BEFORE YOU CAME HERE!");
 					System.out.println(" AND HE LIKED WHAT HE SAW. PROBABLY ENOUGH TO WANT A BABY WITH YOU!");
@@ -171,7 +171,7 @@ public class Main{
 					}
 				}//end of if for garret interaction  interaction
 
-				if(room2.ariFight() && Ari.isAlive()){
+				if(room2.isHere() && room2.ariFight() && Ari.isAlive()){
 					System.out.println(" ");
 					System.out.println(" HOLY COW IT'S " + Ari.getname() + "!! SHE IS WELL KNOWN FOR COMPLAINING");
 					System.out.println(" NO MAN CAN HANDLE THE PURE TEENAGE DRAMA SHE IS CAPABLE OF SUMMONING");
