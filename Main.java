@@ -252,7 +252,7 @@ public class Main{
 						System.out.println(" ");
 						room.ghost();//clear out the players position in the current room
 						room2.ghost();//clear our the room leading up just in case
-						room2.teleportTo(1,1);//add the players position in the coming room
+						room2.teleportTo(1,2);//add the players position in the coming room
 						System.out.println(" ");
 						System.out.println(" 		Welcome to the second room");
 						System.out.println(" ");
@@ -306,7 +306,7 @@ public class Main{
 						System.out.println(" ");
 						room.ghost();//clears the player's position in the current room
 						room2.ghost();//clears the player's position in the room they're going to just in case
-						room.teleportTo(9,13);//put the players position in the room down below
+						room.teleportTo(9,12);//put the players position in the room down below
 						System.out.println(" ");
 						System.out.println("            Welcome to the first room");
 						System.out.println(" ");
@@ -334,7 +334,7 @@ public class Main{
 						System.out.println(" ");
 						room2.ghost();//clears the players position in the room they are going to just in case
 						room3.ghost();//clears the players position in the room they are currently in
-						room2.teleportTo(18,18);//adds the players location in the laast room where the stairs end
+						room2.teleportTo(18,17);//adds the players location in the laast room where the stairs end
 						System.out.println(" ");
 						System.out.println("            Welcome to the second room");
 						System.out.println(" ");
