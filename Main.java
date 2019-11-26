@@ -18,6 +18,8 @@ public class Main{
 		Scanner bob = new Scanner(System.in);
 		Inventory stuff = new Inventory(100000000);	
 		Room room = new Room(20,20);
+		Room room2 = new Room(20,20);
+		Room room3 = new Room(20,20);
 
 		System.out.println(" ");
 		System.out.println("                    ~  WELCOME TO ONE ROOM DUNGEON GAME ~");
@@ -247,10 +249,10 @@ public class Main{
 			if(input.equals("i")){
 				boolean go = true;
 				if(Garret.isAlive()){
-					room.enemymoveGarret();
+					room3.create2.enemymoveGarret();
 				}
 				if(Ari.isAlive()){
-					room.enemymoveAri();
+					room2.create3.enemymoveAri();
 				}
 				do{
 					System.out.println(" ");
