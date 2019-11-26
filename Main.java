@@ -76,12 +76,16 @@ public class Main{
 		System.out.println("   ");
 		System.out.println("   ");
 
-		Enemy Garret =new Enemy("Garret THE DEMON KING", new Item(ItemType.weapon,"BasketBall", 4, 70, 70), 200);
-		Enemy Ari = new Enemy("Ari THE WOMAN", new Item(ItemType.weapon,"Cellphone", 345,543,60),200);
+		Enemy Garret =new Enemy("Garret THE DEMON KING", new Item(ItemType.weapon,"BasketBall", 4, 70, 70), 200);//makes the enemy garret and gives him a weapon
+		Enemy Ari = new Enemy("Ari THE WOMAN", new Item(ItemType.weapon,"Cellphone", 345,543,60),200);//creates the enemy ari and gives her a weapon
 
-		String input = " ";
-
+		String input = " ";//declares and initializes the input variable
+		
+		//fully creates the rooms
 		room.create();
+		room2.create2();
+		room3.create3();
+
 
 		while(bro.alive()){//keeps going until player is dead 
 			System.out.println(" ");
@@ -116,7 +120,7 @@ public class Main{
 			if(input.equals("w") || input.equals("a") || input.equals("s") || input.equals("d")){
 				room.MOVE(input);//to move the character in the room
 
-				if(room.garretFight() && Garret.isAlive()){
+				if(room3.garretFight() && Garret.isAlive()){
 					System.out.println(" WHAT? YOUR FACING " + Garret.getname() + "!! YOU BETTER WATCH OUT.");
 					System.out.println(" HE WAS LOOKING AT YOU THROUGH HIS TELESCOPE BEFORE YOU CAME HERE!");
 					System.out.println(" AND HE LIKED WHAT HE SAW. PROBABLY ENOUGH TO WANT A BABY WITH YOU!");
@@ -167,7 +171,7 @@ public class Main{
 					}
 				}//end of if for garret interaction  interaction
 
-				if(room.ariFight() && Ari.isAlive()){
+				if(room2.ariFight() && Ari.isAlive()){
 					System.out.println(" ");
 					System.out.println(" HOLY COW IT'S " + Ari.getname() + "!! SHE IS WELL KNOWN FOR COMPLAINING");
 					System.out.println(" NO MAN CAN HANDLE THE PURE TEENAGE DRAMA SHE IS CAPABLE OF SUMMONING");

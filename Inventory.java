@@ -130,11 +130,11 @@ public class Inventory{
 	
 	
 	public String currentWeapon(){
-		return this.equippedWeapon.getName();
+		return this.equippedWeapon.toString();
 	}
 	
 	public String currentArmor(){
-		return this.equippedArmor.getName();
+		return this.equippedArmor.toString();
 	}
 
 	public int power(){ //returns strength of the weapon

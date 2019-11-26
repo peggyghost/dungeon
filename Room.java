@@ -64,25 +64,7 @@ class Room{
 				this.Door[i][p] = 0;//filling with zero
 			}
 		}//end of Door making board
-
-		this.Door[9][13] = 1;
-
-		//creating board to keep track of garret
-//                for(int i = 0; i <this.Garret.length; i++){
-  //                      for(int p = 0; p < this.Garret.length; p++){
-    //                            this.Garret[i][p] = 0;//filling with zero
-      //                  }
-        //        }//end of garret board
-          //      this.Garret[18][10] = 1;//putts garret there
-//
-//		//creating board to keep track of garret
-  //              for(int i = 0; i <this.Ari.length; i++){
-    //                    for(int p = 0; p < this.Ari.length; p++){
-      //                          this.Ari[i][p] = 0;//filling with zero
-        //                }
-          //      }//end of garret board
-            //    this.Ari[5][13] = 1;//putts ari there
-
+		this.Door[9][13] = 1;//puts the door here 
 
 		//makes board that tells if item is there
 		for(int i = 0; i <this.Items.length; i++){
@@ -311,14 +293,6 @@ class Room{
 			}
 		}//end of garret board
 		this.Garret[18][10] = 1;//putts garret there
-
-		//creating board to keep track of ari
-//		for(int i = 0; i <this.Ari.length; i++){
-//			for(int p = 0; p < this.Ari.length; p++){
-//				this.Ari[i][p] = 0;//filling with zero
-//			}
-//		}
-//		this.Ari[7][11] = 1;//putts ari there
 
 		//makes board that tells if item is there
 		for(int i = 0; i <this.Items.length; i++){
