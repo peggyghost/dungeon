@@ -1,5 +1,12 @@
 import java.util.*;
 import java.util.ArrayList;
+import java.io.ObjectOutputStream;
+import java.io.ObjectInputStream;
+import java.io.PrintWriter;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 /**
  * a main class that makes a scanner and a inventory object
  * it prints out the options and then asks what the player wants to do
@@ -272,8 +279,17 @@ public class Main{
 							stuff.equipArmor();
 							break;
 						case 5://exit
+							try{
+							FileOutputStream file = new FileOutputStream("data.txt");
+							PrintWriter pw = new PrintWriter(file);
+							bro.save(pw);
+							pw.close();
+							}catch(FileNotFoundException e){
+								System.out.println("not found");
+							}
 							go = false;
 							break;
+					
 					}//end of swtich
 				}while(go);//end of do while
 			}//end of if of inventory choice

@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.PrintWriter;
 
 class Hero {
 	public int health;
@@ -9,6 +10,18 @@ class Hero {
 	//private String Extraability;
 	//private boolean Attack;
 	//public boolean fight;	
+//	void save(PrintWriter pw){
+///		pw.println(name);
+//		Hero.save(pw);
+//	}
+
+
+
+
+
+
+
+
 
 
 	Hero(String name, String Class){
@@ -40,6 +53,14 @@ class Hero {
 	public String name(){
 		return name;
 	}
+
+
+	void save(PrintWriter pw){
+                pw.println(name);
+         //       Hero.save(pw);
+        }
+
+
 	public void damage(int hit){//Hit was never initialized anywere hence I dont know if its going to work,
 		//Like, how the fuck is the program going to know what hit does. It doesnt understand English.
 		//Since Suad said its going to work, I am not going to say anything, I will investigate later.
