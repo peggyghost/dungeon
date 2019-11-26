@@ -21,13 +21,13 @@ public class Main{
 		System.out.println("            BY THE MOST FAMOUS AND HANDSOME CON-ARTIST, SUAD PARVEZ.");
 		System.out.println("        YOU ARE HERE TO KILL THE DEMON KING, GARRETTE DAYKWON AND ARI.");
 		System.out.println("       BECAUSE THEY HAVE STOLEN ALL THE CURRY IN THE LAND OF 'SCHOP SCHOP' ");
-	        System.out.println("              RESTORE THIS LANDS GLORY AND DEFEAT THE DEMON KING!");
+		System.out.println("              RESTORE THIS LANDS GLORY AND DEFEAT THE DEMON KING!");
 		System.out.println("   ");
 		System.out.println("    ");
 		System.out.println(" How to play:");
 		System.out.println("              You, the Hero, will be represented on the board by the '+' symbol.");
 		System.out.println("              Your enemy, the Demon King Garret, will be represented by the ':(' symbol.");
-	        System.out.println("              He is known for being thirsty and pacing back and forth. Watch out, he is tough as fudge");
+		System.out.println("              He is known for being thirsty and pacing back and forth. Watch out, he is tough as fudge");
 		System.out.println("              Ari THE WOMAN will be represented by the '?' symbol.");	
 		System.out.println("              She has gone crazy and roams aimlessly around the room, you may need to chase her.");
 		System.out.println("       ");	
@@ -36,11 +36,11 @@ public class Main{
 		System.out.println("              Preferably you please, bob already went in there and we have no idea where he is..");
 		System.out.println("    ");
 		System.out.println("                                 Press 'w' to move UP. ");
-                System.out.println("                                 Press 's' to move DOWN. ");
-                System.out.println("                                 Press 'a' to move LEFT. ");
-                System.out.println("                                 Press 'd' to move RIGHT. ");
+		System.out.println("                                 Press 's' to move DOWN. ");
+		System.out.println("                                 Press 'a' to move LEFT. ");
+		System.out.println("                                 Press 'd' to move RIGHT. ");
 		System.out.println("                                 Press 'i' to access inventroy ");
-                System.out.println("                                 Press 'q' to activate not alive mode");
+		System.out.println("                                 Press 'q' to activate not alive mode");
 		System.out.println("  ");
 
 		System.out.println(" ");
@@ -58,7 +58,7 @@ public class Main{
 
 		Hero bro = new Hero(Name,Class);
 		stuff.noobGear();//to give the hero a default gear weapon and armour
-	        	
+
 
 		System.out.println(" ");
 		System.out.println("             Remember " + bro.name() + ", to see the instrucitons, press 'p'.");
@@ -85,14 +85,121 @@ public class Main{
 			else if(!Garret.isAlive() && Ari.isAlive()){
 				room.printA();
 			}
-			
+
 			System.out.println(" ");
 			System.out.println("              ");
 			System.out.print("                      ");
 			input = bob.next();//input from user
-			
+
 			if(input.equals("w") || input.equals("a") || input.equals("s") || input.equals("d")){
 				room.MOVE(input);//to move the character in the room
+
+				if(room.garretFight() && Garret.isAlive()){
+					System.out.println(" WHAT? YOUR FACING " + Garret.getname() + "!! YOU BETTER WATCH OUT.");
+					System.out.println(" HE WAS LOOKING AT YOU THROUGH HIS TELESCOPE BEFORE YOU CAME HERE!");
+					System.out.println(" AND HE LIKED WHAT HE SAW. PROBABLY ENOUGH TO WANT A BABY WITH YOU!");
+					System.out.println(" DON'T ASK HOW I KNOW THAT WE DON'T HAVE TIME");
+					System.out.println(" ");
+					while(bro.alive() && Garret.isAlive()){
+						//enemy damage - the armor is the damage the enemy can deal
+						int enemyhit = Garret.power() - stuff.protection();
+						//your weapons damage is the damage you can do
+						int brohit = stuff.power();
+						System.out.println("Press 'k' to attack");
+						String attack = bob.next();
+						if(attack.equals("k")){
+							//the enemy gets damaged by the hero's hit
+							Garret.damage(brohit);//the hero's hit is in the parameter
+							System.out.println(" ");
+							System.out.println("You attacked Garret with your " + stuff.currentWeapon() + ". You did " + brohit + " damage to him!");
+							System.out.println(" His health is now " + Garret.health());
+							System.out.println(" ");
+						}
+						else{
+							System.out.println(" ");
+							System.out.println("your so dumb that wasn't the letter k");
+							System.out.println("you deserve to perish!");
+							System.out.println(" ");
+							bro.kill();
+						}
+						if(Garret.isAlive() && bro.alive()){
+							bro.damage(enemyhit);
+							System.out.println(" ");
+							System.out.println("Garret hit you with his " + Garret.equippedWeapon() + ". It did " + enemyhit + " damage!");
+							System.out.println(" ");
+						}
+					}//end of while fight
+					if(!bro.alive()){
+						System.out.println(" ");
+						System.out.println(bro.name() + "!?!?!?! YOU CAN'T DIE NOW!!!");
+						for(int i = 0 ; i < 6; i++){
+							System.out.println("AAAAAAHHHHHHHHHHHHHHH");
+						}
+						Garret.boyTaunt();
+					}//end of losing message
+					if(bro.alive()){
+						System.out.println(" ");
+						System.out.println(" You have defeated " + Garret.getname() + "!!!!!");
+						System.out.println(" ");
+						bro.flexonGarret();
+					}
+				}//end of if for garret interaction  interaction
+
+				if(room.ariFight() && Ari.isAlive()){
+					System.out.println(" ");
+					System.out.println(" HOLY COW IT'S " + Ari.getname() + "!! SHE IS WELL KNOWN FOR COMPLAINING");
+					System.out.println(" NO MAN CAN HANDLE THE PURE TEENAGE DRAMA SHE IS CAPABLE OF SUMMONING");
+					System.out.println(" IF YOU DON'T BEAT HER QUICK SHE'LL DROWN YOU IN BORING SPEECHES");
+					System.out.println(" ");
+					while(bro.alive() && Ari.isAlive()){
+						//enemy damage - the armor is the damage the enemy can deal
+						int enemyhit = Ari.power() - stuff.protection();
+						//your weapons damage is the damage you can do
+						int brohit = stuff.power();
+						System.out.println(" ");
+						System.out.println("Press 'k' to attack");
+						System.out.println(" ");
+						String attack = bob.next();
+						if(attack.equals("k")){
+							//the enemy gets damaged by the hero's hit
+							Ari.damage(brohit);//the hero's hit is in the parameter
+							System.out.println(" ");
+							System.out.println("You attacked " + Ari.getname() + "  with your " + stuff.currentWeapon() + ". You did " + brohit + " damage to her!");
+							System.out.println(" Her health is now " + Ari.health());
+							System.out.println(" ");
+						}
+						else{
+							System.out.println(" ");
+							System.out.println("your so dumb that wasn't the letter k");
+							System.out.println("you deserve to perish");
+							System.out.println(" ");
+							bro.kill();
+						}
+						if(Ari.isAlive()&& bro.alive()){
+							bro.damage(enemyhit);
+							System.out.println(" ");
+							System.out.println("Ari hit you with her " + Ari.equippedWeapon() + ". It did " + enemyhit + " damage!");
+							Ari.girlTaunt();
+							System.out.println(" ");
+						}
+						System.out.println(" ");
+						bro.flexonAri();
+					}//end of while fight
+					if(!bro.alive()){
+						System.out.println(" ");
+						System.out.println(bro.name() + "!?!?!?! YOU CAN'T DIE NOW!!!");
+						for(int i = 0 ; i < 8; i++){
+							System.out.println("AAAAAAHHHHHHHHHHHHHHH");
+						}
+					}//end of losing message
+					if(bro.alive()){
+						System.out.println(" ");
+						System.out.println(" You have defeated " + Ari.getname() + "!!!!!");
+						System.out.println(" ");
+						bro.flexonAri();
+					}
+				}//end of if for ari fight interaction
+
 				if(Garret.isAlive()){
 					room.enemymoveGarret();
 				}
@@ -100,7 +207,7 @@ public class Main{
 					room.enemymoveAri();
 				}	
 			}//end of if for movement
-			
+
 			if(input.equals("p")){
 				if(Garret.isAlive()){
 					room.enemymoveGarret();
@@ -110,22 +217,20 @@ public class Main{
 				}
 				System.out.println(" ");
 				System.out.println(" How to play:");
-                System.out.println("                You, the Hero, will be represented on the board by the '+' symbol.");
-                System.out.println("                Your enemy, the Demon King Garret, will be represented by the ':(' symbol.");
-                System.out.println("                Ari THE WOMAN will be represented by the '?' symbol.");
-                System.out.println("       ");
-                System.out.println("                Move throughout the board collecting as many items '<$>' as you can to defeat the game.");
-                System.out.println("                If you do happen to run into either enemy, you must dual it out to see  who wins!");
-                System.out.println("    ");
-                System.out.println("                                   Press 'w' to move UP. ");
-                System.out.println("                                   Press 's' to move DOWN. ");
-                System.out.println("                                   Press 'a' to move LEFT. ");
-                System.out.println("                                   Press 'd' to move RIGHT. ");
-                System.out.println("                                   Press 'i' to access inventroy ");
-		System.out.println("                                   Press 'q' to activate not alive mode");
-				//System.out.println(" w:up a:left s:down d:right ");
-				//System.out.println(" i:inventory  q:suicide");
-			       //System.out.println(" ");
+				System.out.println("                You, the Hero, will be represented on the board by the '+' symbol.");
+				System.out.println("                Your enemy, the Demon King Garret, will be represented by the ':(' symbol.");
+				System.out.println("                Ari THE WOMAN will be represented by the '?' symbol.");
+				System.out.println("       ");
+				System.out.println("                Move throughout the board collecting as many items '<$>' as you can to defeat the game.");
+				System.out.println("                If you do happen to run into either enemy, you must dual it out to see  who wins!");
+				System.out.println("    ");
+				System.out.println("                                   Press 'w' to move UP. ");
+				System.out.println("                                   Press 's' to move DOWN. ");
+				System.out.println("                                   Press 'a' to move LEFT. ");
+				System.out.println("                                   Press 'd' to move RIGHT. ");
+				System.out.println("                                   Press 'i' to access inventroy ");
+				System.out.println("                                   Press 'q' to activate not alive mode");
+				System.out.println(" ");
 			}//end of if for printing controls
 
 			if(input.equals("q")){
@@ -153,10 +258,10 @@ public class Main{
 						case 1://print inventory
 							stuff.print();
 							break;
-						//case 2://add random item
-						//	Item thing = ItemGenerator.generate();
-						//	stuff.add(thing);
-						//	break;
+							//case 2://add random item
+							//	Item thing = ItemGenerator.generate();
+							//	stuff.add(thing);
+							//	break;
 						case 2://drop item
 							stuff.drop();	
 							break;
@@ -172,118 +277,12 @@ public class Main{
 					}//end of swtich
 				}while(go);//end of do while
 			}//end of if of inventory choice
-			
-			if(room.garretFight() && Garret.isAlive()){
-				System.out.println(" WHAT? YOUR FACING " + Garret.getname() + "!! YOU BETTER WATCH OUT.");
-				System.out.println(" HE WAS LOOKING AT YOU THROUGH HIS TELESCOPE BEFORE YOU CAME HERE!");
-				System.out.println(" AND HE LIKED WHAT HE SAW. PROBABLY ENOUGH TO WANT A BABY WITH YOU!");
-				System.out.println(" DON'T ASK HOW I KNOW THAT WE DON'T HAVE TIME");
-				System.out.println(" ");
-				while(bro.alive() && Garret.isAlive()){
-					//enemy damage - the armor is the damage the enemy can deal
-					int enemyhit = Garret.power() - stuff.protection();
-					//your weapons damage is the damage you can do
-					int brohit = stuff.power();
-					System.out.println("Press 'k' to attack");
-					String attack = bob.next();
-					if(attack.equals("k")){
-						//the enemy gets damaged by the hero's hit
-						Garret.damage(brohit);//the hero's hit is in the parameter
-						System.out.println(" ");
-						System.out.println("You attacked Garret with your " + stuff.currentWeapon() + ". You did " + brohit + " damage to him!");
-						System.out.println(" His health is now " + Garret.health());
-						System.out.println(" ");
-					}
-					else{
-						System.out.println(" ");
-						System.out.println("your so dumb that wasn't the letter k");
-						System.out.println("you deserve to perish!");
-						System.out.println(" ");
-						bro.kill();
-					}
-					if(Garret.isAlive() && bro.alive()){
-						bro.damage(enemyhit);
-						System.out.println(" ");
-						System.out.println("Garret hit you with his " + Garret.equippedWeapon() + ". It did " + enemyhit + " damage!");
-						System.out.println(" ");
-					}
-				}//end of while fight
-				if(!bro.alive()){
-                                        System.out.println(" ");
-                                        System.out.println(bro.name() + "!?!?!?! YOU CAN'T DIE NOW!!!");
-                                        for(int i = 0 ; i < 6; i++){
-                                                System.out.println("AAAAAAHHHHHHHHHHHHHHH");
-                                        }
-					Garret.boyTaunt();
-                                }//end of losing message
-				if(bro.alive()){
-					System.out.println(" ");
-					System.out.println(" You have defeated " + Garret.getname() + "!!!!!");
-					System.out.println(" ");
-					bro.flexonGarret();
-				}
-			}//end of if for garret interaction  interaction
 
-			if(room.ariFight() && Ari.isAlive()){
-				System.out.println(" ");
-                                System.out.println(" HOLY COW IT'S " + Ari.getname() + "!! SHE IS WELL KNOWN FOR COMPLAINING");
-                                System.out.println(" NO MAN CAN HANDLE THE PURE TEENAGE DRAMA SHE IS CAPABLE OF SUMMONING");
-                                System.out.println(" IF YOU DON'T BEAT HER QUICK SHE'LL DROWN YOU IN BORING SPEECHES");
-                                System.out.println(" ");
-				while(bro.alive() && Ari.isAlive()){
-                                        //enemy damage - the armor is the damage the enemy can deal
-                                        int enemyhit = Ari.power() - stuff.protection();
-                                        //your weapons damage is the damage you can do
-                                        int brohit = stuff.power();
-					System.out.println(" ");
-                                        System.out.println("Press 'k' to attack");
-					System.out.println(" ");
-                                        String attack = bob.next();
-                                        if(attack.equals("k")){
-                                                //the enemy gets damaged by the hero's hit
-                                                Ari.damage(brohit);//the hero's hit is in the parameter
-						System.out.println(" ");
-                                                System.out.println("You attacked " + Ari.getname() + "  with your " + stuff.currentWeapon() + ". You did " + brohit + " damage to her!");
-                                                System.out.println(" Her health is now " + Ari.health());
-						System.out.println(" ");
-                                        }
-                                        else{
-						System.out.println(" ");
-                                                System.out.println("your so dumb that wasn't the letter k");
-                                                System.out.println("you deserve to perish");
-						System.out.println(" ");
-                                                bro.kill();
-                                        }
-					if(Ari.isAlive()&& bro.alive()){
-                                        	bro.damage(enemyhit);
-						System.out.println(" ");
-                                        	System.out.println("Ari hit you with her " + Ari.equippedWeapon() + ". It did " + enemyhit + " damage!");
-						Ari.girlTaunt();
-						System.out.println(" ");
-					}
-					System.out.println(" ");
-                                        
-					bro.flexonAri();
-                                }//end of while fight
-                                if(!bro.alive()){
-                                        System.out.println(" ");
-                                        System.out.println(bro.name() + "!?!?!?! YOU CAN'T DIE NOW!!!");
-                                        for(int i = 0 ; i < 8; i++){
-                                                System.out.println("AAAAAAHHHHHHHHHHHHHHH");
-                                        }
-                                }//end of losing message
-                                if(bro.alive()){
-					System.out.println(" ");
-                                        System.out.println(" You have defeated " + Ari.getname() + "!!!!!");
-					System.out.println(" ");
-					bro.flexonAri();
-                                }
-			}//end of if for ari fight interaction
 
 			if(room.itemonfloor()){
 				stuff.add(room.pickup());
 			}//end of if for checking if item is on the floor.
-			
+
 			if(!Garret.isAlive() && !Ari.isAlive()){
 				for(int i = 0 ; i < 5 ; i++){
 					System.out.println("     YYYYYYYYAAAAAAAAAAAAAAAAAAAAAAAAYYYYYYYYYYY");

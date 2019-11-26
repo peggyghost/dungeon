@@ -8,6 +8,7 @@ class Room{
 	private int[][] Ari;
 	private Item[][] Items;
 	private Random fate = new Random();
+	private boolean present;
 
 	Room(){
 		this.area = new String[20][20];
@@ -16,6 +17,33 @@ class Room{
 		this.Ari = new int[20][20];
 		this.Items = new Item[20][20];
 	}//end of room constructor
+
+	//this method is to check if the player is in the current room
+	public boolean isHere(){
+		for(int i = 0; i < this.position.length ; i++){//loop that iterates through the array to see 1
+			for(int p = 0; p < this.position.length ; p++){
+				if(this.position[i][p] == 1){
+					return true;//if the position is 1 it sends a true
+				}
+			}
+		}
+		return false;//if not it's false
+	}//end of is here method
+	
+	//this method is to teleport the player to the other room, where the other door is 
+	public void teleportTo(int y, int x){
+		this.position[y][x] == 1;
+	}
+
+	//this method is to make the position of the player in the past room gone
+	public void ghost(){
+		for(int i = 0; i < this.position.length ; i++){
+			for(int p = 0; p < this.position.length ; p++){
+				this.position[i][p] = 0;
+			}
+		}
+	}//end of ghost method
+
 
 	public void create(){
 		//creating board to keep track of player postion with 1 or 0. 0 if not there 1 if they are there
