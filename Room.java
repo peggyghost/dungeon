@@ -6,7 +6,9 @@ class Room{
 	private int[][] position;
 	private int[][] Garret;
 	private int[][] Ari;
+	private int[][] Door;
 	private Item[][] Items;
+	private int[][] Stairs;
 	private Random fate = new Random();
 	private boolean present;
 
@@ -16,6 +18,8 @@ class Room{
 		this.Garret = new int[20][20];
 		this.Ari = new int[20][20];
 		this.Items = new Item[20][20];
+		this.Door = new int[20][20];
+		this.Stairs = new int[20][20];
 	}//end of room constructor
 
 	//this method is to check if the player is in the current room
@@ -54,21 +58,31 @@ class Room{
 		}//end of position making board
 		this.position[1][1] = 1;//putting player in this position
 
-		//creating board to keep track of garret
-		for(int i = 0; i <this.Garret.length; i++){
-			for(int p = 0; p < this.Garret.length; p++){
-				this.Garret[i][p] = 0;//filling with zero
+		//creating door in the rooms
+		for(int i = 0; i <this.Door.length; i++){
+			for(int p = 0; p < this.Door.length; p++){
+				this.Door[i][p] = 0;//filling with zero
 			}
-		}//end of garret board
-		this.Garret[18][10] = 1;//putts garret there
+		}//end of Door making board
 
-		//creating board to keep track of ari
-		for(int i = 0; i <this.Ari.length; i++){
-			for(int p = 0; p < this.Ari.length; p++){
-				this.Ari[i][p] = 0;//filling with zero
-			}
-		}
-		this.Ari[7][11] = 1;//putts ari there
+		this.Door[9][13] = 1;
+
+		//creating board to keep track of garret
+                for(int i = 0; i <this.Garret.length; i++){
+                        for(int p = 0; p < this.Garret.length; p++){
+                                this.Garret[i][p] = 0;//filling with zero
+                        }
+                }//end of garret board
+                this.Garret[18][10] = 1;//putts garret there
+
+		//creating board to keep track of garret
+                for(int i = 0; i <this.Ari.length; i++){
+                        for(int p = 0; p < this.Ari.length; p++){
+                                this.Ari[i][p] = 0;//filling with zero
+                        }
+                }//end of garret board
+                this.Ari[5][13] = 1;//putts garret there
+
 
 		//makes board that tells if item is there
 		for(int i = 0; i <this.Items.length; i++){
@@ -171,15 +185,23 @@ class Room{
 				this.position[i][p] = 0;//filling with zero
 			}
 		}//end of position making board
-		this.position[1][1] = 1;//putting player in this position
+		this.position[1][2] = 1;//putting player in this position
 
-		//creating board to keep track of garret
-		for(int i = 0; i <this.Garret.length; i++){
-			for(int p = 0; p < this.Garret.length; p++){
-				this.Garret[i][p] = 0;//filling with zero
-			}
-		}//end of garret board
-		this.Garret[18][10] = 1;//putts garret there
+		//creating door in the rooms
+                for(int i = 0; i <this.Door.length; i++){
+                        for(int p = 0; p < this.Door.length; p++){
+                                this.Door[i][p] = 0;//filling with zero
+                        }
+                }//end of Door making board
+                this.Door[1][1] = 1;
+
+		//creating stairs to transport to room3
+		for(int i = 0; i <this.Stairs.length; i++){
+                        for(int p = 0; p < this.Stairs.length; p++){
+                                this.Stairs[i][p] = 0;//filling with zero
+                        }
+                }//end of Door making board
+                this.Stairs[18][18] = 1;
 
 		//creating board to keep track of ari
 		for(int i = 0; i <this.Ari.length; i++){
@@ -237,7 +259,7 @@ class Room{
 			for(int p = 1; p < 18; p++){
 				this.area[i][p] = "[ ]";
 			}
-		
+
 			System.out.println("  ");
 		}//end of for that creates walls
 
@@ -273,6 +295,14 @@ class Room{
 			}
 		}//end of position making board
 		this.position[1][1] = 1;//putting player in this position
+
+		//creating stairs to connect rooms
+		for(int i = 0; i <this.Stairs.length; i++){
+                        for(int p = 0; p < this.Stairs.length; p++){
+                                this.Stairs[i][p] = 0;//filling with zero
+                        }
+		}
+                this.Stairs[1][1] = 1;
 
 		//creating board to keep track of garret
 		for(int i = 0; i <this.Garret.length; i++){
@@ -314,48 +344,68 @@ class Room{
 				}
 			}//end of innner for
 		}//end of outter for
-		for(int i = 4; i< 5 ; i++){
-			for(int p = 4; p < 7; p++){
+		for(int i = 1; i< 6 ; i++){
+			for(int p = 7; p < 8; p++){
 				this.area[i][p] = "[ ]";
 			}
 		}
-		for(int i = 4; i< 5 ; i++){
-			for(int p = 4; p < 7; p++){
-				this.area[p][i] = "[ ]";
-			}
-		}
-		for(int i = 7; i< 8 ; i++){
-			for(int p = 2; p < 7; p++){
+		for(int i = 6; i< 7 ; i++){
+			for(int p = 7; p > 4; p--){
 				this.area[i][p] = "[ ]";
 			}
 		}
-		for(int i = 17; i< 18 ; i++){
-			for(int p = 13; p < 17; p++){
+		for(int i = 6; i< 11 ; i++){
+			for(int p = 4; p < 5; p++){
 				this.area[i][p] = "[ ]";
 			}
 		}
-		for(int i = 14; i< 15 ; i++){
-			for(int p = 13; p < 17; p++){
-				this.area[p][i] = "[ ]";
+		for(int i = 10; i< 11 ; i++){
+			for(int p = 5; p < 8; p++){
+				this.area[i][p] = "[ ]";
 			}
 		}
-		for(int i = 11; i< 12 ; i++){
-			for(int p = 10; p < 17; p++){
+		for(int i = 11; i< 15 ; i++){
+			for(int p = 7; p < 8; p++){
 				this.area[i][p] = "[ ]";
 			}
 		}
 		for(int i = 15; i< 16 ; i++){
-			for(int p = 3; p < 6; p++){
+			for(int p = 7; p > 3; p--){
 				this.area[i][p] = "[ ]";
 			}
 		}
-		for(int i = 16; i< 17 ; i++){
-			for(int p = 6; p < 13; p++){
-				this.area[p][i] = "[ ]";
+		for(int i = 13; i< 14 ; i++){
+			for(int p = 1; p < 4; p++){
+				this.area[i][p] = "[ ]";
 			}
 		}
-		for(int i = 12; i< 13 ; i++){
-			for(int p = 5; p < 10; p++){
+		for(int i = 4; i< 5 ; i++){
+			for(int p = 12; p < 17; p++){
+				this.area[i][p] = "[ ]";
+			}
+		}
+		for(int i = 5; i< 9 ; i++){
+			for(int p = 12; p < 13; p++){
+				this.area[i][p] = "[ ]";
+			}
+		}
+		for(int i = 13; i< 14 ; i++){
+			for(int p = 7; p < 12; p++){
+				this.area[i][p] = "[ ]";
+			}
+		}
+		for(int i = 13; i< 16 ; i++){
+			for(int p = 12; p < 13; p++){
+				this.area[i][p] = "[ ]";
+			}
+		}
+		for(int i = 16; i< 19 ; i++){
+			for(int p = 10; p < 11; p++){
+				this.area[i][p] = "[ ]";
+			}
+		}
+		for(int i = 9; i< 10 ; i++){
+			for(int p = 12; p < 19; p++){
 				this.area[i][p] = "[ ]";
 			}
 			System.out.println("  ");
@@ -571,10 +621,6 @@ class Room{
 				if(this.position[i][p] == 1){
 					YM = i;
 					XM = p;
-					//					System.out.println("i is " + i);
-					//					System.out.println("P is " + p);
-					//					System.out.println("YM is " + YM);
-					//					System.out.println("XM is " + XM);
 				}
 			}
 		}
@@ -583,32 +629,24 @@ class Room{
 				if(this.area[YM][XM-1] != "[ ]"){
 					this.position[YM][XM-1] = 1;//to turn left
 					this.position[YM][XM] = 0;
-					//					System.out.println("new YM is " + YM);
-					//                                      System.out.println("new XM is " + XM);
 				}
 				break;
 			case "d":
 				if(this.area[YM][XM+1] != "[ ]"){
 					this.position[YM][XM+1] = 1;//to turn right
 					this.position[YM][XM] = 0;
-					//					System.out.println("new YM is " + YM);
-					//                                      System.out.println("new XM is " + XM);
 				}
 				break;
 			case "w":
 				if(this.area[YM-1][XM] != "[ ]"){
 					this.position[YM-1][XM] = 1;//to turn up
 					this.position[YM][XM] = 0;
-					//					System.out.println("new YM is " + YM);
-					//                                      System.out.println("new XM is " + XM);
 				}
 				break;
 			case "s":
 				if(this.area[YM+1][XM] != "[ ]"){
 					this.position[YM+1][XM] = 1;//to turn down
-					this.position[YM][XM] = 0;
-					//					System.out.println("new YM is " + YM);
-					//                                        System.out.println("new XM is " + XM);
+					this.position[YM][XM] = 0; 
 				}
 				break;
 		}//end of switch
@@ -628,6 +666,12 @@ class Room{
 				else if(this.Items[i][p] != null){
 					System.out.print("<$>");
 				}
+				else if(this.Door[i][p] ==1){
+					System.out.print(" D ");
+				}
+				else if(this.Stairs[i][p] ==1){
+                                        System.out.print(" S ");
+                                }
 				else{
 					System.out.print(this.area[i][p]);
 				}
@@ -650,6 +694,12 @@ class Room{
 				else if(this.Items[i][p] != null){
 					System.out.print("<$>");
 				}
+				else if(this.Door[i][p] ==1){
+                                        System.out.print(" D ");
+                                }
+				else if(this.Stairs[i][p] ==1){
+                                        System.out.print(" S ");
+                                }
 				else{
 					System.out.print(this.area[i][p]);
 				}
@@ -658,33 +708,11 @@ class Room{
 	}
 
 	public void print(){
-		//		for(int i = 0; i< 40; i++){
-		//			System.out.println(" ");
-		//		}
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println(" ");
-		System.out.println("                                         ~ ONE ROOM DUNGEON GAME ~");
-		//		for(int i = 0 ; i < this.area.length; i++){
-		//			for(int p = 0 ; p < this.area.length; p++){
-		//				if(this.Garret[i][p] == 1){
-		//					this.area[i][p] = ":( ";
-		//				}//end of garret
-		//				if(this.Ari[i][p]==1){
-		//					this.area[i][p] = " ? ";
-		//				}//end of ari
-		//				if(this.position[i][p]==1){
-		//					this.area[i][p] = " + ";
-		//				}//end of user
-		//				if(this.Items[i][p]!=null){
-		//					this.area[i][p] = "<$>";
-		//				}//end of item
-		//			}
-		//		}
-		//		for(int i = 0; i< 200;i++){
-		//			System.out.println(" ");
-		//		}
+		System.out.println("                                         ~ ONE ROOM DUNGEON GAME ~ ");
 		for(int i = 0; i < this.area.length;i++){
 			System.out.println(" ");
 			System.out.print("                       ");
@@ -701,6 +729,12 @@ class Room{
 				else if(this.Items[i][p] != null){
 					System.out.print("<$>");
 				}
+				else if(this.Door[i][p] ==1){
+                                        System.out.print(" D ");
+                                }
+				else if(this.Stairs[i][p] ==1){
+                                        System.out.print(" S ");
+                                }
 				else{
 					System.out.print(this.area[i][p]);
 				}
