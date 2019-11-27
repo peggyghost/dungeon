@@ -1,16 +1,25 @@
 import java.util.*;
 import java.io.PrintWriter;
 
-class Enemy {
+
+
+
+class Enemy extends Character {
 
 	String name;
 	int health;
 	Item weapon;
 
-	public  Enemy(String name, Item Weapon, int health) {
-		this.name = name;
+
+//	public  Enemy(String name, Item Weapon, int health) {
+//		this.name = name;
+//		this.weapon = Weapon;
+//		this.health = health;
+
+	public  Enemy(String name, int health, Item Weapon) {
+		super(name, health);
 		this.weapon = Weapon;
-		this.health = health;
+
 	}
 
 	public int health(){
@@ -59,9 +68,14 @@ class Enemy {
 		}
 	}//end of girlTaunt
 
+
 	public void boyTaunt(){
 		Random rand = new Random();
 		int i = rand.nextInt()%3;
+
+
+
+
 
 		switch (i){
 			case 0:
@@ -69,19 +83,20 @@ class Enemy {
 				break;
 			case 1:
 				System.out.println("GARRET: You better watch yourself, i'll threaten you with a marriage propsal!!");
+
 				break;
 			case 2:
 				System.out.println( "GARRET: If I beat you up, my wife's boyfriend said that he'll buy me a nintendo switch");
 				break;
 			default:
 				break;
-
 		}
 		System.out.println(" ");
 	}
 	public String getname(){
 		return name;
 	}
+
 
 	void save(PrintWriter pw){
 		pw.println(name);
@@ -96,10 +111,6 @@ class Enemy {
 		for (Item weapon: Weapon){
 
 	}*/
-
-
-
-
 
 
 

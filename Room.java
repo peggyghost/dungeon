@@ -36,18 +36,53 @@ class Room{
 
 	//this method is to teleport the player to the other room, where the other door is 
 	public void teleportTo(int y, int x){
-		this.position[y][x] = 1;
-	}
+		this.position[y][x] = 1;//makes the position here, used for other object room
+	}//end of teleportTo method
 
 	//this method is to make the position of the player in the past room gone
 	public void ghost(){
-		for(int i = 0; i < this.position.length ; i++){
+		for(int i = 0; i < this.position.length ; i++){//itterates through array
 			for(int p = 0; p < this.position.length ; p++){
-				this.position[i][p] = 0;
+				this.position[i][p] = 0;//makes the positions for the array 0, player not here
 			}
 		}
 	}//end of ghost method
 
+	//this method is to see if the player is at a door
+	public boolean onDoor(){
+		int yp = 0; int xp = 0;//coordinates to hold player position
+		int yd = 1; int xd = 1;//coordinates to hold door position
+		for(int i = 0; i < this.position.length; i ++){//looks though arrays to gather position
+			for(int p = 0 ; p < this.position.length; p++){
+				if(this.position[i][p] == 1 && this.Door[i][p] == 1){
+					yp = i; xp = p;
+					yd = i; xd = p;
+				}	
+			}
+		}
+		if(yp==yd && xp==xd){
+			return true;
+		}
+		return false;//if they are not in the same location, return false
+	}//end of onDoor method
+
+	//this method is to see if the player is at the stairs
+	public boolean onStairs(){
+		int yp = 0; int xp = 0;
+		int ys = 0; int xs = 0;
+		for(int i = 0; i < this.position.length; i ++){//looks though arrays to gather position
+			for(int p = 0 ; p < this.position.length; p++){
+				if(this.position[i][p] == 1 && this.Stairs[i][p] == 1){
+					yp=i; xp=p;
+					ys=i; xs=p;
+				}       
+			}
+		}
+		if(yp==ys && xp==xs){
+			return true;
+		}
+		return false;//if they are not in the same location, return false
+	}//end of onStairs method
 
 	public void create(){
 		//creating board to keep track of player postion with 1 or 0. 0 if not there 1 if they are there
