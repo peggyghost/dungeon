@@ -91,12 +91,11 @@ public class Main{
 
 
 
-<<<<<<< HEAD
+
 		people.add(new Hero(Name, 100, Class));
-=======
 		Hero bro = new Hero(Name, 100, Class);
 
->>>>>>> 65c6cb6bb9b7681ceb14392110e3c65de8454e6d
+
 		stuff.noobGear();//to give the hero a default gear weapon and armour
 
 
@@ -106,20 +105,19 @@ public class Main{
 		System.out.println("           Now remember not to ask any questions becuase this is a video game");
 		System.out.println("   ");
 		System.out.println("   ");
-<<<<<<< HEAD
+
 
 		people.add(new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70)));
 		people.add(new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60)));
 
 		//Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
 		//Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
-=======
 		
 		//make the enemy garret    name                  health     weapon
-		Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
+		//Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
 		//make the enemy ari     name           healh                weapon
-		Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
->>>>>>> 65c6cb6bb9b7681ceb14392110e3c65de8454e6d
+		//Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
+
 
 		String input = " ";//declares and initializes the input variable
 
@@ -409,9 +407,9 @@ public class Main{
 			}//end of if for printing controls
 			
 			if(input.equals("q")){
-<<<<<<< HEAD
+
 				people.get(1).kill();
-=======
+
 				System.out.println("Would you like to save and quit?");
 				String yo = bob.next();
 				if (yo.equals("y")){
@@ -430,7 +428,7 @@ public class Main{
 				}else{
 					bro.kill();
 				}
->>>>>>> 65c6cb6bb9b7681ceb14392110e3c65de8454e6d
+
 			}//end of if for quit
 
 			//input for LOADING game
