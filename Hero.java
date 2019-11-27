@@ -57,8 +57,19 @@ class Hero {
 
 	void save(PrintWriter pw){
                 pw.println(name);
-         //       Hero.save(pw);
+		pw.println(Class);
+		pw.println(health);
+		pw.println(isalive);
+
         }
+
+	Hero(Scanner in){
+		name = in.nextLine();
+		Class = in.nextLine();
+		health = in.nextInt();
+		isalive = in.nextBoolean();
+
+	}
 
 
 	public void damage(int hit){//Hit was never initialized anywere hence I dont know if its going to work,
