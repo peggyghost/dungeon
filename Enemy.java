@@ -99,8 +99,8 @@ class Enemy extends Character {
 
 
 	void save(PrintWriter pw){
-		pw.println(name);
-		pw.println(weapon);
+//		pw.println(name);
+//		pw.println(weapon);
 		pw.println(health);
 	}
 

@@ -403,6 +403,7 @@ public class Main{
 						PrintWriter pw = new PrintWriter(file);
 						bro.save(pw);
 						Ari.save(pw);
+						Garret.save();
 
 						pw.close();
 

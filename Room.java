@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.io.PrintWriter;
 class Room{
 
 	private String[][] area;
@@ -22,6 +23,10 @@ class Room{
 		this.Stairs = new int[y][x];
 	}//end of room constructor
 
+//	void save(PrintWriter pw){
+//		pw.println(Ari[][]);
+//		pw.println(Garret.position[][]);
+//	}
 	//this method is to check if the player is in the current room
 	public boolean isHere(){
 		for(int i = 0; i < this.position.length ; i++){//loop that iterates through the array to see 1
@@ -522,6 +527,18 @@ class Room{
 				}
 			}
 		}
+
+	/*	public static void save(PrintWriter pw){
+			for(int i = 0 ; i < this.Garret.length;i++){//this grabs garrets current lo    cations
+                         for(int p = 0; p < this.Garret.length;p++){
+                                 if(this.Garret[i][p] == 1){
+                                         YEG = i;
+                                         XEG = p;
+                                 }
+                         }
+               }
+	pw.println(Garret[i][p]);
+		}*/
 		//int move = fate.nextInt(4);// 0 is left, 1 is right , 2 is up , 3 is down
 
 		int move = turns[count];
@@ -751,5 +768,18 @@ class Room{
 		}//end of outter for print
 
 	}//end of print
-
+		 void save(PrintWriter pw){
+                         for(int i = 0 ; i < this.Garret.length;i++){//this grabs garrets cu    rrent lo    cations
+                          for(int p = 0; p < this.Garret.length;p++){
+                                  if(this.Garret[i][p] == 1){
+                                        int  YEG = i;
+                                          int XEG = p;
+                          pw.println(Garret[i][p]);
+			  	  }
+                        // pw.println(Garret[i][p]);
+			  }
+              // pw.println(Garret[i][p]);
+			 }
+         //pw.println(Garret[i][p]);
+                 }
 }//end of class Room
