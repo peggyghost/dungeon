@@ -6,8 +6,8 @@ abstract class Character{
 
 
 	public Character(String name, int health){
-	       this.name = name;
-	       this.health = health;
+		this.name = name;
+		this.health = health;
 
 	}
 	public abstract void damage(int hit);
@@ -16,8 +16,8 @@ abstract class Character{
 	public abstract void girlTaunt();
 	public abstract void boyTaunt();
 
-	
+
 
 }
 
-		
+
