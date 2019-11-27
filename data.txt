@@ -1,1 +1,4 @@
-suad
+pepper
+salt
+100
+true

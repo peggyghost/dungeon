@@ -49,24 +49,54 @@ public class Main{
 		System.out.println("                                 Press 's' to move DOWN. ");
 		System.out.println("                                 Press 'a' to move LEFT. ");
 		System.out.println("                                 Press 'd' to move RIGHT. ");
-		System.out.println("                                 Press 'i' to access inventroy ");
-		System.out.println("                                 Press 'q' to activate not alive mode");
+		System.out.println("                                 Press 'i' to access inventroy. ");
+		System.out.println("                                 Press 'q' to activate not alive mode.");
+		System.out.println("                                 Press 'l' to load previous game.");
 		System.out.println("  ");
 
-		System.out.println(" ");
-		System.out.println("                       WHAT IS YOUR NAME HERO??");
-		System.out.println(" ");
-		System.out.print("                                  ");
-		String Name = bob.next();
+		System.out.println("Would you like to load your previous game?");
+		String x = bob.next();
+		if (x.equals("y")){
+			try{
+				FileInputStream file = new FileInputStream("data.txt");
+				Scanner in = new Scanner (file);
+			//	Hero bro = new Hero(in);
+				in.close();
 
-		System.out.println(" ");
-		System.out.println("                          WHAT IS YOUR CLASS??");
-		System.out.println("              (FratBoi)  (JucciBoi)  (NerdBoi)  (Arsalan) ");
-		System.out.println(" ");
-		System.out.print("                                    ");
-		String Class = bob.next();
+			}catch (FileNotFoundException e){
+				System.out.println("File Not Found");
+			}
 
+		}				 
+
+
+
+
+			System.out.println(" ");
+			System.out.println("                       WHAT IS YOUR NAME HERO??");
+			System.out.println(" ");
+			System.out.print("                                  ");
+			String Name = bob.next();
+
+			System.out.println(" ");
+			System.out.println("                          WHAT IS YOUR CLASS??");
+			System.out.println("              (FratBoi)  (JucciBoi)  (NerdBoi)  (Arsalan) ");
+			System.out.println(" ");
+			System.out.print("                                    ");
+			String Class = bob.next();
+			Hero bro = new Hero(Name, Class);
+	
+		
+
+
+
+
+<<<<<<< HEAD
 		people.add(new Hero(Name, 100, Class));
+=======
+		Hero bro = new Hero(Name, 100, Class);
+
+>>>>>>> 65c6cb6bb9b7681ceb14392110e3c65de8454e6d
 		stuff.noobGear();//to give the hero a default gear weapon and armour
 
 
@@ -76,12 +106,20 @@ public class Main{
 		System.out.println("           Now remember not to ask any questions becuase this is a video game");
 		System.out.println("   ");
 		System.out.println("   ");
+<<<<<<< HEAD
 
 		people.add(new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70)));
 		people.add(new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60)));
 
 		//Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
 		//Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
+=======
+		
+		//make the enemy garret    name                  health     weapon
+		Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
+		//make the enemy ari     name           healh                weapon
+		Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
+>>>>>>> 65c6cb6bb9b7681ceb14392110e3c65de8454e6d
 
 		String input = " ";//declares and initializes the input variable
 
@@ -256,7 +294,7 @@ public class Main{
 						System.out.println(" ");
 						room.ghost();//clear out the players position in the current room
 						room2.ghost();//clear our the room leading up just in case
-						room2.teleportTo(1,1);//add the players position in the coming room
+						room2.teleportTo(1,2);//add the players position in the coming room
 						System.out.println(" ");
 						System.out.println(" 		Welcome to the second room");
 						System.out.println(" ");
@@ -310,7 +348,7 @@ public class Main{
 						System.out.println(" ");
 						room.ghost();//clears the player's position in the current room
 						room2.ghost();//clears the player's position in the room they're going to just in case
-						room.teleportTo(9,13);//put the players position in the room down below
+						room.teleportTo(9,12);//put the players position in the room down below
 						System.out.println(" ");
 						System.out.println("            Welcome to the first room");
 						System.out.println(" ");
@@ -338,7 +376,7 @@ public class Main{
 						System.out.println(" ");
 						room2.ghost();//clears the players position in the room they are going to just in case
 						room3.ghost();//clears the players position in the room they are currently in
-						room2.teleportTo(18,18);//adds the players location in the laast room where the stairs end
+						room2.teleportTo(18,17);//adds the players location in the laast room where the stairs end
 						System.out.println(" ");
 						System.out.println("            Welcome to the second room");
 						System.out.println(" ");
@@ -369,10 +407,45 @@ public class Main{
 				System.out.println("                                   Press 'q' to activate not alive mode");
 				System.out.println(" ");
 			}//end of if for printing controls
-
+			
 			if(input.equals("q")){
+<<<<<<< HEAD
 				people.get(1).kill();
+=======
+				System.out.println("Would you like to save and quit?");
+				String yo = bob.next();
+				if (yo.equals("y")){
+					try{
+						FileOutputStream file = new FileOutputStream("data.txt");
+						PrintWriter pw = new PrintWriter(file);
+						bro.save(pw);
+						Ari.save(pw);
+
+						pw.close();
+
+					}catch(FileNotFoundException e){
+						System.out.println("not found");
+					}
+					bro.kill();
+				}else{
+					bro.kill();
+				}
+>>>>>>> 65c6cb6bb9b7681ceb14392110e3c65de8454e6d
 			}//end of if for quit
+
+			//input for LOADING game
+			if(input.equals('l')){
+			  try{
+			  FileInputStream file = new FileInputStream("data.txt");
+			  Scanner in = new Scanner (file);
+			 // bro = new Hero(in);
+			  }catch (FileNotFoundException e){
+			  System.out.println("File Not Found");
+			  }
+
+
+			  }
+
 
 			//input for inventory
 			if(input.equals("i")){
@@ -405,7 +478,27 @@ public class Main{
 							stuff.equipArmor();
 							break;
 						case 5://exit
-							try{
+
+							System.out.println("Would you like to save and quit?");
+							String select = bob.next();
+							if (select.equals("y")){
+								try{
+									FileOutputStream file = new FileOutputStream("data.txt");
+									PrintWriter pw = new PrintWriter(file);
+									bro.save(pw);
+									pw.close();
+
+								}catch(FileNotFoundException e){
+									System.out.println("not found");
+								}
+								go = false;
+								bro.kill();
+								break;
+							}else{
+								go = false;
+							}
+
+						/*	try{
 								FileOutputStream file = new FileOutputStream("data.txt");
 								PrintWriter pw = new PrintWriter(file);
 								people.get(1).save(pw);
@@ -415,6 +508,7 @@ public class Main{
 							}
 							go = false;
 							break;
+*/
 
 					}//end of swtich
 				}while(go);//end of do while
@@ -449,3 +543,4 @@ public class Main{
 	}//end of main
 
 }//end of Main
+

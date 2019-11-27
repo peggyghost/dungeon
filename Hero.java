@@ -19,9 +19,26 @@ class Hero extends Character{
 
 
 	void save(PrintWriter pw){
-		pw.println(name);
+
+                pw.println(name);
+		pw.println(Class);
+		pw.println(health);
+		pw.println(isalive);
+
+        }
+
+		
 		//       Hero.save(pw);
-	}
+
+
+
+/*	Hero(Scanner in){
+		name = in.nextLine();
+		Class = in.nextLine();
+		health = in.nextInt();
+		isalive = in.nextBoolean();
+		
+	}*/
 
 
 	public void damage(int hit){
