@@ -6,12 +6,14 @@ class Hero extends Character{
 	public boolean isalive;
 	private String name;
 	private String Class;
+	Item weapon;
 
 	Hero(String name, int health, String Class){
 		super(name, health);
 		this.Class = Class;
 		this.health = 100;
 		this.isalive = true;
+		this.weapon = weapon;
 	}
 	public String getname(){
 		return name;

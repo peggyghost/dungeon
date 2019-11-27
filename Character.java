@@ -1,3 +1,4 @@
+import java.io.PrintWriter;
 
 abstract class Character{
 
@@ -19,6 +20,11 @@ abstract class Character{
 	public abstract int power();
 	public abstract int health();
 	public abstract String equippedWeapon();
+
+	void save(PrintWriter pw){
+		pw.println(name);
+		pw.println(health);
+	}
 
 
 

@@ -412,14 +412,17 @@ public class Main{
 					try{
 						FileOutputStream file = new FileOutputStream("data.txt");
 						PrintWriter pw = new PrintWriter(file);
-<<<<<<< HEAD
-						bro.save(pw);
-						Ari.save(pw);
-						Garret.save();
-=======
-						people.get(0).(pw);
-						people.get(2).save(pw);
->>>>>>> db50950d3dfc45286285b7489a14e66f8340ce1c
+						//save(pw);
+					//	Ari.save(pw);
+					//	Garret.save();
+
+						Character  position = people.get(0);
+						position.save(pw);
+
+
+						Character positionA = people.get(2);
+						positionA.save(pw);
+
 
 						pw.close();
 
@@ -485,14 +488,15 @@ public class Main{
 								try{
 									FileOutputStream file = new FileOutputStream("data.txt");
 									PrintWriter pw = new PrintWriter(file);
-									people.get(0).(pw);
+								Character position = people.get(0);
+									position.save(pw);
 									pw.close();
 
 								}catch(FileNotFoundException e){
 									System.out.println("not found");
 								}
 								go = false;
-								bro.kill();
+								people.get(0).kill();
 								break;
 							}else{
 								go = false;
