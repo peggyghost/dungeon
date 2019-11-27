@@ -75,8 +75,10 @@ public class Main{
 		System.out.println("           Now remember not to ask any questions becuase this is a video game");
 		System.out.println("   ");
 		System.out.println("   ");
-
+		
+		//make the enemy garret    name                  health     weapon
 		Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
+		//make the enemy ari     name           healh                weapon
 		Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
 
 		String input = " ";//declares and initializes the input variable
