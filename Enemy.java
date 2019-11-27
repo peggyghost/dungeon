@@ -1,4 +1,8 @@
 import java.util.*;
+import java.io.PrintWriter;
+
+
+
 
 class Enemy extends Character {
 
@@ -6,9 +10,16 @@ class Enemy extends Character {
 	int health;
 	Item weapon;
 
+
+//	public  Enemy(String name, Item Weapon, int health) {
+//		this.name = name;
+//		this.weapon = Weapon;
+//		this.health = health;
+
 	public  Enemy(String name, int health, Item Weapon) {
 		super(name, health);
 		this.weapon = Weapon;
+
 	}
 
 	public int health(){
@@ -57,9 +68,14 @@ class Enemy extends Character {
 		}
 	}//end of girlTaunt
 
+
 	public void boyTaunt(){
 		Random rand = new Random();
 		int i = rand.nextInt()%3;
+
+
+
+
 
 		switch (i){
 			case 0:
@@ -67,17 +83,36 @@ class Enemy extends Character {
 				break;
 			case 1:
 				System.out.println("GARRET: You better watch yourself, i'll threaten you with a marriage propsal!!");
+
 				break;
 			case 2:
 				System.out.println( "GARRET: If I beat you up, my wife's boyfriend said that he'll buy me a nintendo switch");
 				break;
 			default:
 				break;
-
 		}
 		System.out.println(" ");
 	}
 	public String getname(){
 		return name;
 	}
+
+
+	void save(PrintWriter pw){
+		pw.println(name);
+		pw.println(weapon);
+		pw.println(health);
+	}
+
+/*	Enemy(Scanner in){
+		name = in.nextLine();
+		weapon = in.nextLine();
+		health = in.nextInt();
+		for (Item weapon: Weapon){
+
+	}*/
+
+
+
+
 }

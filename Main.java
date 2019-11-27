@@ -48,24 +48,50 @@ public class Main{
 		System.out.println("                                 Press 's' to move DOWN. ");
 		System.out.println("                                 Press 'a' to move LEFT. ");
 		System.out.println("                                 Press 'd' to move RIGHT. ");
-		System.out.println("                                 Press 'i' to access inventroy ");
-		System.out.println("                                 Press 'q' to activate not alive mode");
+		System.out.println("                                 Press 'i' to access inventroy. ");
+		System.out.println("                                 Press 'q' to activate not alive mode.");
+		System.out.println("                                 Press 'l' to load previous game.");
 		System.out.println("  ");
 
-		System.out.println(" ");
-		System.out.println("                       WHAT IS YOUR NAME HERO??");
-		System.out.println(" ");
-		System.out.print("                                  ");
-		String Name = bob.next();
+		System.out.println("Would you like to load your previous game?");
+		String x = bob.next();
+		if (x.equals("y")){
+			try{
+				FileInputStream file = new FileInputStream("data.txt");
+				Scanner in = new Scanner (file);
+			//	Hero bro = new Hero(in);
+				in.close();
 
-		System.out.println(" ");
-		System.out.println("                          WHAT IS YOUR CLASS??");
-		System.out.println("              (FratBoi)  (JucciBoi)  (NerdBoi)  (Arsalan) ");
-		System.out.println(" ");
-		System.out.print("                                    ");
-		String Class = bob.next();
+			}catch (FileNotFoundException e){
+				System.out.println("File Not Found");
+			}
+
+		}				 
+
+
+
+
+			System.out.println(" ");
+			System.out.println("                       WHAT IS YOUR NAME HERO??");
+			System.out.println(" ");
+			System.out.print("                                  ");
+			String Name = bob.next();
+
+			System.out.println(" ");
+			System.out.println("                          WHAT IS YOUR CLASS??");
+			System.out.println("              (FratBoi)  (JucciBoi)  (NerdBoi)  (Arsalan) ");
+			System.out.println(" ");
+			System.out.print("                                    ");
+			String Class = bob.next();
+			Hero bro = new Hero(Name, Class);
+	
+		
+
+
+
 
 		Hero bro = new Hero(Name, 100, Class);
+
 		stuff.noobGear();//to give the hero a default gear weapon and armour
 
 
@@ -367,10 +393,41 @@ public class Main{
 				System.out.println("                                   Press 'q' to activate not alive mode");
 				System.out.println(" ");
 			}//end of if for printing controls
-
+			
 			if(input.equals("q")){
-				bro.kill();
+				System.out.println("Would you like to save and quit?");
+				String yo = bob.next();
+				if (yo.equals("y")){
+					try{
+						FileOutputStream file = new FileOutputStream("data.txt");
+						PrintWriter pw = new PrintWriter(file);
+						bro.save(pw);
+						Ari.save(pw);
+
+						pw.close();
+
+					}catch(FileNotFoundException e){
+						System.out.println("not found");
+					}
+					bro.kill();
+				}else{
+					bro.kill();
+				}
 			}//end of if for quit
+
+			//input for LOADING game
+			if(input.equals('l')){
+			  try{
+			  FileInputStream file = new FileInputStream("data.txt");
+			  Scanner in = new Scanner (file);
+			 // bro = new Hero(in);
+			  }catch (FileNotFoundException e){
+			  System.out.println("File Not Found");
+			  }
+
+
+			  }
+
 
 			//input for inventory
 			if(input.equals("i")){
@@ -403,7 +460,27 @@ public class Main{
 							stuff.equipArmor();
 							break;
 						case 5://exit
-							try{
+
+							System.out.println("Would you like to save and quit?");
+							String select = bob.next();
+							if (select.equals("y")){
+								try{
+									FileOutputStream file = new FileOutputStream("data.txt");
+									PrintWriter pw = new PrintWriter(file);
+									bro.save(pw);
+									pw.close();
+
+								}catch(FileNotFoundException e){
+									System.out.println("not found");
+								}
+								go = false;
+								bro.kill();
+								break;
+							}else{
+								go = false;
+							}
+
+						/*	try{
 								FileOutputStream file = new FileOutputStream("data.txt");
 								PrintWriter pw = new PrintWriter(file);
 								bro.save(pw);
@@ -413,6 +490,7 @@ public class Main{
 							}
 							go = false;
 							break;
+*/
 
 					}//end of swtich
 				}while(go);//end of do while
@@ -447,3 +525,4 @@ public class Main{
 	}//end of main
 
 }//end of Main
+
