@@ -60,7 +60,11 @@ public class Main{
 			try{
 				FileInputStream file = new FileInputStream("data.txt");
 				Scanner in = new Scanner (file);
+<<<<<<< HEAD
 				//	Hero bro = new Hero(in);
+=======
+		
+>>>>>>> d05da2df71579a746d55b84801c126094738ded3
 				in.close();
 
 			}catch (FileNotFoundException e){
@@ -106,6 +110,7 @@ public class Main{
 		people.add(new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70)));
 		people.add(new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60)));
 
+<<<<<<< HEAD
 		//Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
 		//Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
 
@@ -116,6 +121,8 @@ public class Main{
 		//Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
 
 
+=======
+>>>>>>> d05da2df71579a746d55b84801c126094738ded3
 
 
 		String input = " ";//declares and initializes the input variable
@@ -422,9 +429,15 @@ public class Main{
 					try{
 						FileOutputStream file = new FileOutputStream("data.txt");
 						PrintWriter pw = new PrintWriter(file);
+<<<<<<< HEAD
 						//save(pw);
 						//	Ari.save(pw);
 						//	Garret.save();
+=======
+							
+						 room.save(pw);
+					 						
+>>>>>>> d05da2df71579a746d55b84801c126094738ded3
 
 						Character  position = people.get(0);
 						position.save(pw);
@@ -512,6 +525,7 @@ public class Main{
 								go = false;
 							}
 
+<<<<<<< HEAD
 							/*	try{
 								FileOutputStream file = new FileOutputStream("data.txt");
 								PrintWriter pw = new PrintWriter(file);
@@ -523,6 +537,9 @@ public class Main{
 								go = false;
 								break;
 								*/
+=======
+				
+>>>>>>> d05da2df71579a746d55b84801c126094738ded3
 
 					}//end of swtich
 				}while(go);//end of do while
@@ -558,7 +575,7 @@ public class Main{
 				String response = bob.next();
 				System.out.println(" ");
 				System.out.println("       What's that?? I can't hear you because I am a virtual machine. Oh well.. lolz You probably said 'yes' ");
-				System.out.println("      Thank you for your service " + people.get(0).getname() + ". Good game.");
+				System.out.println("      Thank you for your service " + Name + ". Good game.");
 				System.out.println(" ");
 				people.get(0).kill();
 			}//end of if for winning message 

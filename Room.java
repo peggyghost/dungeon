@@ -413,11 +413,6 @@ class Room{
 				this.area[i][p] = "[ ]";
 			}
 		}
-		for(int i = 16; i< 19 ; i++){
-			for(int p = 10; p < 11; p++){
-				this.area[i][p] = "[ ]";
-			}
-		}
 		for(int i = 9; i< 10 ; i++){
 			for(int p = 12; p < 19; p++){
 				this.area[i][p] = "[ ]";
