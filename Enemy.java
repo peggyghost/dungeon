@@ -111,7 +111,10 @@ class Enemy extends Character {
 		for (Item weapon: Weapon){
 
 	}*/
-
+	
+	public void kill(){
+                this.health = 0;
+        }
 
 
 

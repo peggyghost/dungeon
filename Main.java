@@ -410,8 +410,8 @@ public class Main{
 					try{
 						FileOutputStream file = new FileOutputStream("data.txt");
 						PrintWriter pw = new PrintWriter(file);
-						bro.save(pw);
-						Ari.save(pw);
+						people.get(0)(pw);
+						people.get(2).save(pw);
 
 						pw.close();
 
@@ -477,7 +477,7 @@ public class Main{
 								try{
 									FileOutputStream file = new FileOutputStream("data.txt");
 									PrintWriter pw = new PrintWriter(file);
-									bro.save(pw);
+									people.get(0)(pw);
 									pw.close();
 
 								}catch(FileNotFoundException e){

@@ -71,6 +71,20 @@ class Hero extends Character{
 		}
 	}
 
+	 public String equippedWeapon(){
+                return this.weapon.toString();
+        }//ending bracket for equip
+
+	public int power(){
+                return this.weapon.getPower();
+                //return health - damage;
+        }
+	
+	public int health(){
+                return this.health;
+        }
+
+
 
 }
 

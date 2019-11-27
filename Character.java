@@ -15,6 +15,10 @@ abstract class Character{
 	public abstract boolean isAlive();
 	public abstract void girlTaunt();
 	public abstract void boyTaunt();
+	public abstract void kill();
+	public abstract int power();
+	public abstract int health();
+	public abstract String equippedWeapon();
 
 
 
