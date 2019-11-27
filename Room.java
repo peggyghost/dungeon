@@ -74,7 +74,7 @@ class Room{
 	//this method is to see if the player is at the stairs
 	public boolean onStairs(){
 		int yp = 0; int xp = 0;
-		int ys = 0; int xs = 0;
+		int ys = 1; int xs = 1;
 		for(int i = 0; i < this.position.length; i ++){//looks though arrays to gather position
 			for(int p = 0 ; p < this.position.length; p++){
 				if(this.position[i][p] == 1 && this.Stairs[i][p] == 1){
@@ -207,7 +207,7 @@ class Room{
 				this.position[i][p] = 0;//filling with zero
 			}
 		}//end of position making board
-		this.position[1][2] = 1;//putting player in this position
+		//this.position[1][2] = 1;//putting player in this position
 
 		//creating door in the rooms
 		for(int i = 0; i <this.Door.length; i++){
@@ -316,7 +316,7 @@ class Room{
 				this.position[i][p] = 0;//filling with zero
 			}
 		}//end of position making board
-		this.position[1][1] = 1;//putting player in this position
+		//this.position[1][1] = 1;//putting player in this position
 
 		//creating stairs to connect rooms
 		for(int i = 0; i <this.Stairs.length; i++){
@@ -732,6 +732,22 @@ class Room{
 			}//end of inner for print
 		}//end of outter for print
 	}
+	
+	public void test(){
+		for(int i =0; i< this.position.length;i++){
+			System.out.println(" ");
+			for(int p = 0 ; p<this.position.length;p++){
+				System.out.print(this.position[i][p]);
+			}
+		}
+		System.out.println(" ");
+		for(int i =0; i< this.position.length;i++){
+                        System.out.println(" ");
+                        for(int p = 0 ; p<this.position.length;p++){
+                                System.out.print(this.Ari[i][p]);
+                        }
+                }
+	}//end of test
 
 	public void print(){
 		System.out.println(" ");

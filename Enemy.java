@@ -19,7 +19,8 @@ class Enemy extends Character {
 	public  Enemy(String name, int health, Item Weapon) {
 		super(name, health);
 		this.weapon = Weapon;
-
+		this.name = name;
+		this.health = health;
 	}
 
 	public int health(){

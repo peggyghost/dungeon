@@ -54,13 +54,13 @@ public class Main{
 		System.out.println("                                 Press 'l' to load previous game.");
 		System.out.println("  ");
 
-		System.out.println("Would you like to load your previous game?");
+		System.out.println("Would you like to load your previous game? 'y' 'n'");
 		String x = bob.next();
 		if (x.equals("y")){
 			try{
 				FileInputStream file = new FileInputStream("data.txt");
 				Scanner in = new Scanner (file);
-			//	Hero bro = new Hero(in);
+				//	Hero bro = new Hero(in);
 				in.close();
 
 			}catch (FileNotFoundException e){
@@ -72,20 +72,20 @@ public class Main{
 
 
 
-			System.out.println(" ");
-			System.out.println("                       WHAT IS YOUR NAME HERO??");
-			System.out.println(" ");
-			System.out.print("                                  ");
-			String Name = bob.next();
+		System.out.println(" ");
+		System.out.println("                       WHAT IS YOUR NAME HERO??");
+		System.out.println(" ");
+		System.out.print("                                  ");
+		String Name = bob.next();
 
-			System.out.println(" ");
-			System.out.println("                          WHAT IS YOUR CLASS??");
-			System.out.println("              (FratBoi)  (JucciBoi)  (NerdBoi)  (Arsalan) ");
-			System.out.println(" ");
-			System.out.print("                                    ");
-			String Class = bob.next();
-	
-		
+		System.out.println(" ");
+		System.out.println("                          WHAT IS YOUR CLASS??");
+		System.out.println("              (FratBoi)  (JucciBoi)  (NerdBoi)  (Arsalan) ");
+		System.out.println(" ");
+		System.out.print("                                    ");
+		String Class = bob.next();
+
+
 
 
 
@@ -94,7 +94,7 @@ public class Main{
 		people.add(new Hero(Name, 100, Class));
 
 		stuff.noobGear();//to give the hero a default gear weapon and armour
-		
+
 		System.out.println(" ");
 		System.out.println("             Remember " + people.get(0).getname() + ", to see the instrucitons, press 'p'.");
 		System.out.println(" ");
@@ -109,7 +109,7 @@ public class Main{
 		//Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
 		//Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
 
-		
+
 		//make the enemy garret    name                  health     weapon
 		//Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
 		//make the enemy ari     name           healh                weapon
@@ -157,8 +157,16 @@ public class Main{
 
 			//if statment for movment 
 			if(input.equals("w") || input.equals("a") || input.equals("s") || input.equals("d")){
-				room.MOVE(input);//to move the character in the room
-
+				if(room.isHere()){
+					room.MOVE(input);//to move the character in the room
+				}
+				else if(room2.isHere()){
+					room2.MOVE(input);
+				}
+				else if(room3.isHere()){
+					room3.MOVE(input);
+				}
+				
 				if(room3.isHere() && room3.garretFight() && people.get(1).isAlive()){
 					System.out.println(" WHAT? YOUR FACING " + people.get(1).getname() + "!! YOU BETTER WATCH OUT.");
 					System.out.println(" HE WAS LOOKING AT YOU THROUGH HIS TELESCOPE BEFORE YOU CAME HERE!");
@@ -273,116 +281,118 @@ public class Main{
 				}	
 			}//end of if for movement
 
+			
 			//if statment to see if there is a door or staris leading to other area
-			if(room.isHere()){//if the player is in the first room
-				if(room.onDoor()){//and they are at a door
+			if(room.isHere() && room.onDoor()){//if the player is in the first room
+
+				System.out.println(" ");
+				System.out.println(" 			NANI?!?!? Your near a door, it leads to the next room..." );
+				System.out.println(" 			Want to go through it? 'yes' 'no' ");
+				System.out.println(" ");
+				//ask them if they want to enter and go to next room
+				String response = bob.next();
+				if(response.equals("yes")){
 					System.out.println(" ");
-					System.out.println(" 			NANI?!?!? Your near a door, it leads to the next room..." );
-					System.out.println(" 			Want to go through it? 'yes' 'no' ");
+					System.out.println("		What a brave person you are");
+					for(int i = 0; i < 300 ; i++){
+						System.out.println(" YYYYYYYYYYYYYYYYYYYYYYYYYYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
+					}
 					System.out.println(" ");
-					//ask them if they want to enter and go to next room
-					String response = bob.next();
-					if(response.equals("yes")){
-						System.out.println(" ");
-						System.out.println("		What a brave person you are");
-						for(int i = 0; i < 300 ; i++){
-							System.out.println(" YYYYYYYYYYYYYYYYYYYYYYYYYYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-						}
-						System.out.println(" ");
-						room.ghost();//clear out the players position in the current room
-						room2.ghost();//clear our the room leading up just in case
-						room2.teleportTo(1,2);//add the players position in the coming room
-						System.out.println(" ");
-						System.out.println(" 		Welcome to the second room");
-						System.out.println(" ");
-					}
-					else{
-						System.out.println(" 		um because you didn't say 'yes' i cannot consensually let you go through");
-						System.out.println(" ");
-					}
-				}//end of if
+					room.ghost();//clear out the players position in the current room
+					room2.ghost();//clear our the room leading up just in case
+					room2.teleportTo(1,2);//add the players position in the coming room
+					System.out.println(" ");
+					System.out.println(" 		Welcome to the second room");
+					System.out.println(" ");
+				}
+				else{
+					System.out.println(" 		um because you didn't say 'yes' i cannot consensually let you go through");
+					System.out.println(" ");
+				}
+
 			}
-			else if(room2.isHere()){
-				if(room2.onStairs()){//and they are at a door
+			else if(room2.isHere() && room2.onStairs()){
+
+				System.out.println(" ");
+				System.out.println("                    NANI?!?!? Your near somes stairs, it leads to the next room... up above...spoooooookyyyyyy" );
+				System.out.println("                    Want to go up it? 'yes' 'no' ");
+				System.out.println(" ");
+				//ask them if they want to enter and go to next room
+				String response = bob.next();
+				if(response.equals("yes")){
 					System.out.println(" ");
-					System.out.println("                    NANI?!?!? Your near somes stairs, it leads to the next room... up above...spoooooookyyyyyy" );
-					System.out.println("                    Want to go up it? 'yes' 'no' ");
+					System.out.println("            Get ready for a lot of walking");
+					for(int i = 0; i < 300 ; i++){
+						System.out.println(" YYYYYYYYYYYYYYYYYYYYYYYYYYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
+					}
 					System.out.println(" ");
-					//ask them if they want to enter and go to next room
-					String response = bob.next();
-					if(response.equals("yes")){
-						System.out.println(" ");
-						System.out.println("            Get ready for a lot of walking");
-						for(int i = 0; i < 300 ; i++){
-							System.out.println(" YYYYYYYYYYYYYYYYYYYYYYYYYYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-						}
-						System.out.println(" ");
-						room2.ghost();//clear the players position in the current room 
-						room3.ghost();//clear the players position in the coming room just in case
-						room3.teleportTo(1,1);//put the player in the next room
-						System.out.println(" ");
-						System.out.println("            Welcome to the third room");
-						System.out.println(" ");
-					}
-					else{
-						System.out.println("            that doens't sound like a 'yes'");
-						System.out.println(" ");
-					}
-				}//end of if for if the player is at the stairs that lead up
-				else if(room2.onDoor()){//and they are at a door to go back down 
+					room2.ghost();//clear the players position in the current room 
+					room3.ghost();//clear the players position in the coming room just in case
+					room3.teleportTo(1,1);//put the player in the next room
 					System.out.println(" ");
-					System.out.println("                    HHHHHHHHHHMMMMMMMMMMMMM  that's the door that leads back to the other room." );
-					System.out.println("                    Want to go through it? 'yes' 'no' ");
+					System.out.println("            Welcome to the third room");
 					System.out.println(" ");
-					//ask them if they want to enter and go to next room
-					String response = bob.next();
-					if(response.equals("yes")){
-						System.out.println(" ");
-						System.out.println("            okaaayyyyy");
-						for(int i = 0; i < 300 ; i++){
-							System.out.println(" YYYYYYYYYYYYYYYYYYYYYYYYYYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-						}
-						System.out.println(" ");
-						room.ghost();//clears the player's position in the current room
-						room2.ghost();//clears the player's position in the room they're going to just in case
-						room.teleportTo(9,12);//put the players position in the room down below
-						System.out.println(" ");
-						System.out.println("            Welcome to the first room");
-						System.out.println(" ");
-					}
-					else{
-						System.out.println("            Come back when your answer is 'yes'");
-						System.out.println(" ");
-					}
-				}//end of if
-			}
-			else if(room3.isHere()){//if they are in the third room
-				if(room2.onStairs()){//and they are at some stairs that leads back down
+				}
+				else{
+					System.out.println("            that doens't sound like a 'yes'");
 					System.out.println(" ");
-					System.out.println("                    These are the same stairs you went up from, taking these again will take you downy" );
-					System.out.println("                    Want to go down it? 'yes' 'no' ");
+				}
+			}//end of else if for room2 and stairs
+
+			else if(room2.isHere() && room2.onDoor()){//and they are at a door to go back down 
+				System.out.println(" ");
+				System.out.println("                    HHHHHHHHHHMMMMMMMMMMMMM  that's the door that leads back to the other room." );
+				System.out.println("                    Want to go through it? 'yes' 'no' ");
+				System.out.println(" ");
+				//ask them if they want to enter and go to next room
+				String response = bob.next();
+				if(response.equals("yes")){
 					System.out.println(" ");
-					//ask them if they want to enter and go to last room
-					String response = bob.next();
-					if(response.equals("yes")){
-						System.out.println(" ");
-						System.out.println("            Get ready for a lot of walking");
-						for(int i = 0; i < 300 ; i++){
-							System.out.println(" YYYYYYYYYYYYYYYYYYYYYYYYYYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-						}
-						System.out.println(" ");
-						room2.ghost();//clears the players position in the room they are going to just in case
-						room3.ghost();//clears the players position in the room they are currently in
-						room2.teleportTo(18,17);//adds the players location in the laast room where the stairs end
-						System.out.println(" ");
-						System.out.println("            Welcome to the second room");
-						System.out.println(" ");
+					System.out.println("            okaaayyyyy");
+					for(int i = 0; i < 300 ; i++){
+						System.out.println(" YYYYYYYYYYYYYYYYYYYYYYYYYYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
 					}
-					else{
-						System.out.println("            that doens't sound like a 'yes'");
-						System.out.println(" ");
+					System.out.println(" ");
+					room.ghost();//clears the player's position in the current room
+					room2.ghost();//clears the player's position in the room they're going to just in case
+					room.teleportTo(9,12);//put the players position in the room down below
+					System.out.println(" ");
+					System.out.println("            Welcome to the first room");
+					System.out.println(" ");
+				}
+				else{
+					System.out.println("            Come back when your answer is 'yes'");
+					System.out.println(" ");
+				}
+			}//end of if
+
+			else if(room3.isHere() && room3.onStairs()){//if they are in the third room
+
+				System.out.println(" ");
+				System.out.println("                    These are the same stairs you went up from, taking these again will take you downy" );
+				System.out.println("                    Want to go down it? 'yes' 'no' ");
+				System.out.println(" ");
+				//ask them if they want to enter and go to last room
+				String response = bob.next();
+				if(response.equals("yes")){
+					System.out.println(" ");
+					System.out.println("            Get ready for a lot of walking");
+					for(int i = 0; i < 300 ; i++){
+						System.out.println(" YYYYYYYYYYYYYYYYYYYYYYYYYYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
 					}
-				}//end of if for if the player is at the stairs that lead down
+					System.out.println(" ");
+					room2.ghost();//clears the players position in the room they are going to just in case
+					room3.ghost();//clears the players position in the room they are currently in
+					room2.teleportTo(18,17);//adds the players location in the laast room where the stairs end
+					System.out.println(" ");
+					System.out.println("            Welcome to the second room");
+					System.out.println(" ");
+				}
+				else{
+					System.out.println("            that doens't sound like a 'yes'");
+					System.out.println(" ");
+				}
+
 			}//end of if there is a door if statment
 
 			//for the input if you need to look at directions again
@@ -404,7 +414,7 @@ public class Main{
 				System.out.println("                                   Press 'q' to activate not alive mode");
 				System.out.println(" ");
 			}//end of if for printing controls
-			
+
 			if(input.equals("q")){
 				System.out.println("Would you like to save and quit?");
 				String yo = bob.next();
@@ -413,8 +423,8 @@ public class Main{
 						FileOutputStream file = new FileOutputStream("data.txt");
 						PrintWriter pw = new PrintWriter(file);
 						//save(pw);
-					//	Ari.save(pw);
-					//	Garret.save();
+						//	Ari.save(pw);
+						//	Garret.save();
 
 						Character  position = people.get(0);
 						position.save(pw);
@@ -438,16 +448,16 @@ public class Main{
 
 			//input for LOADING game
 			if(input.equals('l')){
-			  try{
-			  FileInputStream file = new FileInputStream("data.txt");
-			  Scanner in = new Scanner (file);
-			 // bro = new Hero(in);
-			  }catch (FileNotFoundException e){
-			  System.out.println("File Not Found");
-			  }
+				try{
+					FileInputStream file = new FileInputStream("data.txt");
+					Scanner in = new Scanner (file);
+					// bro = new Hero(in);
+				}catch (FileNotFoundException e){
+					System.out.println("File Not Found");
+				}
 
 
-			  }
+			}
 
 
 			//input for inventory
@@ -488,7 +498,7 @@ public class Main{
 								try{
 									FileOutputStream file = new FileOutputStream("data.txt");
 									PrintWriter pw = new PrintWriter(file);
-								Character position = people.get(0);
+									Character position = people.get(0);
 									position.save(pw);
 									pw.close();
 
@@ -502,17 +512,17 @@ public class Main{
 								go = false;
 							}
 
-						/*	try{
+							/*	try{
 								FileOutputStream file = new FileOutputStream("data.txt");
 								PrintWriter pw = new PrintWriter(file);
 								people.get(0).save(pw);
 								pw.close();
-							}catch(FileNotFoundException e){
+								}catch(FileNotFoundException e){
 								System.out.println("not found");
-							}
-							go = false;
-							break;
-*/
+								}
+								go = false;
+								break;
+								*/
 
 					}//end of swtich
 				}while(go);//end of do while
@@ -522,6 +532,17 @@ public class Main{
 			if(room.itemonfloor()){
 				stuff.add(room.pickup());
 			}//end of if for checking if item is on the floor.
+			//System.out.println(people.get(0));
+			//System.out.println(people.get(0).getname());
+			//System.out.println(people.get(1).health());			
+			//System.out.println(people.get(1).isAlive());
+			if(room2.itemonfloor()){
+				stuff.add(room2.pickup());
+			}
+			if(room3.itemonfloor()){
+				stuff.add(room3.pickup());
+			}
+
 
 			if(!people.get(1).isAlive() && !people.get(2).isAlive()){
 				for(int i = 0 ; i < 5 ; i++){

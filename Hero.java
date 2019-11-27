@@ -10,6 +10,7 @@ class Hero extends Character{
 
 	Hero(String name, int health, String Class){
 		super(name, health);
+		this.name = name;
 		this.Class = Class;
 		this.health = 100;
 		this.isalive = true;
