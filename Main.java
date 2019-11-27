@@ -93,10 +93,7 @@ public class Main{
 
 		people.add(new Hero(Name, 100, Class));
 
-
-
 		stuff.noobGear();//to give the hero a default gear weapon and armour
-
 		
 		System.out.println(" ");
 		System.out.println("             Remember " + people.get(0).getname() + ", to see the instrucitons, press 'p'.");
@@ -111,6 +108,14 @@ public class Main{
 
 		//Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
 		//Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
+
+		
+		//make the enemy garret    name                  health     weapon
+		//Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
+		//make the enemy ari     name           healh                weapon
+		//Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
+
+
 
 
 		String input = " ";//declares and initializes the input variable
@@ -401,9 +406,6 @@ public class Main{
 			}//end of if for printing controls
 			
 			if(input.equals("q")){
-
-				people.get(0).kill();
-
 				System.out.println("Would you like to save and quit?");
 				String yo = bob.next();
 				if (yo.equals("y")){
@@ -418,9 +420,9 @@ public class Main{
 					}catch(FileNotFoundException e){
 						System.out.println("not found");
 					}
-					bro.kill();
+					people.get(0).kill();
 				}else{
-					bro.kill();
+					people.get(0).kill();
 				}
 
 			}//end of if for quit
