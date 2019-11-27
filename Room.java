@@ -22,11 +22,6 @@ class Room{
 		this.Door = new int[y][x];
 		this.Stairs = new int[y][x];
 	}//end of room constructor
-
-//	void save(PrintWriter pw){
-//		pw.println(Ari[][]);
-//		pw.println(Garret.position[][]);
-//	}
 	//this method is to check if the player is in the current room
 	public boolean isHere(){
 		for(int i = 0; i < this.position.length ; i++){//loop that iterates through the array to see 1
@@ -207,7 +202,7 @@ class Room{
 				this.position[i][p] = 0;//filling with zero
 			}
 		}//end of position making board
-		//this.position[1][2] = 1;//putting player in this position
+		
 
 		//creating door in the rooms
 		for(int i = 0; i <this.Door.length; i++){
@@ -316,7 +311,7 @@ class Room{
 				this.position[i][p] = 0;//filling with zero
 			}
 		}//end of position making board
-		//this.position[1][1] = 1;//putting player in this position
+		
 
 		//creating stairs to connect rooms
 		for(int i = 0; i <this.Stairs.length; i++){
@@ -522,19 +517,6 @@ class Room{
 				}
 			}
 		}
-
-	/*	public static void save(PrintWriter pw){
-			for(int i = 0 ; i < this.Garret.length;i++){//this grabs garrets current lo    cations
-                         for(int p = 0; p < this.Garret.length;p++){
-                                 if(this.Garret[i][p] == 1){
-                                         YEG = i;
-                                         XEG = p;
-                                 }
-                         }
-               }
-	pw.println(Garret[i][p]);
-		}*/
-		//int move = fate.nextInt(4);// 0 is left, 1 is right , 2 is up , 3 is down
 
 		int move = turns[count];
 		switch(move){//first block is up and down second block is left and right
@@ -749,7 +731,7 @@ class Room{
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println(" ");
-		System.out.println("                                         ~ ONE ROOM DUNGEON GAME ~ ");
+		System.out.println("                                         ~ THREE ROOM DUNGEON GAME ~ ");
 		for(int i = 0; i < this.area.length;i++){
 			System.out.println(" ");
 			System.out.print("                       ");

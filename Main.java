@@ -26,7 +26,7 @@ public class Main{
 		System.out.println("                    ~  WELCOME TO ONE ROOM DUNGEON GAME ~");
 		System.out.println("      ");
 		System.out.println("                 YOU, THE HERO HAS ENTERED THE DEMON'S KINGS ");
-		System.out.println("                 CASTLE. SADLY, HIS CASTLE ONLY HAS ONE ROOM"); 
+		System.out.println("                 CASTLE. SADLY, HIS CASTLE ONLY HAS THREE ROOM"); 
 		System.out.println("               BECAUSE HE HAS A SMALL BRAIN AND GOT RIPPED OFF");
 		System.out.println("            BY THE MOST FAMOUS AND HANDSOME CON-ARTIST, SUAD PARVEZ.");
 		System.out.println("        YOU ARE HERE TO KILL THE DEMON KING, GARRETTE DAYKWON AND ARI.");
@@ -60,11 +60,9 @@ public class Main{
 			try{
 				FileInputStream file = new FileInputStream("data.txt");
 				Scanner in = new Scanner (file);
-<<<<<<< HEAD
 				//	Hero bro = new Hero(in);
-=======
-		
->>>>>>> d05da2df71579a746d55b84801c126094738ded3
+
+
 				in.close();
 
 			}catch (FileNotFoundException e){
@@ -110,19 +108,7 @@ public class Main{
 		people.add(new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70)));
 		people.add(new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60)));
 
-<<<<<<< HEAD
-		//Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
-		//Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
 
-
-		//make the enemy garret    name                  health     weapon
-		//Enemy Garret =new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70));//makes the enemy garret and gives him a weapon
-		//make the enemy ari     name           healh                weapon
-		//Enemy Ari = new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60));//creates the enemy ari and gives her a weapon
-
-
-=======
->>>>>>> d05da2df71579a746d55b84801c126094738ded3
 
 
 		String input = " ";//declares and initializes the input variable
@@ -173,7 +159,7 @@ public class Main{
 				else if(room3.isHere()){
 					room3.MOVE(input);
 				}
-				
+
 				if(room3.isHere() && room3.garretFight() && people.get(1).isAlive()){
 					System.out.println(" WHAT? YOUR FACING " + people.get(1).getname() + "!! YOU BETTER WATCH OUT.");
 					System.out.println(" HE WAS LOOKING AT YOU THROUGH HIS TELESCOPE BEFORE YOU CAME HERE!");
@@ -288,7 +274,7 @@ public class Main{
 				}	
 			}//end of if for movement
 
-			
+
 			//if statment to see if there is a door or staris leading to other area
 			if(room.isHere() && room.onDoor()){//if the player is in the first room
 
@@ -429,15 +415,12 @@ public class Main{
 					try{
 						FileOutputStream file = new FileOutputStream("data.txt");
 						PrintWriter pw = new PrintWriter(file);
-<<<<<<< HEAD
-						//save(pw);
-						//	Ari.save(pw);
-						//	Garret.save();
-=======
-							
-						 room.save(pw);
-					 						
->>>>>>> d05da2df71579a746d55b84801c126094738ded3
+
+
+
+						room.save(pw);
+
+
 
 						Character  position = people.get(0);
 						position.save(pw);
@@ -525,21 +508,9 @@ public class Main{
 								go = false;
 							}
 
-<<<<<<< HEAD
-							/*	try{
-								FileOutputStream file = new FileOutputStream("data.txt");
-								PrintWriter pw = new PrintWriter(file);
-								people.get(0).save(pw);
-								pw.close();
-								}catch(FileNotFoundException e){
-								System.out.println("not found");
-								}
-								go = false;
-								break;
-								*/
-=======
-				
->>>>>>> d05da2df71579a746d55b84801c126094738ded3
+
+
+
 
 					}//end of swtich
 				}while(go);//end of do while
@@ -549,10 +520,6 @@ public class Main{
 			if(room.itemonfloor()){
 				stuff.add(room.pickup());
 			}//end of if for checking if item is on the floor.
-			//System.out.println(people.get(0));
-			//System.out.println(people.get(0).getname());
-			//System.out.println(people.get(1).health());			
-			//System.out.println(people.get(1).isAlive());
 			if(room2.itemonfloor()){
 				stuff.add(room2.pickup());
 			}
