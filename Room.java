@@ -844,6 +844,10 @@ This method tests to see the position.
 			 int YEG = 0;
 			 int XEG = 0;
                          for(int i = 0 ; i < this.Garret.length;i++){//this grabs garrets cu    rrent lo    cations
+
+
+            
+
 				 for(int p = 0; p < this.Garret.length;p++){
                                  	 if(this.Garret[i][p] == 1){
                                           	 YEG = i;
@@ -866,6 +870,7 @@ This method tests to see the position.
 						 XEG = p;
 					 }
 				 }
+
 			 }
 					 pw.println(YEG);
 					 pw.println(XEG);

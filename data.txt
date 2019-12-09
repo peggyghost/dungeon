@@ -1,7 +1,18 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+peggy
+nerd
+=======
+Arsalan
+sadfada
+>>>>>>> b3db9a36e6cdbe5e32bb2e3923df1b14b4ea3370
+=======
 adfsdaDAFGSFA
 CXVBHNGFSDACVG
+>>>>>>> fba6fe579043eb4937ec73de7a16143da3547bb2
 100
 true
+null
 200
 200
 7

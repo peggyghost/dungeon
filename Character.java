@@ -43,8 +43,6 @@ public abstract class Character{
 		pw.println(name);
 	}
 
-
-
 }
 
 
