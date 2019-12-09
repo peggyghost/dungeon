@@ -25,6 +25,7 @@ public class Enemy extends Character {
 	  @param health the health of the enemy.
 	  @param Weapon a weapon from the {@link Item} class.
 	  */
+
 	public  Enemy(String name, int health, Item Weapon) {
 		super(name, health);
 		this.weapon = Weapon;
@@ -142,7 +143,6 @@ public class Enemy extends Character {
 	void save(PrintWriter pw){
 		pw.println(health);
 	}
-
 
 	
 	/**

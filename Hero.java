@@ -50,18 +50,6 @@ public class Hero extends Character{
 
         }
 
-		
-		//       Hero.save(pw);
-
-
-
-/*	Hero(Scanner in){
-		name = in.nextLine();
-		Class = in.nextLine();
-		health = in.nextInt();
-		isalive = in.nextBoolean();
-		
-	}*/
 
 	/**
 	  Calculates the amount of damage done by an attack

@@ -1,4 +1,5 @@
-pepper
-salt
+Suad
+Arsalan
 100
 true
+200
