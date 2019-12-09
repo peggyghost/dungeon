@@ -6,5 +6,5 @@
  @author Paige
  */
 public enum ItemType{
-	weapon , armor, other 
+	weapon , armor, other, potion, buff 
 	}

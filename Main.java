@@ -509,14 +509,15 @@ public class Main{
 				do{
 
 					System.out.println(" ");
-					System.out.println("Your current weapon is " + stuff.currentWeapon());
-					System.out.println("Your current Armor is " + stuff.currentArmor());
+					System.out.println("                           Your current weapon is " + stuff.currentWeapon());
+					System.out.println("                     Your current Armor is " + stuff.currentArmor());
 					System.out.println(" ");
-					System.out.println(" 1. Print the inventory");
-					System.out.println(" 2. Drop an item");
-					System.out.println(" 3. Equip weapon");
-					System.out.println(" 4. Equip armor");
-					System.out.println(" 5. quit");
+					System.out.println("                                    1. Print the inventory");
+					System.out.println("                         2. Drop an item");
+					System.out.println("               3. Equip weapon");
+					System.out.println("                           4. Equip armor");
+					System.out.println("                    5. To heal ");
+					System.out.println("                                        6. quit");
 					System.out.println(" ");
 					int choice = bob.nextInt();
 					switch(choice){
@@ -532,8 +533,13 @@ public class Main{
 						case 4://equp armor
 							stuff.equipArmor();
 							break;
-						case 5://exit
-							System.out.println("Do you want to get back in the game? ");
+						case 5://heals
+							int juice = stuff.heal();
+							people.get(0).heal(juice);
+							break;
+						case 6://exit
+							System.out.println("    ");
+							System.out.println("Do you want to get back in the game?    'y'  'n'   ");
 							String select = bob.next();
 							if (select.equals("y")){
 								go = false;

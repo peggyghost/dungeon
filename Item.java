@@ -42,7 +42,7 @@ public class Item{
 	public int getWeight(){
 		return this.weight;
 	}//end of get wieght
-
+	
 	/*
 	   A method that retrieves the value of an item in the form of an integer.
 	   @return the value.

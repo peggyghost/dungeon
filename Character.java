@@ -24,6 +24,7 @@ public abstract class Character{
 		this.health = health;
 
 	}
+	public abstract void heal(int juice);
 	public abstract void levelUp(int upgrade, int whip);
 	public abstract void damage(int hit);
 	public abstract String getname();

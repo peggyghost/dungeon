@@ -38,6 +38,13 @@ public class Hero extends Character{
 	}
 
 	/**
+         * this method is to heal the person
+         */
+        public void heal(int heal){
+                this.health+=heal;
+        }//end of heal
+
+	/**
 	  Save method that saves the Hero's name, class, health, and if they're alive or not.
 	  @param pw the variable for the Print Writer.
 	  */

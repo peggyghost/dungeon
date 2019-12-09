@@ -117,7 +117,12 @@ public class Inventory{
 		System.out.println(" ");
 		int wing = tim.nextInt();
 		try{
-			this.equippedWeapon = items.get(wing -1);//selects the number the user chooses but subtracts a number to match the array list position of chosesn thing
+			if(items.get(wing -1).getType() != ItemType.weapon){
+				System.out.println("     what are you slecting there's nothing here");
+			}
+			else{
+				this.equippedWeapon = items.get(wing -1);//selects the number the user chooses but subtracts a number to match the array list position of chosesn thing
+			}
 		}
 		catch(IndexOutOfBoundsException e){
 			System.out.println(" ");
@@ -144,7 +149,12 @@ public class Inventory{
 		System.out.println(" ");
 		int yoop = yop.nextInt();
 		try{
-			this.equippedArmor = items.get(yoop -1);//selects the number the user chooses but subtracts a number to match the array list position of chosesn thing
+			if(items.get(yoop -1 ).getType() != ItemType.armor){
+				System.out.println("     what are you slecting there's nothing here");
+			}
+			else{
+				this.equippedArmor = items.get(yoop -1);//selects the number the user chooses but subtracts a number to match the array list position of chosesn thing
+			}
 		}
 		catch(IndexOutOfBoundsException p){
 			System.out.println(" ");
@@ -152,6 +162,43 @@ public class Inventory{
 			System.out.println(" ");
 		}
 	}//end of equipArmomr
+
+	/**
+	 * this method is to get the power of healing of a potion the user selects to heal them with
+	 * @return juice 
+	 * this retrun the amount of healing the possible potion can do
+	 * @throws IndexOutOfBoundsException if the inventory of healing is empty
+	 */
+	public int heal(){
+		Scanner tim = new Scanner(System.in);
+		for(int i = 0 ; i < items.size(); i++){
+			if(items.get(i).getType() == ItemType.potion){
+				System.out.println(" ");
+                                System.out.print(i+1);
+                                System.out.print(" "+ items.get(i).toString());
+			}//end of if
+		}//end of for
+		System.out.println(" ");
+                System.out.println(" WHAT POTION OF HEALING  WOULD YOU LIKE? ");
+                System.out.println(" ");
+		int yeet =  tim.nextInt();
+		try{
+			if(items.get(yeet -1 ).getType() != ItemType.potion){
+                                System.out.println("     what are you slecting there's nothing here");
+                        }//end of if
+			else{
+				int juice = items.get(yeet - 1).getPower();
+				return juice;
+			}//end of else
+		}//end of try
+		catch(IndexOutOfBoundsException d){
+			System.out.println(" ");
+                        System.out.println("it smells like broke in here. you don't have any potions");
+                        System.out.println(" ");
+		}
+		return 0;
+	}//end of heal
+
 
 	/** 
 	 This method equips the player with the default weapon and armor.
@@ -198,11 +245,9 @@ public class Inventory{
 	  @return the strength of the armor.
 	  */
 	public int protection(){
-	
 		return this.equippedArmor.getPower();
-
-
 	}//end of protections
+
 
 	void save(PrintWriter pw){
 		Item equipp = this.equippedWeapon;

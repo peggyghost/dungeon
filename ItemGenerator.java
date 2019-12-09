@@ -32,7 +32,7 @@ public static Item generate(){
                                 
                         case 3:
 				gen = fate.nextInt(10);
-				return new Item(ItemType.weapon, "A Spork", 1, 3, 21);
+				return new Item(ItemType.buff, "Arsalan's beard", 1, 3, 50);
                                 
                         case 4:
 				gen = fate.nextInt(10);
@@ -48,15 +48,15 @@ public static Item generate(){
 				
 			case 7:
 				gen = fate.nextInt(10);
-				return new Item(ItemType.other,"twinkies", 0 , 1, 0);
+				return new Item(ItemType.potion,"infinite twinkies", 0 , 1, 60);
 				
 			case 8:
 				gen = fate.nextInt(10);
-				return new Item(ItemType.other,"Paige's code", 9987343, 12, 12);
+				return new Item(ItemType.potion,"bottomless curry bowl", 9987343, 12, 100);
 				
 			case 9:
 				gen = fate.nextInt(10);
-				return new Item(ItemType.other, "suad's diary",234 ,23,234);
+				return new Item(ItemType.buff, "suad's diary",234 ,23,40);
 			
 		}//end of switch
 		return new Item(ItemType.other,"Deez nuts, gottem", 420, 69, 0);	

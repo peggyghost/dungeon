@@ -32,7 +32,16 @@ public class Enemy extends Character {
 		this.name = name;
 		this.health = health;
 	}
-	
+
+
+	/**
+	 * this method is to heal the person
+	 */
+	public void heal(int heal){
+		this.health+=heal;
+	}//end of heal
+
+
 	/**
 	  Gets the health of the enemy.
 	  @return the health of the enemy.
