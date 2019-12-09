@@ -840,6 +840,7 @@ public class Room{
 	  This method saves the state of the game board and the players and items positions and stores it into a file.
 	  @param pw the variable for the print writer.
 	  */
+<<<<<<< HEAD
 	void save(PrintWriter pw){
 		int YEG = 0;
 		int XEG = 0;
@@ -856,4 +857,57 @@ public class Room{
 		}
 
 	}
+=======
+		 void save(PrintWriter pw){
+			 int YEG = 0;
+			 int XEG = 0;
+                         for(int i = 0 ; i < this.Garret.length;i++){//this grabs garrets cu    rrent lo    cations
+
+
+            
+
+				 for(int p = 0; p < this.Garret.length;p++){
+                                 	 if(this.Garret[i][p] == 1){
+                                          	 YEG = i;
+                                           	 XEG = p;
+					 }
+				 }
+			 }
+                          pw.println(YEG);
+			  pw.println(XEG);
+			  	  }
+            
+
+		 void save2(PrintWriter pw){
+			 int YEG = 0;
+			 int XEG = 0;
+			 for(int i =0; i < this.Ari.length;i++){
+				 for(int p= 0; p < this.Ari.length; p++){
+					 if(this.Ari[i][p] == 1){
+						 YEG = i;
+						 XEG = p;
+					 }
+				 }
+
+			 }
+					 pw.println(YEG);
+					 pw.println(XEG);
+				 
+			 }
+		 void save3(PrintWriter pw){
+			 int YEG = 0;
+                         int XEG = 0;
+                         for(int i =0; i < this.position.length;i++){
+                                 for(int p= 0; p < this.position.length; p++){
+                                         if(this.position[i][p] == 1){
+                                                 YEG = i;
+                                                 XEG = p;
+                                         }
+                                 }
+                         }
+                                         pw.println(YEG);
+                                         pw.println(XEG);
+		 }
+
+>>>>>>> a79a6b6a6bf40c01dfe7c7d0db3d76d16e4637ad
 }//end of class Room
