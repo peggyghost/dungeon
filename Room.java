@@ -9,7 +9,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.PrintWriter;
-class Room{
+public class Room{
 
 	private String[][] area;
 	private int[][] position;

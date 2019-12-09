@@ -7,7 +7,6 @@
 
 import java.io.PrintWriter;
 
-
 abstract class Character{
 
 	private String name;
@@ -15,6 +14,8 @@ abstract class Character{
 
 /**
   Creates a new character with their given name and health.
+  @param name the name of the character.
+  @param health the health of the character.
   */
 	public Character(String name, int health){
 		this.name = name;
