@@ -1,8 +1,9 @@
 /**
-*  A character represents a player in the game The Character class is an abstract class which creates a new player and in itializes the playes name and health status.
-*  @author Suad
-*  @author Arsalan
-*  @author Paige
+  A character represents a player in the game The Character class is an abstract class which creates a new 
+player and in itializes the playes name and health status.
+ @author Suad
+ @author Arsalan
+ @author Paige
   */
 
 

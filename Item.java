@@ -6,6 +6,9 @@
  * and a get name method that gets the name 
  * and a get type method that gets the type of the item
  * and a to string method that prints out the data into string 
+ @author Suad
+ @author Arsalan
+ @author Paige
  */
 public class Item{
 	
