@@ -1,18 +1,26 @@
-Arsalan
-Arsalan
+Boi
+JucciBOi
 100
 true
-null
 200
 200
-7
-14
-18
-7
-1
-18
-0
-0
-0
-0
-A Gun That Gives you Deppresion  : 1001 pounds 20 dollars  99 Power.
+7 18
+17 5
+ 
+7 9
+ 
+0 0
+ 
+0 0
+ 
+18 11
+ 
+18 3
+ 
+17 11
+Divorce Papers  : 1000 pounds 1 dollars  70 Power.
+Timbs  : 900 pounds 1 dollars  50 Power.
+ 
+1  Door  : 500 pounds 20 dollars  30 Power. 
+2  Timbs  : 900 pounds 1 dollars  50 Power. 
+3  Divorce Papers  : 1000 pounds 1 dollars  70 Power.

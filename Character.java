@@ -34,14 +34,9 @@ public abstract class Character{
 	public abstract int power();
 	public abstract int health();
 	public abstract String equippedWeapon();
+	abstract void save(PrintWriter pw);
 	
-	/**
-	  Method to save the abstract Character class.
-	  @param pw the variable name for the print writer.
-	  */
-	void save(PrintWriter pw){
-		pw.println(name);
-	}
+
 
 }
 

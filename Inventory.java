@@ -207,12 +207,22 @@ public class Inventory{
 	void save(PrintWriter pw){
 		Item equipp = this.equippedWeapon;
 		pw.println(equipp);
-	}
+	}//end of save method
 
 	void save2(PrintWriter pw){
 		Item equipp = this.equippedArmor;
 		pw.println(equipp);
-	}
+	}//end of save2 method
+
+	void save3(PrintWriter pw){
+		for(int i =0; i< items.size();i++){
+                        pw.println(" ");
+                        pw.print(i+1);
+                        pw.print("  " + items.get(i).toString());
+                }//end of for loop
+	}//end of save3 method
+
+
 
 
 

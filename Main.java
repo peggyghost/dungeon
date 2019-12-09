@@ -437,26 +437,30 @@ public class Main{
 
 
 						Character Me = people.get(0);
-						Me.save(pw);
+						Me.save(pw);//saves Character's info such as (name, class, health, isAlive));
 
 
 						Character Ari = people.get(1);
-						Ari.save(pw);
+						Ari.save(pw);//saves the health of ari
 
 
 						Character Garret = people.get(2);
-						Garret.save(pw);
+						Garret.save(pw);//saves the health of Garret
 
-						room2.save2(pw);
+						room2.save2(pw);//saves the coordinates of Ari
 
 
-						room3.save(pw);
+						room3.save(pw);//saves the coordinates of Garret
 
-						room.save3(pw);
-						room2.save3(pw);
-						room3.save3(pw);
-						stuff.save(pw);
-						stuff.save2(pw);
+						room.save3(pw);//saves the coordinates of Hero
+						room2.save3(pw);//If in room2 it saves those coordinates
+						room3.save3(pw);//If in room3 it saves those coordinates
+						room.save4(pw);//saves the coordinates of Items
+						room2.save4(pw);//saves the coordinates of Items in room2
+						room3.save4(pw);//saves the coordinates of Items in room3
+						stuff.save(pw);//saves the current weapon of the player
+						stuff.save2(pw);//saves the current armor of the player
+						stuff.save3(pw);//saves the inventory of the player
 
 
 						pw.close();
