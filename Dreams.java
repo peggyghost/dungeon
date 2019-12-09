@@ -19,28 +19,62 @@ public class Dreams{
 	}//end of getsadness
 
 	/**
-	 *this method is to print out a pretty picture
+	 *this method is to print out a pretty picture for ari's flashback
 	 */
-	public void scene(){
+	public static void scene(){
+		System.out.println("               @@");
+		System.out.println("              @@@@@");
 		System.out.println(" ");
-		System.out.println(" ");
-		System.out.println(" ");
-		System.out.println("     _");
-		System.out.println("    |_|");
+		System.out.println("     _                                          @@");
+		System.out.println("    |_|                                       @@@@@");
 		System.out.println("                           __");
 		System.out.println("                          |  |");
 		System.out.println("       ``            __   |  |              ``");
 		System.out.println("    ``   ``         |  |  |  |__               ``");
 		System.out.println("                  __|  |__|  |  |");
 		System.out.println("                 |  |  |  |  |  |");
-		System.out.println("                 |  |  |  |  |  |__");
-		System.out.println("_________________|  |  |  |  |  |  |_______________________");
-		System.out.println(" ");
-		System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("                 |  |  |  |  |  |__               * ****** *** ");
+		System.out.println("_________________|  |  |  |  |  |  |_______________|__|_|___|__");
+		System.out.println("                                                 ****   **** **");
+		System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~                     |  |   | |  | ");
 		System.out.println("          ~~~~~~~~~~~~~~~~~~~~~~~~~                    ");
 		System.out.println("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println(" ");
+                System.out.println(" ");
+		System.out.println(" ");
+                System.out.println(" ");
 	}//end of scene
+	
+	/**
+	 * this is a method to print out a nother pretty picture for garret's flashback
+	 */
+	public static void scene2(){
 
+		System.out.println("                                        ");
+                System.out.println("                 @@@                          @@           _  ");
+                System.out.println("                @@@@@                                     |_|");
+		System.out.println("                                 ``                       ");
+                System.out.println("                        ``			``	");
+                System.out.println("          ___      			@@@	");
+		System.out.println("          | |                      @@@@@       ");
+                System.out.println("          |_|                             ");
+                System.out.println("           |                             ");
+                System.out.println("        ___|__________;_                                 ");
+                System.out.println("        ||||||||||||||/                       ");
+                System.out.println("        |            /                       ");
+		System.out.println("        |           /                     ");
+                System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                        ");
+                System.out.println("                                        ");
+                System.out.println("                               ^^^^^^^^^^^^^^          ");
+                System.out.println("       ^^^^^^^^^^^^^^^^^^^^^^                                     ");
+                System.out.println("                                            ");
+		System.out.println("                                        ");
+                System.out.println("                             ^^^^^^^^^^^^^^           ");
+                System.out.println("        ^^^^^^^^^^^^^^^                                        ");
+                System.out.println("                                         ");
+                System.out.println("                                            ");
+                System.out.println("                                            ");
+	}//end of scene2
 
 	/**
 	 *this is a method to just put a bunch of screams and discord on the screan via strings it's done through a for loop
@@ -84,6 +118,7 @@ public class Dreams{
 	public void ariDream(){
 		Scanner bob = new Scanner(System.in);
 		Dreams.blank(100);		
+		Dreams.scene();
 		System.out.println("         Ari, what a time that was. We met in the land of BING BANG, not to be confused with BING BONG  ");
 		System.out.println("         Everything was so nice back then, what happend???");
 		String blip = bob.next();
@@ -95,12 +130,14 @@ public class Dreams{
 		boolean loop = true;
 		do{//keep having this dream until you recal exactly what happend
 			System.out.println("        ");
+			Dreams.scene();
 			System.out.println("        Ari and i were sitting next to a tree, a beutiful tree, it grows curry, such delicious curry");
 			System.out.println("        Ari's head rested on my shoulder, we were both are comfortable, we felt the warm breeze of the BING BANG");
 			System.out.println("        Did i punched Ari? or gave her a kiss      'punch'   'kiss'");
 			String choice = bob.next();
 			if(choice.equals("kiss")){
 				System.out.println(" ");
+				Dreams.scene();
 				System.out.println("        +sad points");
 				this.sad++;
 				System.out.println(" ");
@@ -115,6 +152,7 @@ public class Dreams{
 				System.out.println("        ");
 				choice = bob.next();
 				if(choice.equals("punch")){
+					Dreams.scene();
 					System.out.println("        Oh yeah i punched Ari, but i was so weak/small body and Ari was such a strong woman that ");
 					System.out.println("        It didn't hurt whatsoever and she though i were flirting with her");
 					System.out.println("        ");
@@ -127,6 +165,7 @@ public class Dreams{
 					System.out.println("        Did i tell her to slow things down? or felt the same tell her tospeed it up?   'slow'   'fast'");
 					choice = bob.next();
 					if(choice.equals("slow")){
+						Dreams.scene();
 						System.out.println(" ");
 						System.out.println("        +sad points");
 						this.sad++;
@@ -155,6 +194,7 @@ public class Dreams{
 						Dreams.blank(100);
 					}//end of slow if
 					else if(choice.equals("fast")){
+						Dreams.scene();
 						System.out.println("        ");
 						System.out.println("        I remember now, i told her i'd want to take things fast. ");
 						System.out.println("        ");
@@ -184,6 +224,7 @@ public class Dreams{
 					}//end of fast if choice
 				}//end of punch if
 				else if(choice.equals("flowers")){
+					Dreams.scene();
 					System.out.println(" ");
 					System.out.println("        +sad points");
 					this.sad++;
@@ -201,6 +242,7 @@ public class Dreams{
 					System.out.println("        ");
 					choice = bob.next();
 					if(choice.equals("doctor")){
+						Dreams.scene();
 						System.out.println(" ");
 						System.out.println("        +sad points");
 						this.sad++;
@@ -228,6 +270,7 @@ public class Dreams{
 						Dreams.blank(100);
 					}//end of if for doctors
 					else if(choice.equals("dab")){
+						Dreams.scene();
 						System.out.println("        ");
 						System.out.println("        ");
 						System.out.println("        i'm pretty sure i told her to suck it up");
@@ -261,6 +304,7 @@ public class Dreams{
 				}//end of flowers  
 			}//end of kiss choice  
 			if(choice.equals("punch")){
+				Dreams.scene();
 				System.out.println("        ");
 				System.out.println("        ");
 				System.out.println("        That's right i just socked her in the face, she was wide open to like BAM");
@@ -278,6 +322,7 @@ public class Dreams{
 				System.out.println("        ");
 				choice = bob.next();
 				if(choice.equals("soyboy")){
+					Dreams.scene();
 					System.out.println("        ");
 					System.out.println("        i... i told her i played call of duty... and not actual good games like MGS or Breath of the wild");
 					System.out.println("        OR EVEN SUDOKU! GOD, ANYTHING BUT COD WHY DID IT HAVE TO BE COD ON XBOXONE OF ALL CONSOLES");
@@ -292,6 +337,7 @@ public class Dreams{
 					System.out.println("        ");
 					choice = bob.next();
 					if(choice.equals("punch")){
+						Dreams.scene();
 						System.out.println("        ");
 						System.out.println("        that's right i punched her again... but man i was so small body and weak..");
 						System.out.println("        ");
@@ -305,7 +351,7 @@ public class Dreams{
 						System.out.println("        I'm very that was the best route");
 						System.out.println("        Cuz Just like that she was gone... i swore to stop being a beta male. And she went off to BLING SHING");
 						System.out.println("        But when she came back she was different.. she wasn't the same anymore. was it from not seeing me??");
-						System.out.println("        yeah that didn't turn out so good, that how we got to where we are now isn't it?");
+						System.out.println("        ");
 						System.out.println("        Jeff from HR told me she went crazy, she just roams the area, doging and weaving anything that come by");
 						System.out.println("        If i want to save this land i need to defeat her before she steals more curry");
 						blip = bob.next();
@@ -322,6 +368,7 @@ public class Dreams{
 						Dreams.blank(100);
 					}//end of punch option
 					else if(choice.equals("kiss")){
+						Dreams.scene();
 						System.out.println(" ");
 						System.out.println("        +sad points");
 						this.sad++;
@@ -353,6 +400,7 @@ public class Dreams{
 					}//end of kiss option
 				}//end of soyboy choice
 				else if(choice.equals("confess")){
+					Dreams.scene();
 					System.out.println(" ");
 					System.out.println("        +sad points");
 					this.sad++;
@@ -390,6 +438,33 @@ public class Dreams{
 		}while(loop);//keep having the dream until you really recall how things happend
 	}//end of ariDream
 
+	/**
+	 * this method is for the dream sequence for garret to see what happend in the past 
+	 */
+	public void garretDream(){
+		Scanner bob = new Scanner(System.in);
+		Dreams.blank(100);
+		Dreams.scene2();
+		System.out.println("           Garret huh? i remember i used to be with him. he was a strange man...   what happend? ");
+		System.out.println("            ");
+		System.out.println("            ");
+		System.out.println("                                              4 years ago ");
+		System.out.println("            ");
+		String blop = bob.next();
+		Dreams.blank(100);
+		System.out.println("            it was just me and garret. and all the marrage applitcations he had stuffed around the ship");
+		System.out.println("            we were standing by the railing of the ship looking out into the sea. sucha perfect day");
+		System.out.println("     ");
+		System.out.println("            Garret: Your eyes look pretty when there's tear in them ");
+		System.out.println(" ");
+		blop = bob.next();
+		System.out.println("            ");
+		System.out.println("            Never in my life have i ever wanted to sleep with the lights on as much as this moment");
+		System.out.println("            What did i say in response ? did i play it cool or beg for my life?");
+		System.out.println("                  'chill'     'beg'");
+		String choice = bob.next();
+
+	}//end of garretDream
 
 
 
