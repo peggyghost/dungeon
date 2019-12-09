@@ -442,6 +442,10 @@ public class Main{
 
 						room3.save(pw);
 
+						room.save3(pw);
+						room2.save3(pw);
+						room3.save3(pw);
+
 
 						pw.close();
 

@@ -871,5 +871,19 @@ This method tests to see the position.
 					 pw.println(XEG);
 				 
 			 }
+		 void save3(PrintWriter pw){
+			 int YEG = 0;
+                         int XEG = 0;
+                         for(int i =0; i < this.position.length;i++){
+                                 for(int p= 0; p < this.position.length; p++){
+                                         if(this.position[i][p] == 1){
+                                                 YEG = i;
+                                                 XEG = p;
+                                         }
+                                 }
+                         }
+                                         pw.println(YEG);
+                                         pw.println(XEG);
+		 }
 
 }//end of class Room
