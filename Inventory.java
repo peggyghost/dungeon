@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 /**
- * this is an inventory class that has the constructuro that makes the array to holld items and a max weight to 
+ * this is an inventory class that has the constructor that makes the array to hold items and a max weight to 
  * make a limit on how much can be held, 
  * there is a method that adds an item that calls the itme generator to get an item to be added to the inventoryu
  * there is a mthod that gets the total weight that gets the current total wieght 
@@ -11,6 +11,9 @@ import java.util.Scanner;
  * then there is a method that eqips weapons and armer by printing out the inventory
  * and then asking wihch weapopn or armor they want to equp it only shows the type of the item that coresponds 
  * with the method
+ @author Suad
+ @author Arsalan
+ @author Paige
  */
 public class Inventory{
 
@@ -21,12 +24,19 @@ public class Inventory{
 	private Item StartingWeapon;
 	private Item StartingArmor;
 
+/** The constructor for the Inventory and creates a new array list of items.
+  @param maxWeight the maximum weight of the inventory that a player can carry at one time.
+  */
 	Inventory(int maxWeight){
 		this.maxWeight = maxWeight;
 		this.items = new ArrayList<Item>();
 		
 	}//end of inventory	
 
+	/** A method that adds an item to the array list only if it's less than or equal to the max weight.
+	  @param item could vary from a weapon or armor.
+	  @return a boolean if item does exceed max weight along with an error message printed to the screen.
+	  */
 	public boolean add(Item item){
 		int big = totalWeight();
 		if(big + item.getWeight() <= maxWeight){
@@ -39,6 +49,10 @@ public class Inventory{
 		return false;
 	}//end of add
 
+	/**
+	  retrieves the total weight of the players collected items.
+	  @return total returns the total weight.
+	  */
 	public int totalWeight(){
 		int total = 0;
 		for(int i = 0; i< items.size();i++){
@@ -48,6 +62,10 @@ public class Inventory{
 		return total;
 	}//end of total weight
 
+
+	/**
+	  A method that prints the items to the screen in a user friendly readable format.
+	  */
 	public void print(){
 
 		for(int i =0; i< items.size();i++){
@@ -59,6 +77,10 @@ public class Inventory{
 
 	}//end of print
 
+	/**
+	  A method that drops an item for the inventory which is an array list of items.
+	  @throws IndexOutOfBoundsException if the player attempts to drop an item that is currently not equipped, an exception will be thrown. 
+	  */
 	public void drop(){
 		Scanner bob = new Scanner(System.in);
 		this.print();
@@ -76,7 +98,11 @@ public class Inventory{
 		}
 	}//end of drop
 
-	public void equipWeapon(){
+	/**
+	  Equips a weapon that the player wants to carry and battle with throughout the game. If the inventory is empty, and exception is thrown.
+	  @throws IndexOutOfBoundsException if the player tries to equip a weapon when the inventory is empty.
+	  */
+  	  public void equipWeapon(){
 		Scanner tim = new Scanner(System.in);
 		for(int i =0; i < items.size(); i++){
 			if(items.get(i).getType() == ItemType.weapon){
@@ -99,6 +125,10 @@ public class Inventory{
 		}
 	}//end of eqiupWeapon
 
+	/**
+	  A method that equips armor for the player to carry around with in the game and use in battles.
+	  @throws IndexOutOfBoundsException if the inventory of armor is currently empty.
+	  */
 	public void equipArmor(){
 		Scanner yop = new Scanner(System.in);
 		for(int i = 0; i<items.size();i++){
@@ -122,26 +152,43 @@ public class Inventory{
 		}
 	}//end of equipArmomr
 
-	//this gives out default gear
+	/** 
+	 This method equips the player with the default weapon and armor.
+	  */
 	public void noobGear(){
 		this.equippedWeapon = new Item(ItemType.weapon, "wet napkin", 1, 1, 10);
 		this.equippedArmor = new Item(ItemType.weapon, "diaper", 4, 3, 20);
 	}
 	
-	
+	/**
+	  A method that displays the current weapon to the screen.
+	  @return the current weapon.
+	  */
 	public String currentWeapon(){
 		return this.equippedWeapon.toString();
 	}
 	
+	/**
+	  A method that displays the current armor to the screen.
+	  @return the current armor.
+	  */
 	public String currentArmor(){
 		return this.equippedArmor.toString();
 	}
 
-	public int power(){ //returns strength of the weapon
+	/**
+	  A method that returns the current strength of the weapon.
+	  @return the current strength.
+	  */
+	public int power(){ 
 		return this.equippedWeapon.getPower();
 	}//end of power
 
-	public int protection(){//returns armor strength
+	/**
+	  A method that returns the armor strength.
+	  @return the strength of the armor.
+	  */
+	public int protection(){
 	
 		return this.equippedArmor.getPower();
 

@@ -1,3 +1,11 @@
+/**
+  An Enemy represents the object in the game in which the {@link Hero} battles and ultimately tries to avoid throughout the game.
+ @author Suad 
+@author Arsalan
+@author Paige
+*/
+
+
 import java.util.*;
 import java.io.PrintWriter;
 
@@ -11,17 +19,34 @@ class Enemy extends Character {
 	Item weapon;
 
 
+<<<<<<< HEAD
+=======
+	/** 
+	  Constructor for the Enemy class.
+	  @param name the name of the Enemy.
+	  @param health the health of the enemy.
+	  @param Weapon a weapon from the {@link Item} class.
+	  */
+>>>>>>> b4536a37ea4e9abb4bdc2f6e964a92d2590af1e2
 	public  Enemy(String name, int health, Item Weapon) {
 		super(name, health);
 		this.weapon = Weapon;
 		this.name = name;
 		this.health = health;
 	}
-
+	
+	/**
+	  Gets the health of the enemy.
+	  @return the health of the enemy.
+	  */
 	public int health(){
 		return this.health;
 	}
 
+	/**
+	  A method that determines if the Enemy is dead or alive.
+	  @return a boolean.
+	  */
 	public boolean isAlive() {
 		if (this.health <= 0) {
 			return false;
@@ -29,19 +54,35 @@ class Enemy extends Character {
 		return true;
 	}
 
+	/**
+	  Calculates the amount of damage done by an attack.
+	  @param hit the amount of power used for an attack.
+	  */
 	public void damage(int hit){
 		this.health -= hit;
 	}
-
+	
+	/**
+	  A method that obtains the amount of power a weapon has.
+	  @return the weapons power.
+	  */
 	public int power(){
 		return this.weapon.getPower();
 		//return health - damage;
 	}
-
+	
+	/**
+	  Method gets the current equipped weapon.
+	  @return the current weapon in a readable formet using the toString() method.
+	  */
 	public String equippedWeapon(){
 		return this.weapon.toString();
 	}//ending bracket for equip
 
+
+	/**
+	  Prints a taunt to the screen for the player to read/be intimidated by using a switch statement and random number generator.
+	*/
 	public void girlTaunt(){
 
 		Random rand = new Random();
@@ -65,13 +106,12 @@ class Enemy extends Character {
 	}//end of girlTaunt
 
 
+	/**
+	  Prints a taunt to the screen for the player to read/be intimidated by using a switch statement and a random number generator.
+	  */
 	public void boyTaunt(){
 		Random rand = new Random();
 		int i = rand.nextInt()%3;
-
-
-
-
 
 		switch (i){
 			case 0:
@@ -89,20 +129,34 @@ class Enemy extends Character {
 		}
 		System.out.println(" ");
 	}
+
+	/** retrieves the name of the Enemy.
+	  @return the name of the enemy.
+	  */
 	public String getname(){
 		return name;
 	}
 
 
+	/*
+	   A method used to save the Enemy's stats.
+	   @param pw the variable used for the Print Writer.
+	   */
 	void save(PrintWriter pw){
 		pw.println(health);
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b4536a37ea4e9abb4bdc2f6e964a92d2590af1e2
 	
+	/**
+	  Automatically kills the charater when the method is called by initializing the health to 0.
+	  */
 	public void kill(){
                 this.health = 0;
-        }
 
 
-
+	}
 }

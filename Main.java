@@ -11,7 +11,10 @@ import java.io.FileWriter;
  * a main class that makes a scanner and a inventory object
  * it prints out the options and then asks what the player wants to do
  * each option utilizes the methods in the other classes, it quites if you press 6 
- * it's in a do while so it never stops unless you wnat to stop
+ * it's in a do while so it never stops unless you want it to stop.
+ @author Suad
+@author Arsalan
+ @author Paige
  */
 public class Main{
 	public static void main(String[] args){
@@ -54,15 +57,15 @@ public class Main{
 		System.out.println("                                 Press 'l' to load previous game.");
 		System.out.println("  ");
 
+		/**
+		  utilizes the file save method.
+		  */
 		System.out.println("Would you like to load your previous game? 'y' 'n'");
 		String x = bob.next();
 		if (x.equals("y")){
 			try{
 				FileInputStream file = new FileInputStream("data.txt");
 				Scanner in = new Scanner (file);
-				//	Hero bro = new Hero(in);
-
-
 				in.close();
 
 			}catch (FileNotFoundException e){
