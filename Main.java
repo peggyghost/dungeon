@@ -421,16 +421,17 @@ public class Main{
 
 
 
-						room.save(pw);
+						Character Me = people.get(0);
+						Me.save(pw);
+						
+					
+						Character Ari = people.get(1);
+						Ari.save(pw);
 
+						Character Garret = people.get(2);
+						Garret.save(pw);
 
-
-						Character  position = people.get(0);
-						position.save(pw);
-
-
-						Character positionA = people.get(2);
-						positionA.save(pw);
+						room3.save(pw);
 
 
 						pw.close();
@@ -497,8 +498,8 @@ public class Main{
 								try{
 									FileOutputStream file = new FileOutputStream("data.txt");
 									PrintWriter pw = new PrintWriter(file);
-									Character position = people.get(0);
-									position.save(pw);
+									Character name = people.get(0);
+									name.save(pw);
 									pw.close();
 
 								}catch(FileNotFoundException e){

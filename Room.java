@@ -841,12 +841,14 @@ This method tests to see the position.
 	  @param pw the variable for the print writer.
 	  */
 		 void save(PrintWriter pw){
+			 int YEG = 0;
+			 int XEG = 0;
                          for(int i = 0 ; i < this.Garret.length;i++){//this grabs garrets cu    rrent lo    cations
                           for(int p = 0; p < this.Garret.length;p++){
                                   if(this.Garret[i][p] == 1){
-                                        int  YEG = i;
-                                          int XEG = p;
-                          pw.println(Garret[i][p]);
+                                           YEG = i;
+                                           XEG = p;
+                          pw.println(this.Garret[YEG][XEG]);
 			  	  }
             
 			  }

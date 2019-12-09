@@ -1,5 +1,6 @@
-Suad
 Arsalan
-100
+NerdBoi
+20
 true
 200
+-40
