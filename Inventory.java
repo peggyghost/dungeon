@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.PrintWriter;
 /**
  * this is an inventory class that has the constructor that makes the array to hold items and a max weight to 
  * make a limit on how much can be held, 
@@ -202,6 +203,16 @@ public class Inventory{
 
 
 	}//end of protections
+
+	void save(PrintWriter pw){
+		Item equipp = this.equippedWeapon;
+		pw.println(equipp);
+	}
+
+	void save2(PrintWriter pw){
+		Item equipp = this.equippedArmor;
+		pw.println(equipp);
+	}
 
 
 

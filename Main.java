@@ -14,7 +14,7 @@ import java.io.FileReader;
  * each option utilizes the methods in the other classes, it quites if you press 6 
  * it's in a do while so it never stops unless you want it to stop.
  @author Suad
-@author Arsalan
+ @author Arsalan
  @author Paige
  */
 public class Main{
@@ -26,7 +26,7 @@ public class Main{
 		Room room3 = new Room(20,20);
 		ArrayList<Character> people = new ArrayList<Character>(); 
 
-		
+
 		System.out.println(" ");
 		System.out.println("                    ~  WELCOME TO ONE ROOM DUNGEON GAME ~");
 		System.out.println("      ");
@@ -66,19 +66,19 @@ public class Main{
 		String x = bob.next();
 		if (x.equals("y")){
 			try{
-		
 
-			FileReader fr = new FileReader("data.txt");
+
+				FileReader fr = new FileReader("data.txt");
 
 				int i;
 				while ((i=fr.read()) != -1)
 					System.out.print((char) i);
-							
+
 			}catch (FileNotFoundException e){
 				System.out.println("File Not Found");
 				return;
 			}
-		
+
 
 		}				 
 
@@ -158,7 +158,7 @@ public class Main{
 			System.out.println("              ");
 			System.out.print("                      ");
 			input = bob.next();//input from user
-			
+
 			//if stemtnet for giving best gear
 			if(input.equals("suad")){
 				stuff.godGear();
@@ -438,8 +438,8 @@ public class Main{
 
 						Character Me = people.get(0);
 						Me.save(pw);
-						
-					
+
+
 						Character Ari = people.get(1);
 						Ari.save(pw);
 
@@ -455,6 +455,8 @@ public class Main{
 						room.save3(pw);
 						room2.save3(pw);
 						room3.save3(pw);
+						stuff.save(pw);
+						stuff.save2(pw);
 
 
 						pw.close();
@@ -517,22 +519,11 @@ public class Main{
 							System.out.println("Do you want to get back in the game? ");
 							String select = bob.next();
 							if (select.equals("y")){
-								try{
-									FileOutputStream file = new FileOutputStream("data.txt");
-									PrintWriter pw = new PrintWriter(file);
-									name.save(pw);
-									pw.close();
-
-								}catch(FileNotFoundException e){
-									System.out.println("not found");
-								}
 								go = false;
 								break;
 							}else{
 								go = false;
 							}
-
-
 
 
 

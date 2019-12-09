@@ -1,27 +1,18 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-peggy
-nerd
-=======
 Arsalan
-sadfada
->>>>>>> b3db9a36e6cdbe5e32bb2e3923df1b14b4ea3370
-=======
-adfsdaDAFGSFA
-CXVBHNGFSDACVG
->>>>>>> fba6fe579043eb4937ec73de7a16143da3547bb2
+Arsalan
 100
 true
 null
 200
 200
 7
-11
+14
 18
-10
+7
 1
-1
+18
 0
 0
 0
 0
+A Gun That Gives you Deppresion  : 1001 pounds 20 dollars  99 Power.
