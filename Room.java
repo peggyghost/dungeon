@@ -841,17 +841,40 @@ This method tests to see the position.
 	  @param pw the variable for the print writer.
 	  */
 		 void save(PrintWriter pw){
+			 int YEG = 0;
+			 int XEG = 0;
                          for(int i = 0 ; i < this.Garret.length;i++){//this grabs garrets cu    rrent lo    cations
-                          for(int p = 0; p < this.Garret.length;p++){
-                                  if(this.Garret[i][p] == 1){
-                                        int  YEG = i;
-                                          int XEG = p;
-                          pw.println(Garret[i][p]);
-			  System.out.println(Garret[i][p]);
-			  	  }
-            		  }
+
+
             
+
+				 for(int p = 0; p < this.Garret.length;p++){
+                                 	 if(this.Garret[i][p] == 1){
+                                          	 YEG = i;
+                                           	 XEG = p;
+					 }
+				 }
 			 }
-         
-                 }
+                          pw.println(YEG);
+			  pw.println(XEG);
+			  	  }
+            
+
+		 void save2(PrintWriter pw){
+			 int YEG = 0;
+			 int XEG = 0;
+			 for(int i =0; i < this.Ari.length;i++){
+				 for(int p= 0; p < this.Ari.length; p++){
+					 if(this.Ari[i][p] == 1){
+						 YEG = i;
+						 XEG = p;
+					 }
+				 }
+
+			 }
+					 pw.println(YEG);
+					 pw.println(XEG);
+				 
+			 }
+
 }//end of class Room

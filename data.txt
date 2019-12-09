@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 peggy
 nerd
+=======
+Arsalan
+sadfada
+>>>>>>> b3db9a36e6cdbe5e32bb2e3923df1b14b4ea3370
 100
 true
 null
 200
+200
+8
+10
+18
+7

@@ -116,7 +116,7 @@ public class Inventory{
 		System.out.println(" ");
 		int wing = tim.nextInt();
 		try{
-			this.equippedWeapon = items.get(wing -1);
+			this.equippedWeapon = items.get(wing -1);//selects the number the user chooses but subtracts a number to match the array list position of chosesn thing
 		}
 		catch(IndexOutOfBoundsException e){
 			System.out.println(" ");
@@ -143,7 +143,7 @@ public class Inventory{
 		System.out.println(" ");
 		int yoop = yop.nextInt();
 		try{
-			this.equippedArmor = items.get(yoop -1);
+			this.equippedArmor = items.get(yoop -1);//selects the number the user chooses but subtracts a number to match the array list position of chosesn thing
 		}
 		catch(IndexOutOfBoundsException p){
 			System.out.println(" ");
@@ -157,8 +157,16 @@ public class Inventory{
 	  */
 	public void noobGear(){
 		this.equippedWeapon = new Item(ItemType.weapon, "wet napkin", 1, 1, 10);
-		this.equippedArmor = new Item(ItemType.weapon, "diaper", 4, 3, 20);
+		this.equippedArmor = new Item(ItemType.armor, "diaper", 4, 3, 20);
 	}
+
+	/**
+	 *this method is to give the player god level gear if they now a cheat code
+	 */
+	public void godGear(){
+		this.equippedWeapon = new Item(ItemType.weapon, "SMOULDER FACE TECHNIQUE", 0 , 0, 999);
+		this.equippedArmor = new Item(ItemType.armor, "SUAD'S JACKET", 0 , 990 , 999);
+	}//end of godGear
 	
 	/**
 	  A method that displays the current weapon to the screen.
