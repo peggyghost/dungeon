@@ -505,7 +505,6 @@ public class Main{
 									System.out.println("not found");
 								}
 								go = false;
-								people.get(0).kill();
 								break;
 							}else{
 								go = false;

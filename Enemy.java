@@ -19,15 +19,13 @@ class Enemy extends Character {
 	Item weapon;
 
 
-<<<<<<< HEAD
-=======
 	/** 
 	  Constructor for the Enemy class.
 	  @param name the name of the Enemy.
 	  @param health the health of the enemy.
 	  @param Weapon a weapon from the {@link Item} class.
 	  */
->>>>>>> b4536a37ea4e9abb4bdc2f6e964a92d2590af1e2
+
 	public  Enemy(String name, int health, Item Weapon) {
 		super(name, health);
 		this.weapon = Weapon;
@@ -146,10 +144,6 @@ class Enemy extends Character {
 		pw.println(health);
 	}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b4536a37ea4e9abb4bdc2f6e964a92d2590af1e2
 	
 	/**
 	  Automatically kills the charater when the method is called by initializing the health to 0.
