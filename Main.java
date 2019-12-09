@@ -443,18 +443,18 @@ public class Main{
 						Character Ari = people.get(1);
 						Ari.save(pw);
 
-<<<<<<< HEAD
-						Character  position = people.get(0);
-						position.save(pw);
-					
-=======
+
 						Character Garret = people.get(2);
 						Garret.save(pw);
 
 						room2.save2(pw);
->>>>>>> b3db9a36e6cdbe5e32bb2e3923df1b14b4ea3370
+
 
 						room3.save(pw);
+
+						room.save3(pw);
+						room2.save3(pw);
+						room3.save3(pw);
 
 
 						pw.close();
