@@ -504,14 +504,12 @@ public class Main{
 							stuff.equipArmor();
 							break;
 						case 5://exit
-
-							System.out.println("Would you like to save and quit?");
+							System.out.println("Do you want to get back in the game? ");
 							String select = bob.next();
 							if (select.equals("y")){
 								try{
 									FileOutputStream file = new FileOutputStream("data.txt");
 									PrintWriter pw = new PrintWriter(file);
-									Character name = people.get(0);
 									name.save(pw);
 									pw.close();
 
