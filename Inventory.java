@@ -22,16 +22,17 @@ public class Inventory{
 	private int maxWeight;
 	private Item equippedWeapon;
 	private Item equippedArmor;
+	private Item equippedBuff;
 	private Item StartingWeapon;
 	private Item StartingArmor;
 
-/** The constructor for the Inventory and creates a new array list of items.
-  @param maxWeight the maximum weight of the inventory that a player can carry at one time.
-  */
+	/** The constructor for the Inventory and creates a new array list of items.
+	  @param maxWeight the maximum weight of the inventory that a player can carry at one time.
+	  */
 	Inventory(int maxWeight){
 		this.maxWeight = maxWeight;
 		this.items = new ArrayList<Item>();
-		
+
 	}//end of inventory	
 
 	/** A method that adds an item to the array list only if it's less than or equal to the max weight.
@@ -45,7 +46,7 @@ public class Inventory{
 			return true;
 		}//end of if
 		System.out.println(" ");
-		System.out.println(" You are carrying too much stuff");
+		System.out.println("                              You are carrying too much stuff");
 		System.out.println(" ");
 		return false;
 	}//end of add
@@ -70,8 +71,8 @@ public class Inventory{
 	public void print(){
 
 		for(int i =0; i< items.size();i++){
-			System.out.println(" ");
-			System.out.print(i+1);
+			System.out.println("                        ");
+			System.out.print("                             "+ ( i+1));
 			System.out.print("  " + items.get(i).toString());
 		}//end of for
 
@@ -86,7 +87,7 @@ public class Inventory{
 		Scanner bob = new Scanner(System.in);
 		this.print();
 		System.out.println(" ");
-		System.out.println(" WHAT DO YE WANT REMOVED PUNY HUMAN" );
+		System.out.println("                              WHAT DO YE WANT REMOVED PUNY HUMAN" );
 		System.out.println(" ");
 		int choice = bob.nextInt();
 		try{
@@ -94,8 +95,8 @@ public class Inventory{
 		}
 		catch(IndexOutOfBoundsException e){
 			System.out.println(" ");
-                        System.out.println("what?? are you trying to drop air? you have nothing, your're broke");
-                        System.out.println(" ");
+			System.out.println("                                  what?? are you trying to drop air? you have nothing, your're broke");
+			System.out.println(" ");
 		}
 	}//end of drop
 
@@ -103,17 +104,17 @@ public class Inventory{
 	  Equips a weapon that the player wants to carry and battle with throughout the game. If the inventory is empty, and exception is thrown.
 	  @throws IndexOutOfBoundsException if the player tries to equip a weapon when the inventory is empty.
 	  */
-  	  public void equipWeapon(){
+	public void equipWeapon(){
 		Scanner tim = new Scanner(System.in);
 		for(int i =0; i < items.size(); i++){
 			if(items.get(i).getType() == ItemType.weapon){
 				System.out.println(" ");
-				System.out.print(i+1);
+				System.out.print("                              " + (i+1));
 				System.out.print(" " + items.get(i).toString());
 			}//end of if
 		}//end of for
 		System.out.println(" ");
-		System.out.println(" WHAT METHOD OF DESTRUCTION WOULD YOU LIKE? ");
+		System.out.println("                                        WHAT METHOD OF DESTRUCTION WOULD YOU LIKE? ");
 		System.out.println(" ");
 		int wing = tim.nextInt();
 		try{
@@ -126,7 +127,7 @@ public class Inventory{
 		}
 		catch(IndexOutOfBoundsException e){
 			System.out.println(" ");
-			System.out.println("not to be mean you spleef, but maybe you shoud pick up some items first");
+			System.out.println("                 not to be mean you spleef, but maybe you shoud pick up some items first");
 			System.out.println(" ");
 		}
 	}//end of eqiupWeapon
@@ -140,12 +141,12 @@ public class Inventory{
 		for(int i = 0; i<items.size();i++){
 			if(items.get(i).getType() == ItemType.armor){
 				System.out.println(" ");
-                                System.out.print(i+1);
-                                System.out.print(" "+ items.get(i).toString());
+				System.out.print("                              " +  (i+1));
+				System.out.print(" "+ items.get(i).toString());
 			}//end of if
 		}//end of for
 		System.out.println(" ");
-                System.out.println(" WHAT ARMOR OF SAVING GRACE WOULD YOU LIKE? ");
+		System.out.println("                                    WHAT ARMOR OF SAVING GRACE WOULD YOU LIKE? ");
 		System.out.println(" ");
 		int yoop = yop.nextInt();
 		try{
@@ -158,10 +159,42 @@ public class Inventory{
 		}
 		catch(IndexOutOfBoundsException p){
 			System.out.println(" ");
-			System.out.println("it smells like broke in here. you don't have any armour");
+			System.out.println("                           it smells like broke in here. you don't have any armour");
 			System.out.println(" ");
 		}
 	}//end of equipArmomr
+
+	/**
+	 * this method is to equip an item that will give a damage buff to the player to all weapons
+	 * @throws IndexOutOfBoundsException   if the inventory of buffs is crrently empty
+	 */
+	public void equipBuff(){
+		Scanner nom = new Scanner(System.in);
+		for(int i = 0; i<items.size();i++){
+			if(items.get(i).getType() == ItemType.buff){
+				System.out.println(" ");
+				System.out.print("                                          "+ ( i+1));
+				System.out.print("  "+ items.get(i).toString());
+			}//end of if
+		}//end of for
+		System.out.println(" ");
+		System.out.println("                                    WHAT ITEM WOULD YOU LIKE TO HELP BUFF YOU? ");
+		System.out.println(" ");
+		int jk = nom.nextInt();
+		try{
+			if(items.get(jk -1).getType() != ItemType.buff){
+				System.out.println("     what are you slecting there's nothing here");
+			}//end of if
+			else{
+				this.equippedBuff = items.get(jk -1);
+			}//end of else
+		}//end of try
+		catch(IndexOutOfBoundsException q){
+			System.out.println(" ");
+			System.out.println("                           it smells like broke in here. you don't have any buffs");
+			System.out.println(" ");
+		}//end of catch
+	}//end of equipBuff
 
 	/**
 	 * this method is to get the power of healing of a potion the user selects to heal them with
@@ -174,18 +207,18 @@ public class Inventory{
 		for(int i = 0 ; i < items.size(); i++){
 			if(items.get(i).getType() == ItemType.potion){
 				System.out.println(" ");
-                                System.out.print(i+1);
-                                System.out.print(" "+ items.get(i).toString());
+				System.out.print(i+1);
+				System.out.print(" "+ items.get(i).toString());
 			}//end of if
 		}//end of for
 		System.out.println(" ");
-                System.out.println(" WHAT POTION OF HEALING  WOULD YOU LIKE? ");
-                System.out.println(" ");
+		System.out.println("                     WHAT POTION OF HEALING  WOULD YOU LIKE? ");
+		System.out.println(" ");
 		int yeet =  tim.nextInt();
 		try{
 			if(items.get(yeet -1 ).getType() != ItemType.potion){
-                                System.out.println("     what are you slecting there's nothing here");
-                        }//end of if
+				System.out.println("                         what are you slecting there's nothing here");
+			}//end of if
 			else{
 				int juice = items.get(yeet - 1).getPower();
 				return juice;
@@ -193,15 +226,15 @@ public class Inventory{
 		}//end of try
 		catch(IndexOutOfBoundsException d){
 			System.out.println(" ");
-                        System.out.println("it smells like broke in here. you don't have any potions");
-                        System.out.println(" ");
+			System.out.println("                         it smells like broke in here. you don't have any potions");
+			System.out.println(" ");
 		}
 		return 0;
 	}//end of heal
 
 
 	/** 
-	 This method equips the player with the default weapon and armor.
+	  This method equips the player with the default weapon and armor.
 	  */
 	public void noobGear(){
 		this.equippedWeapon = new Item(ItemType.weapon, "wet napkin", 1, 1, 10);
@@ -215,7 +248,7 @@ public class Inventory{
 		this.equippedWeapon = new Item(ItemType.weapon, "SMOULDER FACE TECHNIQUE", 0 , 0, 999);
 		this.equippedArmor = new Item(ItemType.armor, "SUAD'S JACKET", 0 , 990 , 999);
 	}//end of godGear
-	
+
 	/**
 	  A method that displays the current weapon to the screen.
 	  @return the current weapon.
@@ -223,7 +256,7 @@ public class Inventory{
 	public String currentWeapon(){
 		return this.equippedWeapon.toString();
 	}
-	
+
 	/**
 	  A method that displays the current armor to the screen.
 	  @return the current armor.
@@ -248,6 +281,14 @@ public class Inventory{
 		return this.equippedArmor.getPower();
 	}//end of protections
 
+	/**
+	 * this is a method to return the buff's strenght
+	 * @return power 
+	 * the strenght of the buff that can be applied to hits on curretn weapon
+	 */
+	public int buff(){
+		return this.equippedBuff.getPower();
+	}//end of buff
 
 	void save(PrintWriter pw){
 		Item equipp = this.equippedWeapon;
@@ -261,10 +302,10 @@ public class Inventory{
 
 	void save3(PrintWriter pw){
 		for(int i =0; i< items.size();i++){
-                        pw.println(" ");
-                        pw.print(i+1);
-                        pw.print("  " + items.get(i).toString());
-                }//end of for loop
+			pw.println(" ");
+			pw.print(i+1);
+			pw.print("  " + items.get(i).toString());
+		}//end of for loop
 	}//end of save3 method
 
 
