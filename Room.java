@@ -852,12 +852,11 @@ public class Room{
                                  	 if(this.Garret[i][p] == 1){
                                           	 YEG = i;
                                            	 XEG = p;
-					 }
-				 }
-			 }
-                          pw.println(YEG);
-			  pw.println(XEG);
-			  	  }
+					 }//end of if statement
+				 }//end of inner for loop
+			 }//end of outer for loop
+                          pw.println(YEG + " " + XEG);
+			  	  }//end of save method
             
 
 		 void save2(PrintWriter pw){
@@ -868,15 +867,15 @@ public class Room{
 					 if(this.Ari[i][p] == 1){
 						 YEG = i;
 						 XEG = p;
-					 }
-				 }
+					 }//end of if statement
+				 }//end of inner for loop
 
-			 }
-					 pw.println(YEG);
-					 pw.println(XEG);
+			 }//end of outer for loop
+					 pw.println(YEG + " " + XEG);
 				 
-			 }
+			 }//end of save2 methid
 		 void save3(PrintWriter pw){
+			 pw.println(" ");
 			 int YEG = 0;
                          int XEG = 0;
                          for(int i =0; i < this.position.length;i++){
@@ -884,11 +883,26 @@ public class Room{
                                          if(this.position[i][p] == 1){
                                                  YEG = i;
                                                  XEG = p;
-                                         }
-                                 }
-                         }
-                                         pw.println(YEG);
-                                         pw.println(XEG);
-		 }
+                                         }//end of if statement
+                                 }//end of inner for loop
+                         }//end of outer for loop
+                                        pw.println(YEG + " " + XEG);
+		 }//end of save3 method
+
+		void save4(PrintWriter pw){
+		 	 pw.println(" ");
+			 int YEG = 0;
+                         int XEG = 0;
+                         for(int i =0; i < this.Items.length;i++){
+                                 for(int p= 0; p < this.Items.length; p++){
+                                         if(this.Items[i][p] != null){
+                                                 YEG = i;
+                                                 XEG = p;
+                                         }//end of if statement
+                                 }//end of inner for loop
+                         }//end of outer for loop
+                                         pw.println(YEG + " " + XEG);
+
+		 }//end of save4 method
 
 }//end of class Room

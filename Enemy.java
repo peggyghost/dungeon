@@ -142,8 +142,7 @@ public class Enemy extends Character {
 	   */
 	void save(PrintWriter pw){
 		pw.println(health);
-//		pw.println(Charae.equippedWeapon());
-	}
+	}//end of save method
 
 	
 	/**

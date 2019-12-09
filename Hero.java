@@ -47,9 +47,8 @@ public class Hero extends Character{
 		pw.println(Class);
 		pw.println(health);
 		pw.println(isalive);
-		pw.println(weapon);
 
-        }
+        }//end of save method
 
 
 	/**
