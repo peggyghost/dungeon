@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.io.PrintWriter;
 
 
-class Hero extends Character{
+public class Hero extends Character{
 	public int health;
 	public boolean isalive;
 	private String name;

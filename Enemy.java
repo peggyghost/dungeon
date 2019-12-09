@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 
 
 
-class Enemy extends Character {
+public class Enemy extends Character {
 
 	String name;
 	int health;
