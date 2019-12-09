@@ -107,7 +107,19 @@ public class Hero extends Character{
 	   */
 	public int power(){
                 return this.weapon.getPower();
-             }
+        }//end of power
+
+	
+        /**
+         * this method is to incease the enemy's health in the situation they get a power up
+         * depending on the sad level in the dream form the dream class
+         * @param level  the number used to set thier health to a certain level
+         * @param force the number used to set thier new strenght 
+         */
+        public void levelUp(int level, int force){
+                this.health = level;
+                this.weapon.setPower(force);
+        }//end of level up
 	
 	/**
 	  A method to retrieve the health of the player.

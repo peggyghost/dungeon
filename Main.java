@@ -20,7 +20,8 @@ import java.io.FileReader;
 public class Main{
 	public static void main(String[] args) throws Exception{
 		Scanner bob = new Scanner(System.in);
-		Inventory stuff = new Inventory(100000000);	
+		Inventory stuff = new Inventory(100000000);
+		Dreams dream1 = new Dreams();	
 		Room room = new Room(20,20);
 		Room room2 = new Room(20,20);
 		Room room3 = new Room(20,20);
@@ -313,6 +314,18 @@ public class Main{
 					room2.ghost();//clear our the room leading up just in case
 					room2.teleportTo(1,2);//add the players position in the coming room
 					System.out.println(" ");
+					if(people.get(2).isAlive()){
+						dream1.ariDream();//initiates the flashback to show what happend with ari
+						if(dream1.getSadness() >=3  ){//if the flashback was level 3 sad increas ari's health to 300
+							people.get(2).levelUp(300,90);
+						}
+						else if(dream1.getSadness() == 2 ){//if level 2 sad increase her health to 250
+							people.get(2).levelUp(250,80);
+						}
+						else if(dream1.getSadness() == 1){//if level 1 sad increase her health to 220
+							people.get(2).levelUp(220,70);
+						}
+					}//end of if for flashback sequence
 					System.out.println(" 		Welcome to the second room");
 					System.out.println(" ");
 				}

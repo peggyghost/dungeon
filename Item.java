@@ -82,6 +82,13 @@ public class Item{
 	public int getPower(){
 		return strength;
 	}//end of power 
-
+	
+	/**
+	 * this method is to set the power of a weapon to a certain value if it got upgraded
+	 * @param increase the number of strenth the weapon will be upgraded to in int
+	 */
+	public void setPower(int increase){
+		this.strength = increase;
+	}//end of setPower
 
 }//end of Item
