@@ -1,6 +1,10 @@
 Arsalan
-NerdBoi
-20
+sadfada
+100
 true
 200
--40
+200
+8
+10
+18
+7

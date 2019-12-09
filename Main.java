@@ -438,6 +438,8 @@ public class Main{
 						Character Garret = people.get(2);
 						Garret.save(pw);
 
+						room2.save2(pw);
+
 						room3.save(pw);
 
 
