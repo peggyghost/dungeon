@@ -19,10 +19,6 @@ class Enemy extends Character {
 	Item weapon;
 
 
-//	public  Enemy(String name, Item Weapon, int health) {
-//		this.name = name;
-//		this.weapon = Weapon;
-//		this.health = health;
 	/** 
 	  Constructor for the Enemy class.
 	  @param name the name of the Enemy.
@@ -149,21 +145,13 @@ class Enemy extends Character {
 		pw.println(health);
 	}
 
-/*	Enemy(Scanner in){
-		name = in.nextLine();
-		weapon = in.nextLine();
-		health = in.nextInt();
-		for (Item weapon: Weapon){
 
-	}*/
 	
 	/**
 	  Automatically kills the charater when the method is called by initializing the health to 0.
 	  */
 	public void kill(){
                 this.health = 0;
-        }
-
 
 
 }

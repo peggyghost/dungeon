@@ -3,11 +3,17 @@ import java.util.Random;
 /**
  * this clas to generate random items for the inventory,
  * it generates a random nuber that goes through cases for said random numbver, it returns
- * the item and it's data that acompanied with it
+ * the item and it's data that acompanied with it.
+ @author Suad
+ @author Arsalan
+ @author Paige
  */
 public class ItemGenerator{
 
-
+/**
+  This method generates a random number 1-10 and then uses a case switch statement to determine which item will be generated.
+@return a new item.
+*/
 public static Item generate(){
                 Random fate = new Random();
                 int gen = fate.nextInt(10);
