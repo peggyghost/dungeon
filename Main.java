@@ -134,7 +134,7 @@ public class Main{
 					room2.printA();//if so print out room with her in it
 				}
 				else{
-					room2.print();//if not, print out room without her cuz she dead
+					room2.printG();//if not, print out room without her cuz she dead
 				}
 			}//end of else if
 			else if(room3.isHere()){//if in the third room
@@ -142,7 +142,7 @@ public class Main{
 					room3.printG();//if so print out the room wit hhim in it
 				}
 				else{
-					room3.print();//if not print out room without him cuz he dead
+					room3.printA();//if not print out room without him cuz he dead
 				}
 			}//end of else if
 
@@ -150,7 +150,11 @@ public class Main{
 			System.out.println("              ");
 			System.out.print("                      ");
 			input = bob.next();//input from user
-
+			
+			//if stemtnet for giving best gear
+			if(input.equals("suad")){
+				stuff.godGear();
+			}
 			//if statment for movment 
 			if(input.equals("w") || input.equals("a") || input.equals("s") || input.equals("d")){
 				if(room.isHere()){
@@ -195,6 +199,8 @@ public class Main{
 							people.get(0).damage(enemyhit);
 							System.out.println(" ");
 							System.out.println("Garret hit you with his " + people.get(1).equippedWeapon() + ". It did " + enemyhit + " damage!");
+							people.get(1).boyTaunt();
+							System.out.println("your health is now " + people.get(0).health());
 							System.out.println(" ");
 						}
 					}//end of while fight
@@ -249,6 +255,7 @@ public class Main{
 							System.out.println(" ");
 							System.out.println("Ari hit you with her " + people.get(2).equippedWeapon() + ". It did " + enemyhit + " damage!");
 							people.get(2).girlTaunt();
+							System.out.println("your health is now " + people.get(0).health());
 							System.out.println(" ");
 						}
 						System.out.println(" ");
