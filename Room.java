@@ -847,9 +847,9 @@ This method tests to see the position.
                                         int  YEG = i;
                                           int XEG = p;
                           pw.println(Garret[i][p]);
+			  System.out.println(Garret[i][p]);
 			  	  }
-            
-			  }
+            		  }
             
 			 }
          

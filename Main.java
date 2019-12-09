@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.io.FileReader;
 /**
  * a main class that makes a scanner and a inventory object
  * it prints out the options and then asks what the player wants to do
@@ -17,7 +18,7 @@ import java.io.FileWriter;
  @author Paige
  */
 public class Main{
-	public static void main(String[] args){
+	public static void main(String[] args) throws Exception{
 		Scanner bob = new Scanner(System.in);
 		Inventory stuff = new Inventory(100000000);	
 		Room room = new Room(20,20);
@@ -25,6 +26,7 @@ public class Main{
 		Room room3 = new Room(20,20);
 		ArrayList<Character> people = new ArrayList<Character>(); 
 
+		
 		System.out.println(" ");
 		System.out.println("                    ~  WELCOME TO ONE ROOM DUNGEON GAME ~");
 		System.out.println("      ");
@@ -64,13 +66,19 @@ public class Main{
 		String x = bob.next();
 		if (x.equals("y")){
 			try{
-				FileInputStream file = new FileInputStream("data.txt");
-				Scanner in = new Scanner (file);
-				in.close();
+		
 
+			FileReader fr = new FileReader("data.txt");
+
+				int i;
+				while ((i=fr.read()) != -1)
+					System.out.print((char) i);
+							
 			}catch (FileNotFoundException e){
 				System.out.println("File Not Found");
+				return;
 			}
+		
 
 		}				 
 
@@ -427,7 +435,7 @@ public class Main{
 
 						Character  position = people.get(0);
 						position.save(pw);
-
+					
 
 						Character positionA = people.get(2);
 						positionA.save(pw);

@@ -42,7 +42,7 @@ public abstract class Character{
 	void save(PrintWriter pw){
 		pw.println(name);
 		pw.println(health);
-	}
+		}
 
 
 
