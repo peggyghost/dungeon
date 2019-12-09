@@ -1,9 +1,9 @@
 /**
-*  The Room class creates the game board, places the characters on the board and keeps track of their position.
+ *  The Room class creates the game board, places the characters on the board and keeps track of their position.
  * @author Suad
  * @author Arsalan
  * @author Paige
-  */
+ */
 
 
 import java.util.ArrayList;
@@ -20,11 +20,11 @@ public class Room{
 	private int[][] Stairs;
 	private Random fate = new Random();
 	private boolean present;
-/**
-  This is the Room constructor.
-  @param y the y coordinate.
-  @param x the x coordinate.
-  */
+	/**
+	  This is the Room constructor.
+	  @param y the y coordinate.
+	  @param x the x coordinate.
+	  */
 	Room(int y, int x){
 		this.area = new String[y][x];
 		this.position = new int[y][x];
@@ -36,8 +36,8 @@ public class Room{
 	}//end of room constructor
 
 	/**A method that checks if the player is in the current room.
-	@return a boolean that returns true if the player is there and false if their not.
-	*/
+	  @return a boolean that returns true if the player is there and false if their not.
+	  */
 	public boolean isHere(){
 		for(int i = 0; i < this.position.length ; i++){//loop that iterates through the array to see 1
 			for(int p = 0; p < this.position.length ; p++){
@@ -51,16 +51,16 @@ public class Room{
 
 	/**
 	  This method is to teleport the player to the other room, where the other door is.
-	 @param y the y coordinate.
-	@param x the x coordinate.
-       */	
+	  @param y the y coordinate.
+	  @param x the x coordinate.
+	  */	
 	public void teleportTo(int y, int x){
 		this.position[y][x] = 1;//makes the position here, used for other object room
 	}//end of teleportTo method
 
 	/**
 	  This method is to make the position of the player in the past room gone.
-	*/
+	  */
 	public void ghost(){
 		for(int i = 0; i < this.position.length ; i++){//itterates through array
 			for(int p = 0; p < this.position.length ; p++){
@@ -92,8 +92,8 @@ public class Room{
 
 	/**
 	  This method is to see if the player is at the stairs.
-	@return a boolean.
-	*/
+	  @return a boolean.
+	  */
 	public boolean onStairs(){
 		int yp = 0; int xp = 0;
 		int ys = 1; int xs = 1;
@@ -234,7 +234,7 @@ public class Room{
 				this.position[i][p] = 0;//filling with zero
 			}
 		}//end of position making board
-		
+
 
 		//creating door in the rooms
 		for(int i = 0; i <this.Door.length; i++){
@@ -345,7 +345,7 @@ public class Room{
 				this.position[i][p] = 0;//filling with zero
 			}
 		}//end of position making board
-		
+
 
 		//creating stairs to connect rooms
 		for(int i = 0; i <this.Stairs.length; i++){
@@ -550,7 +550,7 @@ public class Room{
 	}//end of itemonfloor
 
 	private int count =0;//holds variable that has list placment to make garret walk in pattern
-	
+
 	/**
 	  A method that makes Garret the enemy move throughout the board.
 	  */
@@ -674,8 +674,8 @@ public class Room{
 
 	/**
 	  This method makes it so the player can move throughout the board.
-	@param input depending on what the user inputs, the player will move left for input a, right for input d, up for input w, and down for input s.
-	*/
+	  @param input depending on what the user inputs, the player will move left for input a, right for input d, up for input w, and down for input s.
+	  */
 	public void MOVE(String input){
 		int YM=0;
 		int XM=0;
@@ -748,8 +748,8 @@ public class Room{
 
 	/**
 	  This methods makes it so that Ari is represented by a ?, the empty space represented by +, items represente
-    d by $, door, represented by D, and stairs represented by S.
-    */
+	  d by $, door, represented by D, and stairs represented by S.
+	  */
 	public void printA(){
 		for(int i = 0; i < this.area.length;i++){
 			System.out.println(" ");
@@ -778,9 +778,9 @@ public class Room{
 		}//end of outter for print
 	}
 
-/**
-This method tests to see the position.
-*/
+	/**
+	  This method tests to see the position.
+	  */
 	public void test(){
 		for(int i =0; i< this.position.length;i++){
 			System.out.println(" ");
@@ -790,11 +790,11 @@ This method tests to see the position.
 		}
 		System.out.println(" ");
 		for(int i =0; i< this.position.length;i++){
-                        System.out.println(" ");
-                        for(int p = 0 ; p<this.position.length;p++){
-                                System.out.print(this.Ari[i][p]);
-                        }
-                }
+			System.out.println(" ");
+			for(int p = 0 ; p<this.position.length;p++){
+				System.out.print(this.Ari[i][p]);
+			}
+		}
 	}//end of test
 
 	/**
@@ -840,20 +840,20 @@ This method tests to see the position.
 	  This method saves the state of the game board and the players and items positions and stores it into a file.
 	  @param pw the variable for the print writer.
 	  */
-		 void save(PrintWriter pw){
-			 int YEG = 0;
-			 int XEG = 0;
-                         for(int i = 0 ; i < this.Garret.length;i++){//this grabs garrets cu    rrent lo    cations
-                          for(int p = 0; p < this.Garret.length;p++){
-                                  if(this.Garret[i][p] == 1){
-                                           YEG = i;
-                                           XEG = p;
-                          pw.println(this.Garret[YEG][XEG]);
-			  	  }
-            
-			  }
-            
-			 }
-         
-                 }
+	void save(PrintWriter pw){
+		int YEG = 0;
+		int XEG = 0;
+		for(int i = 0 ; i < this.Garret.length;i++){//this grabs garrets cu    rrent lo    cations
+			for(int p = 0; p < this.Garret.length;p++){
+				if(this.Garret[i][p] == 1){
+					YEG = i;
+					XEG = p;
+					pw.println(this.Garret[YEG][XEG]);
+				}
+
+			}
+
+		}
+
+	}
 }//end of class Room
