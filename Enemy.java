@@ -140,8 +140,6 @@ class Enemy extends Character {
 	   @param pw the variable used for the Print Writer.
 	   */
 	void save(PrintWriter pw){
-//		pw.println(name);
-//		pw.println(weapon);
 		pw.println(health);
 	}
 
@@ -154,4 +152,5 @@ class Enemy extends Character {
                 this.health = 0;
 
 
+	}
 }
