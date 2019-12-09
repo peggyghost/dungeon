@@ -11,11 +11,6 @@ class Enemy extends Character {
 	Item weapon;
 
 
-//	public  Enemy(String name, Item Weapon, int health) {
-//		this.name = name;
-//		this.weapon = Weapon;
-//		this.health = health;
-
 	public  Enemy(String name, int health, Item Weapon) {
 		super(name, health);
 		this.weapon = Weapon;
@@ -100,18 +95,9 @@ class Enemy extends Character {
 
 
 	void save(PrintWriter pw){
-//		pw.println(name);
-//		pw.println(weapon);
 		pw.println(health);
 	}
 
-/*	Enemy(Scanner in){
-		name = in.nextLine();
-		weapon = in.nextLine();
-		health = in.nextInt();
-		for (Item weapon: Weapon){
-
-	}*/
 	
 	public void kill(){
                 this.health = 0;
