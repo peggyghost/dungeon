@@ -84,37 +84,6 @@ public class Main{
 
 		}//end of if for saying yes to load in
 
-			Inventory stuff = new Inventory(100000000);
-			Dreams dream1 = new Dreams();
-			Room room = new Room(20,20);
-			Room room2 = new Room(20,20);
-			Room room3 = new Room(20,20);
-			ArrayList<Character> people = new ArrayList<Character>();
-			people.add(new Hero(Name, 100, Class));
-			System.out.println(" ");
-			System.out.println("                       WHAT IS YOUR NAME HERO??");
-			System.out.println(" ");
-			System.out.print("                                  ");
-			String Name = bob.next();
-
-			System.out.println(" ");
-			System.out.println("                          WHAT IS YOUR CLASS??");
-			System.out.println("              (FratBoi)  (JucciBoi)  (NerdBoi)  (Arsalan) ");
-			System.out.println(" ");
-			System.out.print("                                    ");
-			String Class = bob.next();
-
-			stuff.noobGear();//to give the hero a default gear weapon and armour
-
-			System.out.println(" ");
-			System.out.println("             Remember " + people.get(0).getname() + ", to see the instrucitons, press 'p'.");
-			System.out.println(" ");
-			System.out.println("           Now remember not to ask any questions becuase this is a video game");
-			System.out.println("   ");
-			System.out.println("   ");
-
-
-
 		Inventory stuff = new Inventory(100000000);
 		Dreams dream1 = new Dreams();
 		Room room = new Room(20,20);
