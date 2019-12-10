@@ -34,7 +34,8 @@ public abstract class Character{
 	public abstract int health();
 	public abstract String equippedWeapon();
 	abstract void save(PrintWriter pw);
-	
+	public abstract void setHealth(int bob);
+	public abstract void setName(String bob);	
 
 
 }

@@ -137,6 +137,14 @@ public class Hero extends Character{
                 return this.health;
         }
 
+	public void setHealth(int bob){
+		 this.health = bob;
+	}
+
+	public void setName(String bob){
+		this.name = bob;
+	}
+
 
 
 }

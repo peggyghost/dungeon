@@ -170,4 +170,11 @@ public class Enemy extends Character {
 
 
 	}
+
+	public void setHealth(int bob){
+                 this.health = bob;
+        }
+        public void setName(String bob){
+                this.name = bob;
+        }
 }
