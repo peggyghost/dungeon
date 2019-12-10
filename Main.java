@@ -346,6 +346,9 @@ public class Main{
 					room2.ghost();//clear the players position in the current room 
 					room3.ghost();//clear the players position in the coming room just in case
 					room3.teleportTo(1,1);//put the player in the next room
+					if(people.get(1).isAlive()){
+						dream1.garretDream();
+					}
 					System.out.println(" ");
 					System.out.println("            Welcome to the third room");
 					System.out.println(" ");
