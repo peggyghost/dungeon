@@ -1,3 +1,5 @@
+import java.io.PrintWriter;
+
 /**
  * A character represents a player in the game. 
  * The character class is an abstract class which creates a new player and initializes name and health stats.
@@ -5,10 +7,6 @@
  * @author Arsalan
  * @author Paige
  * */
-
-
-import java.io.PrintWriter;
-
 public abstract class Character{
 
 	private String name;

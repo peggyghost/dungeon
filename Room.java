@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Random;
+import java.io.PrintWriter;
+
 /**
  * The Room class creates the game board, places the characters on the board, and keeps track of the characters positions.
  * @author Suad
@@ -5,9 +9,7 @@
  * @author Paige
  * */
 
-import java.util.ArrayList;
-import java.util.Random;
-import java.io.PrintWriter;
+
 public class Room{
 
 	private String[][] area;

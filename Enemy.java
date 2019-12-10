@@ -1,16 +1,12 @@
+import java.util.*;
+import java.io.PrintWriter;
+
 /**
  * An Enemy represents the object in the game which the {@link Hero} battles and ultimately tries to hunt to to battle throughout the game.
  * @author Suad
  * @author Arsalan
  * @author Paige
  * */
-
-
-import java.util.*;
-import java.io.PrintWriter;
-
-
-
 
 public class Enemy extends Character {
 
