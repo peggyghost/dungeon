@@ -84,24 +84,15 @@ public class Main{
 			}
 
 
-<<<<<<< HEAD
-		}//end of if for saying yes to load 
 
-
-		Inventory stuff = new Inventory(100000000);
-		Dreams dream1 = new Dreams();
-		Room room = new Room(20,20);
-		Room room2 = new Room(20,20);
-		Room room3 = new Room(20,20);
-=======
-		}//end of if for saying yes to load in
+		}//end of if for saying yes to load
 
 		stuff = new Inventory(100000000);
 		dream1 = new Dreams();
 		room = new Room(20,20);
 		room2 = new Room(20,20);
 		room3 = new Room(20,20);
->>>>>>> f3214fbc488b6f53c9d48b978a90304dbb620d13
+
 		ArrayList<Character> people = new ArrayList<Character>();
 		System.out.println(" ");
 		System.out.println("                       WHAT IS YOUR NAME HERO??");
