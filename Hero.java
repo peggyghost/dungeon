@@ -1,9 +1,9 @@
 /**
- The Hero class represents a subclass of {@link Character} which the {@link Enemy} battles.
- @author Suad
- @author Arsalan
- @author Paige
- */
+ * The Hero class represents a subclass of {@link Character} which the {@link Enemy} battles.
+ * @author Suad
+ * @author Arsalan
+ * @author Paige
+ * */
 
 import java.util.Scanner;
 import java.io.PrintWriter;

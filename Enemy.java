@@ -1,9 +1,9 @@
 /**
-  An Enemy represents the object in the game in which the {@link Hero} battles and ultimately tries to avoid throughout the game.
- @author Suad 
-@author Arsalan
-@author Paige
-*/
+ * An Enemy represents the object in the game which the {@link Hero} battles and ultimately tries to hunt to to battle throughout the game.
+ * @author Suad
+ * @author Arsalan
+ * @author Paige
+ * */
 
 
 import java.util.*;

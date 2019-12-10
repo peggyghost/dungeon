@@ -1,3 +1,11 @@
+/**
+ * The Dream class is the additional component added to the game because what's a game without some fantastic dialog?
+ *  It is an interactional class composed mainly of dialog. 
+ *  Players can enter into this dream sequence in various ways throughout the game. 
+ *  @author Suad Parvez
+ *  */
+
+
 import java.util.Scanner;
 
 public class Dreams{
@@ -11,7 +19,7 @@ public class Dreams{
 		this.sad = 0;
 	}
 	/**
-	 *this method is to return the meter value in intigers  on how sad the dream was
+	 *this method is to return the meter value in integers  on how sad the dream was
 	 @return sad 
 	 */
 	public int getSadness(){

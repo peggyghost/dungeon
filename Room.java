@@ -1,10 +1,9 @@
 /**
- *  The Room class creates the game board, places the characters on the board and keeps track of their position.
+ * The Room class creates the game board, places the characters on the board, and keeps track of the characters positions.
  * @author Suad
  * @author Arsalan
  * @author Paige
- */
-
+ * */
 
 import java.util.ArrayList;
 import java.util.Random;
