@@ -83,8 +83,7 @@ public class Main{
 
 
 		}//end of if for saying yes to load in
-<<<<<<< HEAD
-		else if(x.equals("n")){
+
 			Inventory stuff = new Inventory(100000000);
 			Dreams dream1 = new Dreams();
 			Room room = new Room(20,20);
@@ -113,8 +112,8 @@ public class Main{
 			System.out.println("           Now remember not to ask any questions becuase this is a video game");
 			System.out.println("   ");
 			System.out.println("   ");
-=======
->>>>>>> 30e7455d4db6d1d6d33499c704c29798b6374bfb
+
+
 
 		Inventory stuff = new Inventory(100000000);
 		Dreams dream1 = new Dreams();
