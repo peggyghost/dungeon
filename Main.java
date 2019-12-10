@@ -68,10 +68,10 @@ public class Main{
 				String nam = " ";
 				BufferedReader br = new BufferedReader(new FileReader("data.txt"));
 				nam = (br.readLine());
-				Hero.setName(nam);
+				//Hero.setName(nam);
 				String calass = br.readLine();
 				int life = (Integer.parseInt(br.readLine()));
-				Hero.setHealth(life);
+				//Hero.setHealth(life);
 
 				br.close();
 
@@ -83,6 +83,7 @@ public class Main{
 
 
 		}//end of if for saying yes to load in
+<<<<<<< HEAD
 		else if(x.equals("n")){
 			Inventory stuff = new Inventory(100000000);
 			Dreams dream1 = new Dreams();
@@ -112,20 +113,46 @@ public class Main{
 			System.out.println("           Now remember not to ask any questions becuase this is a video game");
 			System.out.println("   ");
 			System.out.println("   ");
+=======
+>>>>>>> 30e7455d4db6d1d6d33499c704c29798b6374bfb
+
+		Inventory stuff = new Inventory(100000000);
+		Dreams dream1 = new Dreams();
+		Room room = new Room(20,20);
+		Room room2 = new Room(20,20);
+		Room room3 = new Room(20,20);
+		ArrayList<Character> people = new ArrayList<Character>();
+		System.out.println(" ");
+		System.out.println("                       WHAT IS YOUR NAME HERO??");
+		System.out.println(" ");
+		System.out.print("                                  ");
+		String Name = bob.next();
+
+		System.out.println(" ");
+		System.out.println("                          WHAT IS YOUR CLASS??");
+		System.out.println("              (FratBoi)  (JucciBoi)  (NerdBoi)  (Arsalan) ");
+		System.out.println(" ");
+		System.out.print("                                    ");
+		String Class = bob.next();
+		people.add(new Hero(Name, 100, Class));
+
+		stuff.noobGear();//to give the hero a default gear weapon and armour
+
+		System.out.println(" ");
+		System.out.println("             Remember " + people.get(0).getname() + ", to see the instrucitons, press 'p'.");
+		System.out.println(" ");
+		System.out.println("           Now remember not to ask any questions becuase this is a video game");
+		System.out.println("   ");
+		System.out.println("   ");
 
 
-			people.add(new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70)));
-			people.add(new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60)));
-			String input = " ";//declares and initializes the input variable
-			//fully creates the rooms
-			room.create();
-			room2.create2();
-			room3.create3();
-		}//end of if for saying no to load in	
-
-
-
-
+		people.add(new Enemy("Garret THE DEMON KING", 200, new Item(ItemType.weapon,"BasketBall", 4, 70, 70)));
+		people.add(new Enemy("Ari THE WOMAN", 200, new Item(ItemType.weapon,"Cellphone", 345,543,60)));
+		String input = " ";//declares and initializes the input variable
+		//fully creates the rooms
+		room.create();
+		room2.create2();
+		room3.create3();
 
 
 
