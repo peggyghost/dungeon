@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.nio.file.Files;
 /**
  * a main class that makes a scanner and a inventory object
  * it prints out the options and then asks what the player wants to do
@@ -65,15 +66,16 @@ public class Main{
 		String x = bob.next();
 		if (x.equals("y")){
 			try{
-				String nam = " ";
-				BufferedReader br = new BufferedReader(new FileReader("data.txt"));
-				nam = (br.readLine());
-				//Hero.setName(nam);
-				String calass = br.readLine();
-				int life = (Integer.parseInt(br.readLine()));
-				//Hero.setHealth(life);
+				
+				FileInputStream fileIn = new FileInputStream("data.txt");
+       			        Scanner suad = new Scanner(fileIn);
 
-				br.close();
+				String nam = suad.nextLine();
+				
+				String calass = suad.nextLine();
+				System.out.println(calass);
+				int life = suad.nextInt();
+				
 
 
 			}catch (FileNotFoundException e){
