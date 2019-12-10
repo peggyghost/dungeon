@@ -1,26 +1,22 @@
-Boi
-JucciBOi
+dfjklsd;afg
+dkgfhfkdls;
 100
 true
 200
 200
-7 18
-17 5
+7 11
+18 10
  
-7 9
- 
-0 0
+1 1
  
 0 0
  
-18 11
+0 0
  
-18 3
+14 15
  
-17 11
-Divorce Papers  : 1000 pounds 1 dollars  70 Power.
-Timbs  : 900 pounds 1 dollars  50 Power.
+16 4
  
-1  Door  : 500 pounds 20 dollars  30 Power. 
-2  Timbs  : 900 pounds 1 dollars  50 Power. 
-3  Divorce Papers  : 1000 pounds 1 dollars  70 Power.
+17 7
+wet napkin  : 1 pounds 1 dollars  10 Power.
+diaper  : 4 pounds 3 dollars  20 Power.

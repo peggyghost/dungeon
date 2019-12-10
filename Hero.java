@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import java.io.PrintWriter;
+
 /**
  * The Hero class represents a subclass of {@link Character} which the {@link Enemy} battles.
  * @author Suad
@@ -5,15 +8,13 @@
  * @author Paige
  * */
 
-import java.util.Scanner;
-import java.io.PrintWriter;
 
 
 public class Hero extends Character{
 	public int health;
 	public boolean isalive;
-	private String name;
-	private String Class;
+	public String name;
+	public String Class;
 	Item weapon;
 	
 	/** constructor for the Hero Class.
@@ -135,6 +136,14 @@ public class Hero extends Character{
 	public int health(){
                 return this.health;
         }
+
+	public void setHealth(int bob){
+		 this.health = bob;
+	}
+
+	public void setName(String bob){
+		this.name = bob;
+	}
 
 
 
