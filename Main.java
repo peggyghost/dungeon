@@ -83,7 +83,7 @@ public class Main{
 
 
 		}//end of if for saying yes to load in
-		else if(x.equals("n"){
+		else if(x.equals("n")){
 			Inventory stuff = new Inventory(100000000);
 			Dreams dream1 = new Dreams();
 			Room room = new Room(20,20);
