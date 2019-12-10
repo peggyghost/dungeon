@@ -129,6 +129,10 @@ public class Dreams{
 		Dreams.scene();
 		System.out.println("         Ari, what a time that was. We met in the land of BING BANG, not to be confused with BING BONG  ");
 		System.out.println("         Everything was so nice back then, what happend???");
+		Dreams.blank(3);
+		System.out.println("                 ***remember this is a fuzzy memorey of yours, so the story molds to your desicions***");
+		System.out.println("                       ***bad choices leads to a sadder story, which gives ari more trama***");
+		System.out.println("                     ***more trama can make ari stronger, try to make this a happy memorey***");
 		String blip = bob.next();
 		Dreams.blank(2);
 		System.out.println("                              7 years ago ");
@@ -325,7 +329,7 @@ public class Dreams{
 				blip = bob.next();
 				System.out.println("        ");
 				System.out.println("        Well not the reaction i was expecting but that was fine");
-				System.out.println("        But the reason i brought her here was to tell that i... I'M PREGANANT WITH JEFF'S KID");
+				System.out.println("        But the reason i brought her here was to tell that i... I'M PREGANANT WITH JULAIN'S KID");
 				System.out.println("        Did i tell her that i was preganant ? or that i played call of duty like a soy beta male?    'confess'  'soyboy'");
 				System.out.println("        ");
 				choice = bob.next();
@@ -415,7 +419,7 @@ public class Dreams{
 					System.out.println(" ");
 					System.out.println(" ");
 					System.out.println("        Ari: lol it's okay so am i");
-					System.out.println("        Ari: Don't get me wrong this is so messed up, like ooooh drama But have you seen jeff's hair?");
+					System.out.println("        Ari: Don't get me wrong this is so messed up, like ooooh drama But have you seen Julian's hair?");
 					System.out.println("        Ari: Almost as good as Suad's");
 					System.out.println("        Ari: But anyway we probably shouldnt be with each other so i'm breaking up with you");
 					System.out.println("        Ari: kinda chose the wrong option there bud, and you were on a role weren't you?");

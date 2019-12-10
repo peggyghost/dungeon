@@ -239,6 +239,7 @@ public class Inventory{
 	public void noobGear(){
 		this.equippedWeapon = new Item(ItemType.weapon, "wet napkin", 1, 1, 10);
 		this.equippedArmor = new Item(ItemType.armor, "diaper", 4, 3, 20);
+		this.equippedBuff = new Item(ItemType.buff, "julian's pick up game", 0, 0, 5);
 	}
 
 	/**
@@ -247,6 +248,7 @@ public class Inventory{
 	public void godGear(){
 		this.equippedWeapon = new Item(ItemType.weapon, "SMOULDER FACE TECHNIQUE", 0 , 0, 999);
 		this.equippedArmor = new Item(ItemType.armor, "SUAD'S JACKET", 0 , 990 , 999);
+		this.equippedBuff = new Item(ItemType.buff, "Dylan's headphones", 2 , 999, 999);
 	}//end of godGear
 
 	/**
