@@ -480,7 +480,7 @@ public class Main{
 				try{
 					FileInputStream file = new FileInputStream("data.txt");
 					Scanner in = new Scanner (file);
-					// bro = new Hero(in);
+					
 				}catch (FileNotFoundException e){
 					System.out.println("File Not Found");
 				}
