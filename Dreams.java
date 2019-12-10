@@ -474,6 +474,7 @@ public class Dreams{
 		System.out.println("            Never in my life have i ever wanted to sleep with the lights on as much as this moment");
 		System.out.println("            What did i say in response ? did i play it cool or beg for my life?");
 		System.out.println("                  'chill'     'beg'");
+		System.out.println("            ");
 		String choice = bob.next();
 
 	}//end of garretDream
