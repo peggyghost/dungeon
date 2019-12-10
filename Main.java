@@ -22,8 +22,6 @@ public class Main{
 	public static void main(String[] args) throws Exception{
 		Scanner bob = new Scanner(System.in);
 
-
-
 		System.out.println(" ");
 		System.out.println("                    ~  WELCOME TO ONE ROOM DUNGEON GAME ~");
 		System.out.println("      ");
@@ -56,7 +54,9 @@ public class Main{
 		System.out.println("                                 Press 'l' to load previous game.");
 		System.out.println("  ");
 
-
+		Inventory stuff;
+		Dreams dream1;
+		Room room; Room room2; Room room3;
 
 		/**
 		  utilizes the file save method.
@@ -84,11 +84,11 @@ public class Main{
 
 		}//end of if for saying yes to load in
 
-		Inventory stuff = new Inventory(100000000);
-		Dreams dream1 = new Dreams();
-		Room room = new Room(20,20);
-		Room room2 = new Room(20,20);
-		Room room3 = new Room(20,20);
+		stuff = new Inventory(100000000);
+		dream1 = new Dreams();
+		room = new Room(20,20);
+		room2 = new Room(20,20);
+		room3 = new Room(20,20);
 		ArrayList<Character> people = new ArrayList<Character>();
 		System.out.println(" ");
 		System.out.println("                       WHAT IS YOUR NAME HERO??");
