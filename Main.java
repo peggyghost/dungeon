@@ -23,8 +23,6 @@ public class Main{
 	public static void main(String[] args) throws Exception{
 		Scanner bob = new Scanner(System.in);
 
-
-
 		System.out.println(" ");
 		System.out.println("                    ~  WELCOME TO ONE ROOM DUNGEON GAME ~");
 		System.out.println("      ");
@@ -57,7 +55,9 @@ public class Main{
 		System.out.println("                                 Press 'l' to load previous game.");
 		System.out.println("  ");
 
-
+		Inventory stuff;
+		Dreams dream1;
+		Room room; Room room2; Room room3;
 
 		/**
 		  utilizes the file save method.
@@ -84,6 +84,7 @@ public class Main{
 			}
 
 
+<<<<<<< HEAD
 		}//end of if for saying yes to load 
 
 
@@ -92,6 +93,15 @@ public class Main{
 		Room room = new Room(20,20);
 		Room room2 = new Room(20,20);
 		Room room3 = new Room(20,20);
+=======
+		}//end of if for saying yes to load in
+
+		stuff = new Inventory(100000000);
+		dream1 = new Dreams();
+		room = new Room(20,20);
+		room2 = new Room(20,20);
+		room3 = new Room(20,20);
+>>>>>>> f3214fbc488b6f53c9d48b978a90304dbb620d13
 		ArrayList<Character> people = new ArrayList<Character>();
 		System.out.println(" ");
 		System.out.println("                       WHAT IS YOUR NAME HERO??");
@@ -349,6 +359,9 @@ public class Main{
 					room2.ghost();//clear the players position in the current room 
 					room3.ghost();//clear the players position in the coming room just in case
 					room3.teleportTo(1,1);//put the player in the next room
+					if(people.get(1).isAlive()){
+						dream1.garretDream();
+					}
 					System.out.println(" ");
 					System.out.println("            Welcome to the third room");
 					System.out.println(" ");

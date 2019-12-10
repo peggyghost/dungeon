@@ -47,40 +47,40 @@ public class Dreams{
 		System.out.println("          ~~~~~~~~~~~~~~~~~~~~~~~~~                    ");
 		System.out.println("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println(" ");
-                System.out.println(" ");
 		System.out.println(" ");
-                System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
 	}//end of scene
-	
+
 	/**
 	 * this is a method to print out a nother pretty picture for garret's flashback
 	 */
 	public static void scene2(){
 
 		System.out.println("                                        ");
-                System.out.println("                 @@@                          @@           _  ");
-                System.out.println("                @@@@@                                     |_|");
+		System.out.println("                 @@@                          @@           _  ");
+		System.out.println("                @@@@@                                     |_|");
 		System.out.println("                                 ``                       ");
-                System.out.println("                        ``			``	");
-                System.out.println("          ___      			@@@	");
+		System.out.println("                        ``			``	");
+		System.out.println("          ___      			@@@	");
 		System.out.println("          | |                      @@@@@       ");
-                System.out.println("          |_|                             ");
-                System.out.println("           |                             ");
-                System.out.println("        ___|__________;_                                 ");
-                System.out.println("        ||||||||||||||/                       ");
-                System.out.println("        |            /                       ");
+		System.out.println("          |_|                             ");
+		System.out.println("           |                             ");
+		System.out.println("        ___|__________;_                                 ");
+		System.out.println("        ||||||||||||||/                       ");
+		System.out.println("        |            /                       ");
 		System.out.println("        |           /                     ");
-                System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                        ");
-                System.out.println("                                        ");
-                System.out.println("                               ^^^^^^^^^^^^^^          ");
-                System.out.println("       ^^^^^^^^^^^^^^^^^^^^^^                                     ");
-                System.out.println("                                            ");
+		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                        ");
 		System.out.println("                                        ");
-                System.out.println("                             ^^^^^^^^^^^^^^           ");
-                System.out.println("        ^^^^^^^^^^^^^^^                                        ");
-                System.out.println("                                         ");
-                System.out.println("                                            ");
-                System.out.println("                                            ");
+		System.out.println("                               ^^^^^^^^^^^^^^          ");
+		System.out.println("       ^^^^^^^^^^^^^^^^^^^^^^                                     ");
+		System.out.println("                                            ");
+		System.out.println("                                        ");
+		System.out.println("                             ^^^^^^^^^^^^^^           ");
+		System.out.println("        ^^^^^^^^^^^^^^^                                        ");
+		System.out.println("                                         ");
+		System.out.println("                                            ");
+		System.out.println("                                            ");
 	}//end of scene2
 
 	/**
@@ -462,20 +462,139 @@ public class Dreams{
 		System.out.println("            ");
 		System.out.println("                                              4 years ago ");
 		System.out.println("            ");
+		String choice;
 		String blop = bob.next();
 		Dreams.blank(100);
-		System.out.println("            it was just me and garret. and all the marrage applitcations he had stuffed around the ship");
-		System.out.println("            we were standing by the railing of the ship looking out into the sea. sucha perfect day");
-		System.out.println("     ");
-		System.out.println("            Garret: Your eyes look pretty when there's tear in them ");
-		System.out.println(" ");
-		blop = bob.next();
-		System.out.println("            ");
-		System.out.println("            Never in my life have i ever wanted to sleep with the lights on as much as this moment");
-		System.out.println("            What did i say in response ? did i play it cool or beg for my life?");
-		System.out.println("                  'chill'     'beg'");
-		String choice = bob.next();
-
+		boolean go = true;
+		do{
+			Dreams.blank(20);
+			Dreams.scene2();
+			System.out.println("            it was just me and garret. and all the marrage applitcations he had stuffed around the ship");
+			System.out.println("            we were standing by the railing of the ship looking out into the sea. sucha perfect day");
+			System.out.println("     ");
+			System.out.println("            Garret: Your eyes look pretty when there's tear in them ");
+			System.out.println("            Garret: I'm so glad you don't notice when i watch you sleep ");
+			System.out.println(" ");
+			blop = bob.next();
+			System.out.println("            ");
+			System.out.println("            Never in my life have i ever wanted to sleep with the lights on as much as this moment");
+			System.out.println("            What did i say in response ? did i jump off the boat or slap him?");
+			System.out.println("                  'jump'     'slap'");
+			System.out.println("            ");
+			choice = bob.next();
+			if(choice.equals("jump")){
+				Dreams.blank(20);
+				Dreams.scene2();
+				System.out.println("             ");
+				System.out.println("             Oh yeah i yeeted off that boat. i didn't care where i would go i just couldn't");
+				System.out.println("             And yet i turn my head and there wss Garret, swimming with me ");
+				System.out.println("             ");
+				blop = bob.next();
+				System.out.println("             Garret: i didn't know you were such a good swimmer honey buns");
+				System.out.println("             Garret: you almost lost me there sugar plum");
+				System.out.println("             Garret: it's a good thing our love is so strong that it makes me follow you anywhere");
+				System.out.println("             ");
+				blop = bob.next();
+				System.out.println("             And of course god wants me to suffer because the next thing i knew he dragged me back to the boat");
+				System.out.println("             Natrually, i'd want to get away from that phsyco. But what did i do in my predicatmint?");
+				System.out.println("             Did i play dead? or did i just stay quiet");
+				System.out.println("                   'dead'   'quiet'  ");
+				System.out.println("             ");
+				choice = bob.next();
+				if(choice.equals("dead")||choice.equals("quiet")){
+					Dreams.blank(20);
+					Dreams.scene2();
+					System.out.println("             ");
+					System.out.println("             Oh yeah it didn't matter cuz he's insane");
+					System.out.println("             ");
+					blop = bob.next();
+					System.out.println("             Garret: listen i know we just met each other 5 days ago");
+					System.out.println("             Garret: but i really want to marry you... what's your name again?");
+					System.out.println("             Garret: doens't matter, our love will fight through it");
+					System.out.println("             ");
+					System.out.println("             I'm going to wake up with my face skinned off aren't i?");
+					System.out.println("             ");
+					System.out.println("             But strangley he disapeared");
+					System.out.println("             I havn't seen him for a strangly long time. The only other time i heard from or about him is today");
+					System.out.println("             this mission, when he stole the curry from SCHOP SCHOP. maybe things would've been different if he");
+					System.out.println("             wasn't such a wierdo. But i guess that's just how things go");
+					blop = bob.next();
+					System.out.println("        ");
+					System.out.println("        but is that what really happend? am i sure that's how it went down?  'yes'  'no'");
+					choice = bob.next();
+					if(choice.equals("yes")){//asks if they would like tp proceed basically
+						go = false;//if yes then the dream quites
+					}
+					else{
+						go  = true;
+						this.sad = 0;
+					}
+					Dreams.blank(100);
+				}
+			}//end of jump first choice 
+			else if(choice.equals("slap")){
+				Dreams.blank(20);
+				Dreams.scene2();
+				System.out.println("             I remember i slapped the chesnuts out of him. You could hear the smack from a block way");
+				System.out.println("             As i retracted my hand back to my side, garret looked back at me with a shocked look");
+				System.out.println("             ");
+				blop = bob.next();
+				System.out.println("             Garret: Oh man that... was almost has hard as my wife's boyfriend slaps me");
+				System.out.println("             Garret: I say you have some real talent in this, you should file my taxes");
+				System.out.println("             Garret: whenever i make a mistake in filing my taxes my wife's boyfriend hits me");
+				System.out.println("             ");
+				System.out.println("             ");
+				blop = bob.next();
+				System.out.println("             Why has god left me in this situation i wonder. I'm not sure. I just wanted to watch some birds");
+				System.out.println("             I think i did one of two actions. but i'm not sure. did i try to leave? ");
+				System.out.println("                       'yes'    'no'");
+				choice = bob.next();
+				if(choice.equals("yes")){
+					Dreams.blank(20);
+					Dreams.scene2();
+					System.out.println("             I'm not sure how i left. I could've sworn he wouldn've followed me");
+					System.out.println("             But i'm not going to question it");
+					System.out.println("             I havn't seen him for a strangly long time. The only other time i heard from or about him is today");
+					System.out.println("             this mission, when he stole the curry from SCHOP SCHOP. maybe things would've been different if he");
+					System.out.println("             wasn't such a wierdo. But i guess that's just how things go");
+					blop = bob.next();
+					System.out.println("        ");
+					System.out.println("        but is that what really happend? am i sure that's how it went down?  'yes'  'no'");
+					choice = bob.next();
+					if(choice.equals("yes")){//asks if they would like tp proceed basically
+						go = false;//if yes then the dream quites
+					}
+					else{
+						go  = true;
+						this.sad = 0;
+					}
+					Dreams.blank(100);
+				}
+				else if(choice.equals("no")){
+					Dreams.blank(20);
+					Dreams.scene2();
+					System.out.println("             ");
+					System.out.println("             lol ther's no way i decided to stay, i just walked away. didn't even look back");
+					System.out.println("             I'm still curious as to why he didn't stop me, but i guess somthing in him clicked");
+					System.out.println("             But i'm not going to question it");
+					System.out.println("             I havn't seen him for a strangly long time. The only other time i heard from or about him is today");
+					System.out.println("             this mission, when he stole the curry from SCHOP SCHOP. maybe things would've been different if he");
+					System.out.println("             wasn't such a wierdo. But i guess that's just how things go");
+					blop = bob.next();
+					System.out.println("        ");
+					System.out.println("        but is that what really happend? am i sure that's how it went down?  'yes'  'no'");
+					choice = bob.next();
+					if(choice.equals("yes")){//asks if they would like tp proceed basically
+						go = false;//if yes then the dream quites
+					}
+					else{
+						go = true;
+						this.sad = 0;
+					}
+					Dreams.blank(100);
+				}
+			}//end of choice for beg  first choice
+		}while(go);//to keep going until rememebr how the flashback went 
 	}//end of garretDream
 
 
