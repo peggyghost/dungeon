@@ -1,16 +1,12 @@
-/**
-  An Enemy represents the object in the game in which the {@link Hero} battles and ultimately tries to avoid throughout the game.
- @author Suad 
-@author Arsalan
-@author Paige
-*/
-
-
 import java.util.*;
 import java.io.PrintWriter;
 
-
-
+/**
+ * An Enemy represents the object in the game which the {@link Hero} battles and ultimately tries to hunt to to battle throughout the game.
+ * @author Suad
+ * @author Arsalan
+ * @author Paige
+ * */
 
 public class Enemy extends Character {
 
@@ -32,7 +28,16 @@ public class Enemy extends Character {
 		this.name = name;
 		this.health = health;
 	}
-	
+
+
+	/**
+	 * this method is to heal the person
+	 */
+	public void heal(int heal){
+		this.health+=heal;
+	}//end of heal
+
+
 	/**
 	  Gets the health of the enemy.
 	  @return the health of the enemy.
@@ -40,6 +45,18 @@ public class Enemy extends Character {
 	public int health(){
 		return this.health;
 	}
+	
+	/**
+	 * this method is to incease the enemy's health in the situation they get a power up
+	 * depending on the sad level in the dream form the dream class
+	 * @param level  the number used to set thier health to a certain level
+	 * @param force the number used to set thier new strenght 
+	 */
+	public void levelUp(int level, int force){
+		this.health = level;
+		this.weapon.setPower(force);
+	}//end of level up
+
 
 	/**
 	  A method that determines if the Enemy is dead or alive.

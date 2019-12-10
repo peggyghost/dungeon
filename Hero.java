@@ -1,19 +1,20 @@
-/**
- The Hero class represents a subclass of {@link Character} which the {@link Enemy} battles.
- @author Suad
- @author Arsalan
- @author Paige
- */
-
 import java.util.Scanner;
 import java.io.PrintWriter;
+
+/**
+ * The Hero class represents a subclass of {@link Character} which the {@link Enemy} battles.
+ * @author Suad
+ * @author Arsalan
+ * @author Paige
+ * */
+
 
 
 public class Hero extends Character{
 	public int health;
 	public boolean isalive;
-	private String name;
-	private String Class;
+	public String name;
+	public String Class;
 	Item weapon;
 	
 	/** constructor for the Hero Class.
@@ -36,6 +37,13 @@ public class Hero extends Character{
 	public String getname(){
 		return name;
 	}
+
+	/**
+         * this method is to heal the person
+         */
+        public void heal(int heal){
+                this.health+=heal;
+        }//end of heal
 
 	/**
 	  Save method that saves the Hero's name, class, health, and if they're alive or not.
@@ -107,7 +115,19 @@ public class Hero extends Character{
 	   */
 	public int power(){
                 return this.weapon.getPower();
-             }
+        }//end of power
+
+	
+        /**
+         * this method is to incease the enemy's health in the situation they get a power up
+         * depending on the sad level in the dream form the dream class
+         * @param level  the number used to set thier health to a certain level
+         * @param force the number used to set thier new strenght 
+         */
+        public void levelUp(int level, int force){
+                this.health = level;
+                this.weapon.setPower(force);
+        }//end of level up
 	
 	/**
 	  A method to retrieve the health of the player.

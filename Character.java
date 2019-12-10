@@ -1,14 +1,12 @@
-/**
-  A character represents a player in the game The Character class is an abstract class which creates a new 
-player and in itializes the playes name and health status.
- @author Suad
- @author Arsalan
- @author Paige
-  */
-
-
 import java.io.PrintWriter;
 
+/**
+ * A character represents a player in the game. 
+ * The character class is an abstract class which creates a new player and initializes name and health stats.
+ * @author Suad
+ * @author Arsalan
+ * @author Paige
+ * */
 public abstract class Character{
 
 	private String name;
@@ -24,7 +22,8 @@ public abstract class Character{
 		this.health = health;
 
 	}
-
+	public abstract void heal(int juice);
+	public abstract void levelUp(int upgrade, int whip);
 	public abstract void damage(int hit);
 	public abstract String getname();
 	public abstract boolean isAlive();

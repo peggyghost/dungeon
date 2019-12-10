@@ -20,7 +20,8 @@ import java.io.FileReader;
 public class Main{
 	public static void main(String[] args) throws Exception{
 		Scanner bob = new Scanner(System.in);
-		Inventory stuff = new Inventory(100000000);	
+		Inventory stuff = new Inventory(100000000);
+		Dreams dream1 = new Dreams();	
 		Room room = new Room(20,20);
 		Room room2 = new Room(20,20);
 		Room room3 = new Room(20,20);
@@ -185,7 +186,7 @@ public class Main{
 						//enemy damage - the armor is the damage the enemy can deal
 						int enemyhit = people.get(1).power() - stuff.protection();
 						//your weapons damage is the damage you can do
-						int brohit = stuff.power();
+						int brohit = stuff.power() + stuff.buff();
 						System.out.println("Press 'k' to attack");
 						String attack = bob.next();
 						if(attack.equals("k")){
@@ -238,7 +239,7 @@ public class Main{
 						//enemy damage - the armor is the damage the enemy can deal
 						int enemyhit = people.get(2).power() - stuff.protection();
 						//your weapons damage is the damage you can do
-						int brohit = stuff.power();
+						int brohit = stuff.power() + stuff.buff();
 						System.out.println(" ");
 						System.out.println("Press 'k' to attack");
 						System.out.println(" ");
@@ -313,6 +314,18 @@ public class Main{
 					room2.ghost();//clear our the room leading up just in case
 					room2.teleportTo(1,2);//add the players position in the coming room
 					System.out.println(" ");
+					if(people.get(2).isAlive()){
+						dream1.ariDream();//initiates the flashback to show what happend with ari
+						if(dream1.getSadness() >=3  ){//if the flashback was level 3 sad increas ari's health to 300
+							people.get(2).levelUp(300,90);
+						}
+						else if(dream1.getSadness() == 2 ){//if level 2 sad increase her health to 250
+							people.get(2).levelUp(250,80);
+						}
+						else if(dream1.getSadness() == 1){//if level 1 sad increase her health to 220
+							people.get(2).levelUp(220,70);
+						}
+					}//end of if for flashback sequence
 					System.out.println(" 		Welcome to the second room");
 					System.out.println(" ");
 				}
@@ -352,8 +365,8 @@ public class Main{
 
 			else if(room2.isHere() && room2.onDoor()){//and they are at a door to go back down 
 				System.out.println(" ");
-				System.out.println("                    HHHHHHHHHHMMMMMMMMMMMMM  that's the door that leads back to the other room." );
-				System.out.println("                    Want to go through it? 'yes' 'no' ");
+				System.out.println("            		        HHHHHHHHHHMMMMMMMMMMMMM  that's the door that leads back to the other room." );
+				System.out.println("            			        Want to go through it? 'yes' 'no' ");
 				System.out.println(" ");
 				//ask them if they want to enter and go to next room
 				String response = bob.next();
@@ -380,8 +393,8 @@ public class Main{
 			else if(room3.isHere() && room3.onStairs()){//if they are in the third room
 
 				System.out.println(" ");
-				System.out.println("                    These are the same stairs you went up from, taking these again will take you downy" );
-				System.out.println("                    Want to go down it? 'yes' 'no' ");
+				System.out.println("              				      These are the same stairs you went up from, taking these again will take you downy" );
+				System.out.println("               					     Want to go down it? 'yes' 'no' ");
 				System.out.println(" ");
 				//ask them if they want to enter and go to last room
 				String response = bob.next();
@@ -390,17 +403,18 @@ public class Main{
 					System.out.println("            Get ready for a lot of walking");
 					for(int i = 0; i < 300 ; i++){
 						System.out.println(" YYYYYYYYYYYYYYYYYYYYYYYYYYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
+						System.out.println("    ");
 					}
 					System.out.println(" ");
 					room2.ghost();//clears the players position in the room they are going to just in case
 					room3.ghost();//clears the players position in the room they are currently in
 					room2.teleportTo(18,17);//adds the players location in the laast room where the stairs end
 					System.out.println(" ");
-					System.out.println("            Welcome to the second room");
+					System.out.println("       			     Welcome to the second room");
 					System.out.println(" ");
 				}
 				else{
-					System.out.println("            that doens't sound like a 'yes'");
+					System.out.println("   				         that doens't sound like a 'yes'");
 					System.out.println(" ");
 				}
 
@@ -409,20 +423,20 @@ public class Main{
 			//for the input if you need to look at directions again
 			if(input.equals("p")){
 				System.out.println(" ");
-				System.out.println(" How to play:");
-				System.out.println("                You, the Hero, will be represented on the board by the '+' symbol.");
-				System.out.println("                Your enemy, the Demon King Garret, will be represented by the ':(' symbol. He is super sad so he walks in a path");
-				System.out.println("                Ari THE WOMAN will be represented by the '?' symbol. She is CRAZY so you need to chase her");
+				System.out.println("                         How to play:");
+				System.out.println("                                                        You, the Hero, will be represented on the board by the '+' symbol.");
+				System.out.println("        					        Your enemy, the Demon King Garret, will be represented by the ':(' symbol. He is super sad so he walks in a path");
+				System.out.println("    					            Ari THE WOMAN will be represented by the '?' symbol. She is CRAZY so you need to chase her");
 				System.out.println("       ");
-				System.out.println("                Move throughout the board collecting as many items '<$>' as you can to find a powerful weapon.");
-				System.out.println("                If you do happen to run into either enemy, you must dual it out to see who wins!");
+				System.out.println("         					       Move throughout the board collecting as many items '<$>' as you can to find a powerful weapon.");
+				System.out.println("            					    If you do happen to run into either enemy, you must dual it out to see who wins!");
 				System.out.println("    ");
-				System.out.println("                                   Press 'w' to move UP. ");
-				System.out.println("                                   Press 's' to move DOWN. ");
-				System.out.println("                                   Press 'a' to move LEFT. ");
-				System.out.println("                                   Press 'd' to move RIGHT. ");
-				System.out.println("                                   Press 'i' to access inventroy ");
-				System.out.println("                                   Press 'q' to activate not alive mode");
+				System.out.println("      			                             Press 'w' to move UP. ");
+				System.out.println(" 				                                  Press 's' to move DOWN. ");
+				System.out.println("                           				        Press 'a' to move LEFT. ");
+				System.out.println("               			                    Press 'd' to move RIGHT. ");
+				System.out.println("               				                    Press 'i' to access inventroy ");
+				System.out.println("                            			       Press 'q' to activate not alive mode");
 				System.out.println(" ");
 			}//end of if for printing controls
 
@@ -496,14 +510,16 @@ public class Main{
 				do{
 
 					System.out.println(" ");
-					System.out.println("Your current weapon is " + stuff.currentWeapon());
-					System.out.println("Your current Armor is " + stuff.currentArmor());
+					System.out.println("                           Your current weapon is " + stuff.currentWeapon());
+					System.out.println("                     Your current Armor is " + stuff.currentArmor());
 					System.out.println(" ");
-					System.out.println(" 1. Print the inventory");
-					System.out.println(" 2. Drop an item");
-					System.out.println(" 3. Equip weapon");
-					System.out.println(" 4. Equip armor");
-					System.out.println(" 5. quit");
+					System.out.println("                                    1. Print the inventory");
+					System.out.println("                         2. Drop an item");
+					System.out.println("               3. Equip weapon");
+					System.out.println("                           4. Equip armor");
+					System.out.println("                    5. Use heal ");
+					System.out.println("                                        6. Equip buff");
+					System.out.println("                                    7. quit");
 					System.out.println(" ");
 					int choice = bob.nextInt();
 					switch(choice){
@@ -519,8 +535,15 @@ public class Main{
 						case 4://equp armor
 							stuff.equipArmor();
 							break;
-						case 5://exit
-							System.out.println("Do you want to get back in the game? ");
+						case 5://heals
+							int juice = stuff.heal();
+							people.get(0).heal(juice);
+							break;
+						case 6://equip buff
+							stuff.equipBuff();
+						case 7://exit
+							System.out.println("    ");
+							System.out.println("                        Do you want to get back in the game?    'y'  'n'   ");
 							String select = bob.next();
 							if (select.equals("y")){
 								go = false;
@@ -549,19 +572,20 @@ public class Main{
 
 			if(!people.get(1).isAlive() && !people.get(2).isAlive()){
 				for(int i = 0 ; i < 5 ; i++){
-					System.out.println("     YYYYYYYYAAAAAAAAAAAAAAAAAAAAAAAAYYYYYYYYYYY");
-					System.out.println("                     YOU HAVE WON ");
+					System.out.println(" 							    YYYYYYYYAAAAAAAAAAAAAAAAAAAAAAAAYYYYYYYYYYY");
+					System.out.println("                 							    YOU HAVE WON ");
 				}
 				System.out.println(" ");
-				System.out.println("      YOU HAVE DONE IT, YOU HAVE KILLED THE DEMON KING AND HER QUEEN");
-				System.out.println("      The curry can now be restored to the land of 'SCHOP SCHOP'");
-				System.out.println("             Now you can finally rest in peace and die. ");
-				System.out.println("                     Are you ready to die? ");
+				System.out.println("    						  YOU HAVE DONE IT, YOU HAVE KILLED THE DEMON KING AND HER QUEEN");
+				System.out.println("    							  The curry can now be restored to the land of 'SCHOP SCHOP'");
+				System.out.println("      						       Now you can finally rest in peace and die. ");
+				System.out.println("              						       Are you ready to die? ");
 				System.out.println(" ");
+				System.out.print("                                                                          ");
 				String response = bob.next();
 				System.out.println(" ");
-				System.out.println("       What's that?? I can't hear you because I am a virtual machine. Oh well.. lolz You probably said 'yes' ");
-				System.out.println("      Thank you for your service " + Name + ". Good game.");
+				System.out.println("                                      What's that?? I can't hear you because I am a virtual machine. Oh well.. lolz You probably said 'yes' ");
+				System.out.println("                                                               Thank you for your service " + Name + ". Good game.");
 				System.out.println(" ");
 				people.get(0).kill();
 			}//end of if for winning message 
